@@ -52,7 +52,8 @@ public class BaseTestNG extends TestListenerAdapter {
 	private final static boolean quitDriver = false;
 	private final static int IMPLICIT_WAIT_TIMEOUT = 120; // in seconds
 	private final static int PAGELOAD_WAIT_TIMEOUT = 120; // in seconds
-
+	public WebDriver driver = null;
+	
 	@DataProvider(name = "DataProvider", parallel = false)
 	public static Object[][] getData() {
 		ArrayList<ArrayList<HashMap<String, String>>> executionDetails = new ArrayList<ArrayList<HashMap<String, String>>>();
@@ -92,7 +93,7 @@ public class BaseTestNG extends TestListenerAdapter {
 
 	@Test(dataProvider = "DataProvider")
 	public void BaseTestNGExecutor(List<HashMap<String, String>> executionFlow) {
-		WebDriver driver = null;
+//		WebDriver driver = null;
 		HashMap<String, String> callee = null;
 		try {
 			try {
@@ -186,6 +187,7 @@ public class BaseTestNG extends TestListenerAdapter {
 		}
 		ExtentTestManager.endTest();
 		ExtentManager.getInstance().flush();
+		driver.close();
 	}
 
 	/**
