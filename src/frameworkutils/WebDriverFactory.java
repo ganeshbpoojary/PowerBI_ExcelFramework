@@ -471,8 +471,8 @@ public class WebDriverFactory {
 		element.sendKeys(value);
 		enteredTextValue = element.getAttribute("value");
 		if (enteredTextValue.equals(value)) {
-			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),
-					"Value has been set with <B>[" + enteredTextValue + "]</B>");
+//			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),"Value has been set with <B>[" + enteredTextValue + "]</B>");
+			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),  "Value has been set");
 			return true;
 		} else {
 			extentTest.log(LogStatus.FAIL, "Type In:= " + by.toString(),
@@ -1209,6 +1209,32 @@ public class WebDriverFactory {
 
 	/**
 	 * 
+	 * Wait for element to be Loaded for default timeout
+	 *
+	 * 
+	 * 
+	 * @param by
+	 * 
+	 *           By instance of WebElement
+	 * 
+	 */
+	
+	public void waitForElementTobeLocated(By by) {
+		if (driver instanceof InternetExplorerDriver) {
+			int secs = 0;
+			while (secs <= WEBDRIVER_WAIT_TIMEOUT) {
+				snooze(1000);
+				secs++;
+				if (isDisplayed(by))
+					break;
+			}
+		} else {
+			new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT).until(ExpectedConditions.visibilityOfElementLocated(by));
+		}
+	}
+
+	/**
+	 * 
 	 * Wait for element to be visible for default timeout
 	 *
 	 * 
@@ -1499,6 +1525,8 @@ public class WebDriverFactory {
 			extentTest.log(LogStatus.FAIL, "checkSummaryChartName: ",
 					"Chart <B> " + chartName + " </B> is not Visible");
 			return false;
+			
+			
 		}
 	}
 
