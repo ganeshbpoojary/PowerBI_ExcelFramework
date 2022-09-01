@@ -8,7 +8,7 @@
           <include name="afterMethod"/>
           <include name="killProcess"/>
           <include name="afterSuite"/>
-          <include name="BaseTestNGExecutor" invocation-numbers="0 1"/>
+          <include name="BaseTestNGExecutor" invocation-numbers="0"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- testlogic.BaseTestNG -->

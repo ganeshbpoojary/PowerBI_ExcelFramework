@@ -4,7 +4,16 @@ import org.openqa.selenium.By;
 
 
 
-public class APPM_UI {
+public class StoreInsight_UI {
+	
+	//Tabs
+	
+	public static final By tab_MixComposition=By.xpath("//div[contains(text(),'Mix & Composition')]//ancestor::div[@class='contentOuterContainer']/..");	
+	public static final By tab_StoreGrade=By.xpath("//div[contains(text(),'Store Grade')]//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By tab_Attributes=By.xpath("//div[contains(text(),'Attributes')]//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By tab_TimeShifts=By.xpath("//div[contains(text(),'Time Shifts')]//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By tab_ModelQuality=By.xpath("//div[contains(text(),'Model Quality')]//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By tab_StoreHealthPerf=By.xpath("//div[contains(text(),'Store Health & Performance')]//ancestor::div[@class='contentOuterContainer']/..");
 	
 	public static final By txt_email=By.xpath("//input[@id='email']");
 	public static final By txt_password=By.name("passwd");
@@ -14,7 +23,7 @@ public class APPM_UI {
 	
 	public static final By dd_productHierarchy=By.xpath("//*[@title='Product Hierarchy']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']");
 	public static final By opt_dropDownRowsData = By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
-	                                                        //input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']
+	
 	public static final By header_SummaryChart = By.xpath("//div[@class='innerContainer']//div[text()='Routing' or text()='Destination']");
 	
 	public static final By row_SummaryChart_option1=By.xpath("//div[contains(@class,'expandableCell cell-interactive')]");
@@ -24,8 +33,8 @@ public class APPM_UI {
 	public static final By btn_DeepDive=By.xpath("//div[text()='Deep dive']//ancestor::div[@class='contentOuterContainer']/..");
 	public static final By table_DeepDive=By.xpath("//*[@class='tableExContainer']");
 	
-	public static final By tab_leadTimeAnalysis=By.xpath("//div[contains(text(),'Lead Time Analysis')]//ancestor::div[@class='contentOuterContainer']/..");	
-	public static final By tab_Yield=By.xpath("//div[contains(text(),'Yield')]//ancestor::div[@class='contentOuterContainer']/..");
+	
+	
 	public static final By tab_Capacity=By.xpath("//div[contains(text(),'Capacity')]//ancestor::div[@class='contentOuterContainer']/..");
 	
 	public static final By btn_SupplierLeadTime=By.xpath("//div[text()='Supplier lead time']//ancestor::div[@class='contentOuterContainer']/..");
