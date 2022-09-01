@@ -180,8 +180,8 @@ public class DataBook {
 						String iterationStatus = executionFlow
 								.getCell(headerDetails.get(iterationValue), Row.CREATE_NULL_AS_BLANK)
 								.getStringCellValue();
-//						if (testCaseIDChild.equals(testCaseIDParent) && !(iterationStatus.equalsIgnoreCase("pass") || iterationStatus.equalsIgnoreCase("skip"))) {
-						if (testCaseIDChild.equals(testCaseIDParent) ) {
+						if (testCaseIDChild.equals(testCaseIDParent) && !(iterationStatus.equalsIgnoreCase("pass") || iterationStatus.equalsIgnoreCase("skip"))) {
+//						if (testCaseIDChild.equals(testCaseIDParent) ) {
 							HashMap<String, String> record = new HashMap<String, String>();
 							record.put("RowNumber", String.valueOf(iRow));
 							record.put("TestCaseID",

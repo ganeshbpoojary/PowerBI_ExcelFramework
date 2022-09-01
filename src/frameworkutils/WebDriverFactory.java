@@ -42,7 +42,9 @@ import org.testng.Assert;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import frameworkutils.ExtentTestManager;
+import testlogic.Supplier_Logic;
 import uimaps.APPM_UI;
+import uimaps.Supplier_UI;
 import frameworkutils.ExtentManager;
 import java.util.Arrays;
 //import java.util.List;
@@ -471,8 +473,8 @@ public class WebDriverFactory {
 		element.sendKeys(value);
 		enteredTextValue = element.getAttribute("value");
 		if (enteredTextValue.equals(value)) {
-			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),
-					"Value has been set with <B>[" + enteredTextValue + "]</B>");
+//			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),					"Value has been set with <B>[" + enteredTextValue + "]</B>");
+			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),					"Value has been set");
 			return true;
 		} else {
 			extentTest.log(LogStatus.FAIL, "Type In:= " + by.toString(),
@@ -1401,48 +1403,6 @@ public class WebDriverFactory {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
 	}
 
-	public boolean selectDropDown(String dd) {
-		// return false if WebElement is not found
-		WebDriverWait wait = new WebDriverWait(driver, 1200);
-		try {
-			waitForPageToLoad();
-			Thread.sleep(2000);
-			WebElement elm = driver.findElement(By.xpath("//*[@title='" + dd
-					+ "']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']"));
-
-//			WebElement elm = driver.findElement(By.xpath("//*[@aria-label='" + dd + "']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']"));
-
-			if (!elm.isDisplayed())
-				return false;
-			elm.click();
-			extentTest.log(LogStatus.INFO, "selectDropDown: ", "Drop Down <B> " + dd + " </B> is clicked");
-			waitForPageToLoad();
-			return true;
-		} catch (UnhandledAlertException uaex) {
-			extentTest.log(LogStatus.FAIL, "Drop Down <B>[" + dd + "]</B>", "is not clicked - <B>");
-			return false;
-		} catch (InterruptedException e) {
-			extentTest.log(LogStatus.FAIL, "Drop Down <B>[" + dd + "]</B>", "is not clicked - <B>");
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	public int getDropDownRowCount() {
-		WebDriverWait wait = new WebDriverWait(driver, 1200);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']")));
-		try {
-			List<WebElement> rows = driver.findElements(By.xpath(
-					"//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']"));
-			int size = rows.size();
-			extentTest.log(LogStatus.INFO, "getDropDownRowCount: ", "Number of rows is- <B>[" + size + "]</B>");
-			return size;
-		} catch (NoSuchElementException nsex) {
-			return -1;
-		}
-	}
-
 	public boolean checkElementIsEnabled(By by) {
 		// return false if WebElement is not found
 		if (!findElement(by)) {
@@ -1464,68 +1424,6 @@ public class WebDriverFactory {
 					"Unhandled Alert is Present" + "</B>" + captureScreenShot());
 			return false;
 		}
-	}
-
-	public boolean checkDropDownForOption(String opt) {
-		System.out.print(opt);
-		WebDriverWait wait = new WebDriverWait(driver, 1200);
-		int rows = getDropDownRowCount();
-		for (int i = 1; i <= rows; i++) {
-			String value = driver.findElement(By.xpath(
-					"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
-							+ i + "]//span[@class='slicerText']"))
-					.getText();
-			if (value.equals(opt)) {
-				extentTest.log(LogStatus.INFO, "checkDropDownForOption: ", "Option is present- <B>[" + opt + "]</B>");
-				return true;
-			} else {
-				extentTest.log(LogStatus.FAIL, "checkDropDownForOption: ",
-						"Option is not present- <B>[" + opt + "]</B>");
-			}
-		}
-		return false;
-	}
-
-	public boolean checkSummaryChartName(String chartName) {
-		try {
-			System.out.print(chartName);
-			WebDriverWait wait = new WebDriverWait(driver, 1200);
-			List<WebElement> elm = driver.findElements(By.xpath("//div[@title='" + chartName + "']"));
-			if (!(elm.size() == 1))
-				return false;
-			extentTest.log(LogStatus.INFO, "checkSummaryChartName: ", "Chart <B> " + chartName + " </B> is Visible");
-			return true;
-		} catch (NoSuchElementException nsex) {
-			extentTest.log(LogStatus.FAIL, "checkSummaryChartName: ",
-					"Chart <B> " + chartName + " </B> is not Visible");
-			return false;
-		}
-	}
-
-	public boolean checkChartColumnHeader(String str) {
-		try {
-			String[] items = str.split("\\|");
-			List<String> itemList = Arrays.asList(items);
-			System.out.println(itemList.toString());
-
-			for (int i = 0; i < itemList.size(); i++) {
-				String head = itemList.get(i).trim();
-				List<WebElement> elm = driver
-						.findElements(By.xpath("//div[@class='innerContainer']//div[text()='" + head + "']"));
-				System.out.println(elm.size());
-				if (!(elm.size() == 1))
-					return false;
-			}
-			extentTest.log(LogStatus.PASS, "checkChartColumnHeader: ",
-					"Column Header <B> " + str.toString() + " </B> is Present");
-			return true;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			extentTest.log(LogStatus.FAIL, "checkChartColumnHeader: ",
-					"Column Header <B> " + str.toString() + " </B> is not Present");
-			return false;
-		}
-
 	}
 
 	public boolean Ctrl_END() {
@@ -1561,4 +1459,8 @@ public class WebDriverFactory {
 			return false;
 		}
 	}
+	
+
+	
+	
 }

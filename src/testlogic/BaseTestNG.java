@@ -180,6 +180,7 @@ public class BaseTestNG extends TestListenerAdapter {
 	public void afterMethod(ITestResult result) {
 		if (result.isSuccess()) {
 			ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed", "Test passed");
+			driver.close();
 		} else if (result.getStatus() == ITestResult.FAILURE) {
 			ExtentTestManager.getTest().log(LogStatus.FAIL, "Test failed", "Test failed");
 		} else if (result.getStatus() == ITestResult.SKIP) {
@@ -187,7 +188,7 @@ public class BaseTestNG extends TestListenerAdapter {
 		}
 		ExtentTestManager.endTest();
 		ExtentManager.getInstance().flush();
-		driver.close();
+		
 	}
 
 	/**
