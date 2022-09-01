@@ -36,28 +36,6 @@ public class APPM_Logic extends WebDriverFactory {
 	String detailHeader = dataBook.get("DetailedViewColumn_Header");
 
 	
-	public void login() {
-		synchronized (APPM_Logic.class) {
-			try {
-				refreshDataBook();
-				launchAPP(url);
-				waitForPageToLoad();
-				Thread.sleep(1000);
-				typeIn(APPM_UI.txt_email, email);
-				clickOn(APPM_UI.btn_submitPowerBI);
-				waitForPageToLoad();
-				typeIn(APPM_UI.txt_password, pwd);
-				clickOn(APPM_UI.btn_signinBY);
-				clickOn(APPM_UI.btn_yesBY);
-				waitForPageToLoad();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-
-	
 	/**
 	 * Checks filter has data	 
 	 * 

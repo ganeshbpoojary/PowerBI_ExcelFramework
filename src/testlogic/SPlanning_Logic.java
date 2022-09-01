@@ -61,7 +61,7 @@ public class SPlanning_Logic extends WebDriverFactory{
 		synchronized (SPlanning_Logic.class) {
 			try {
 				
-				clickonFilterandValidatethedata(filterName);
+				clickonFilterandValidatethedata_Space(filterName);
 				extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
 			}				
 			 catch (Exception e) {
@@ -78,7 +78,7 @@ public class SPlanning_Logic extends WebDriverFactory{
 	synchronized (SPlanning_Logic.class) {
 		try {
 			
-			clickonFilterandchecktheSearchButton(filterName);
+			clickonFilterandchecktheSearchButton_Space(filterName);
 			extentTest.log(LogStatus.PASS, "Search Buttton is enabled", "Search Buttton has Data");
 		}				
 		 catch (Exception e) {

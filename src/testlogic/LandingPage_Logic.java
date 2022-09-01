@@ -20,9 +20,9 @@ import frameworkutils.DataBook;
 import frameworkutils.WebDriverFactory;
 import uimaps.APPM_UI;
 
-public class Landing_Logic extends WebDriverFactory {
+public class LandingPage_Logic extends WebDriverFactory {
 
-	public Landing_Logic(WebDriver driver, Map<String, String> dataBook) {
+	public LandingPage_Logic(WebDriver driver, Map<String, String> dataBook) {
 		super(driver, dataBook);
 	}
 
@@ -37,7 +37,7 @@ public class Landing_Logic extends WebDriverFactory {
 
 	
 	public void login() {
-		synchronized (Landing_Logic.class) {
+		synchronized (LandingPage_Logic.class) {
 			try {
 				refreshDataBook();
 				launchAPP(url);
