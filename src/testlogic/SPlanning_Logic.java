@@ -24,9 +24,7 @@ public class SPlanning_Logic extends WebDriverFactory{
 		super(driver, dataBook);
 		// TODO Auto-generated constructor stub
 	}
-	String url = dataBook.get("Url");
-	String email = dataBook.get("Email");
-	String pwd = dataBook.get("Password");
+
 	String filterName = dataBook.get("Fliter_Name");
 	String filterOption = dataBook.get("Filter_Option");
 	String chartName = dataBook.get("Chart_Name");

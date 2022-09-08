@@ -3,12 +3,7 @@ package uimaps;
 import org.openqa.selenium.By;
 
 public class SPlanning_UI {
-	
-	public static final By txt_email=By.xpath("//input[@id='email']");
-	public static final By txt_password=By.name("passwd");
-	public static final By btn_submitPowerBI=By.id("submitBtn");
-	public static final By btn_signinBY=By.xpath("//input[contains(@id,'idSIButton')]");
-	public static final By btn_yesBY=By.xpath("//input[@value='Yes']");
+
 	public static final By resetCalenderbutton= By.xpath("//*[text()=\"Reset Calendar\"]");
 	public static final By alertMorebutton=By.xpath("//div[text()='Details']/..");
 	public static final By alertSubCategory=By.xpath("//*[@class='innerContainer']");

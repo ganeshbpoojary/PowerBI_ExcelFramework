@@ -6,8 +6,6 @@ import org.openqa.selenium.By;
 
 public class StoreInsight_UI {
 	
-	//Tabs
-	
 	public static final By tab_MixComposition=By.xpath("//div[contains(text(),'Mix & Composition')]//ancestor::div[@class='contentOuterContainer']/..");	
 	public static final By tab_StoreGrade=By.xpath("//div[contains(text(),'Store Grade')]//ancestor::div[@class='contentOuterContainer']/..");
 	public static final By tab_Attributes=By.xpath("//div[contains(text(),'Attributes')]//ancestor::div[@class='contentOuterContainer']/..");
@@ -31,9 +29,7 @@ public class StoreInsight_UI {
 	
 	public static final By btn_DeepDiveProperty=By.xpath("//div[text()='Deep dive']");
 	public static final By btn_DeepDive=By.xpath("//div[text()='Deep dive']//ancestor::div[@class='contentOuterContainer']/..");
-	public static final By table_DeepDive=By.xpath("//*[@class='tableExContainer']");
-	
-	
+	public static final By table_DeepDive=By.xpath("//*[@class='tableExContainer']");	
 	
 	public static final By tab_Capacity=By.xpath("//div[contains(text(),'Capacity')]//ancestor::div[@class='contentOuterContainer']/..");
 	
@@ -48,12 +44,5 @@ public class StoreInsight_UI {
 	public static final By btn_DetailedViewChart=By.xpath("//div[contains(text(),'Detailed view') or contains(text(),'Detailed View')]//ancestor::div[@class='contentOuterContainer']/..");	
 	public static final By btn_SummaryViewChart=By.xpath("//div[contains(text(),'Summary')]//ancestor::div[@class='contentOuterContainer']/..");
 	
-	
-	
-	
-	
-	
-	
-//	public static final By btnlogout=By.xpath("//img[@src='/WebTours/images/in_home.gif']/..");  // UserName
 
 }

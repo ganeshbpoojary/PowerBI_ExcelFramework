@@ -19,6 +19,7 @@ import com.thoughtworks.selenium.webdriven.commands.IsVisible;
 import frameworkutils.DataBook;
 import frameworkutils.WebDriverFactory;
 import uimaps.APPM_UI;
+import uimaps.LandingPage_UI;
 
 public class LandingPage_Logic extends WebDriverFactory {
 
@@ -29,11 +30,6 @@ public class LandingPage_Logic extends WebDriverFactory {
 	String url = dataBook.get("Url");
 	String email = dataBook.get("Email");
 	String pwd = dataBook.get("Password");
-	String filterName = dataBook.get("Fliter_Name");
-	String filterOption = dataBook.get("Filter_Option");
-	String chartName = dataBook.get("Chart_Name");
-	String summaryHeader = dataBook.get("SummaryColumn_Header");
-	String detailHeader = dataBook.get("DetailedViewColumn_Header");
 
 	
 	public void login() {
@@ -43,12 +39,12 @@ public class LandingPage_Logic extends WebDriverFactory {
 				launchAPP(url);
 				waitForPageToLoad();
 				Thread.sleep(1000);
-				typeIn(APPM_UI.txt_email, email);
-				clickOn(APPM_UI.btn_submitPowerBI);
+				typeIn(LandingPage_UI.txt_email, email);
+				clickOn(LandingPage_UI.btn_submitPowerBI);
 				waitForPageToLoad();
-				typeIn(APPM_UI.txt_password, pwd);
-				clickOn(APPM_UI.btn_signinBY);
-				clickOn(APPM_UI.btn_yesBY);
+				typeIn(LandingPage_UI.txt_password, pwd);
+				clickOn(LandingPage_UI.btn_signinBY);
+				clickOn(LandingPage_UI.btn_yesBY);
 				waitForPageToLoad();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
