@@ -6,16 +6,12 @@ import org.openqa.selenium.By;
 
 public class Supplier_UI {
 	
-	//Tabs
-	
 	public static final By tab_ExecutiveSummary=By.xpath("//div[contains(text(),'Executive Summary')]//ancestor::div[@class='contentOuterContainer']/..");	
 	public static final By tab_SupplierReview=By.xpath("//div[contains(text(),'Supplier Review')]//ancestor::div[@class='contentOuterContainer']/..");
 	public static final By tab_SupplierScore=By.xpath("//div[contains(text(),'Supplier Score')]//ancestor::div[@class='contentOuterContainer']/..");
 	
 	public static final By dd_options_supplier=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
 	
-	
-
 	public static final By span_Spend_value=By.xpath("(//div[contains(text(),'Spend')]/../../../../../../../../../../../..//*[@class='value']/*)[1]");
 	public static final By span_Spend_percentage=By.xpath("(//div[contains(text(),'Spend')]/../../../../../../../../../../../..//*[@class='value']/*)[2]");
 	public static final By span_Spend_arrow=By.xpath("(//div[contains(text(),'Spend')]/../../../../../../../../../../../..//*[@class='value']/*)[3]");
@@ -68,19 +64,13 @@ public class Supplier_UI {
 	public static final By dd_from=By.xpath("//div[contains(@aria-label,'from_month') and @role='combobox']/div");
 	public static final By dd_to=By.xpath("//div[contains(@aria-label,'to_month') and @role='combobox']/div");
 	public static final By dd_SelectAll_option=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
-	
-	//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']
-	
+		
 	public static final By opt_dropDownRowsData = By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
 	
 	public static final By header_SummaryChart = By.xpath("//div[@class='innerContainer']//div[text()='Routing' or text()='Destination']");
 	
 	public static final By row_SummaryChart_option1=By.xpath("//div[contains(@class,'expandableCell cell-interactive')]");
 	public static final By row_SummaryChart_option2=By.xpath("//div[contains(@class,'rowHeaders')]//div[contains(@class,'pivotTableCellWrap cell-interactive')]");
-	
-
-	
-	
 	
 	public static final By tab_Capacity=By.xpath("//div[contains(text(),'Capacity')]//ancestor::div[@class='contentOuterContainer']/..");
 	
@@ -105,13 +95,11 @@ public class Supplier_UI {
 	public static final By iconChartView=By.xpath("//div[contains(@aria-label,'Chart View')]");
 	public static final By iconTableView=By.xpath("//div[contains(@aria-label,'Table View')]");
 	
+	public static final By matrixRows=By.xpath("//div[@class='bodyCells']//div[contains(@class,'pivotTableCellWrap')]");
 	
+	public static final By lineGraph=By.xpath("//*[@class='lineChartSVG']//*[@class='markerPaths']");
+	public static final By barGraph=By.xpath("//*[@class='columnChartUnclippedGraphicsContext']//*[@class='series']");
 	
-	
-	
-	
-	
-	
-//	public static final By btnlogout=By.xpath("//img[@src='/WebTours/images/in_home.gif']/..");  // UserName
-
+	public static final By Yaxis_StartValue=By.xpath("(//*[@class='y axis showLinesOnAxis']//*[@fill='currentColor'])[1]");
+	public static final By Yaxis_EndValue=By.xpath("(//*[@class='y axis showLinesOnAxis']//*[@fill='currentColor'])[3]");	
 }

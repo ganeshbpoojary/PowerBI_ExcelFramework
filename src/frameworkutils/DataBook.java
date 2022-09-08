@@ -324,7 +324,7 @@ public class DataBook {
 
 	public static synchronized void updateTestStepStatus(HashMap<String, String> stepDetails, String status) {
 		// String fileName =
-		// "C:/Users/606813868/Automation/Extend_TestNG_Automation/test-data/ExecutionController.xlsx";
+		// "./test-data/ExecutionController.xlsx";
 		String fileName = stepDetails.get("SuiteFileName");
 		int rowNumber = Integer.valueOf(stepDetails.get("RowNumber"));
 		String iteration = stepDetails.get("Iteration");
@@ -379,7 +379,7 @@ public class DataBook {
 
 	public static synchronized void updateMasterControllerStatus(HashMap<String, String> stepDetails, String status) {
 		// String fileName =
-		// "C:/Users/606813868/Automation/Extend_TestNG_Automation/test-data/ExecutionController.xlsx";
+		// "./test-data/ExecutionController.xlsx";
 		String fileName = stepDetails.get("SuiteFileName");
 		// int rowNumber = Integer.valueOf(stepDetails.get("RowNumber"));
 		int rowNumber = 0;

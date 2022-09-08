@@ -30,14 +30,13 @@ public class Supplier_Logic extends WebDriverFactory {
 		super(driver, dataBook);
 	}
 
-	String url = dataBook.get("Url");
-	String email = dataBook.get("Email");
-	String pwd = dataBook.get("Password");
 	String filterName = dataBook.get("Fliter_Name");
 	String filterOption = dataBook.get("Filter_Option");
 	String chartName = dataBook.get("Chart_Name");
 	String summaryHeader = dataBook.get("Column_Header");
 	String rowHeader = dataBook.get("Row_Header");
+	String lineGraph = dataBook.get("Line_Graph");
+	String barGraph = dataBook.get("Bar_Graph");
 
 	public static ArrayList<String> months() {
 		ArrayList<String> monthList = new ArrayList<String>();
@@ -86,8 +85,7 @@ public class Supplier_Logic extends WebDriverFactory {
 				waitForElementTobeClickable(Supplier_UI.iconTableView);
 				isEnabled(Supplier_UI.iconTableView);
 				if (isEnabled(Supplier_UI.iconTableView))
-					extentTest.log(LogStatus.PASS, "Table View icon should be enabled",
-							"Table View icon is enabled");
+					extentTest.log(LogStatus.PASS, "Table View icon should be enabled", "Table View icon is enabled");
 				else
 					extentTest.log(LogStatus.FAIL, "Table View icon should be enabled",
 							"Table View icon is not enabled");
@@ -97,15 +95,14 @@ public class Supplier_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	public void validateChartViewButtonEnabled_Supplier() {
 		synchronized (Supplier_Logic.class) {
 			try {
 				waitForElementTobeClickable(Supplier_UI.iconChartView);
 				isEnabled(Supplier_UI.iconChartView);
 				if (isEnabled(Supplier_UI.iconChartView))
-					extentTest.log(LogStatus.PASS, "Chart View icon should be enabled",
-							"Table View icon is enabled");
+					extentTest.log(LogStatus.PASS, "Chart View icon should be enabled", "Table View icon is enabled");
 				else
 					extentTest.log(LogStatus.FAIL, "Chart View icon should be enabled",
 							"Table View icon is not enabled");
@@ -115,27 +112,29 @@ public class Supplier_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	public void validateMatrixHasRowHeader_Supplier() {
 		synchronized (Supplier_Logic.class) {
 			try {
 				clickOn(Supplier_UI.iconTableView);
 				waitForPageToLoad();
-				if(checkMatrixHeader_Supplier(rowHeader))
-					extentTest.log(LogStatus.PASS, "checkMatrixRowHeader_Supplier: ", "Row Heade - <B> " + rowHeader + " </B> is Present");
+				if (checkMatrixHeader_Supplier(rowHeader))
+					extentTest.log(LogStatus.PASS, "checkMatrixRowHeader_Supplier: ",
+							"Row Heade - <B> " + rowHeader + " </B> is Present");
 				else
-					extentTest.log(LogStatus.FAIL, "checkMatrixRowHeader_Supplier: ", "Row Heade - <B> " + rowHeader + " </B> is not Present");
+					extentTest.log(LogStatus.FAIL, "checkMatrixRowHeader_Supplier: ",
+							"Row Heade - <B> " + rowHeader + " </B> is not Present");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
-	
+
 	private boolean checkMatrixHeader_Supplier(String rowHeader) {
 		try {
 			driver.findElement(By.xpath("//div[@aria-roledescription='Matrix']//div[@title='" + rowHeader + "']"));
-			
+
 //			extentTest.log(LogStatus.INFO, "checkMatrixHeader_Supplier ","Value has been set");
 			return true;
 		} catch (NoSuchElementException nsex) {
@@ -150,20 +149,22 @@ public class Supplier_Logic extends WebDriverFactory {
 		}
 		return yearList;
 	}
-	
+
 	/**
-	 * Checks a particular value in a filter	 
+	 * Checks a particular value in a filter
 	 * 
 	 * @param - Filter name, Filter option
 	 * 
 	 **/
 	public void validateValueInDropDown_Supplier() {
 		synchronized (APPM_Logic.class) {
-			try {				
+			try {
 				if (checkDropDownForOption_Supplier(filterOption))
-					extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "option - <B> " + filterOption + " </B>is present");
+					extentTest.log(LogStatus.PASS, "Drop Down Data presence validation",
+							"option - <B> " + filterOption + " </B>is present");
 				else
-					extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation", "option - <B> " + filterOption + " </B>is not present");
+					extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation",
+							"option - <B> " + filterOption + " </B>is not present");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -178,22 +179,6 @@ public class Supplier_Logic extends WebDriverFactory {
 		}
 		return shortYearList;
 	}
-
-//	public void testingMonthsYears_Suppplier() {
-//		synchronized (Supplier_Logic.class) {
-//			try {
-//				if (checkDropDownForMonthsYears_Supplier(months(), years()))
-//					extentTest.log(LogStatus.PASS, "Drop Down should have Months and Years",
-//							"Drop Down is having Months and Years");
-//				else
-//					extentTest.log(LogStatus.FAIL, "Drop Down should have Months and Years",
-//							"Drop Down is not having Months and Years");
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//	}
 
 	private boolean checkChartXAxisForMonthsYears_Supplier(ArrayList<String> shortMonthList,
 			ArrayList<String> shortYearList) {
@@ -266,7 +251,7 @@ public class Supplier_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	public void gotoWhatAreMyPurchasingTrendsWithRespectTosupplierContracts_Suppplier() {
 		synchronized (Supplier_Logic.class) {
 			try {
@@ -278,7 +263,7 @@ public class Supplier_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	public void gotoHowAreMyBehavioralMetricsPerforming_Suppplier() {
 		synchronized (Supplier_Logic.class) {
 			try {
@@ -732,15 +717,17 @@ public class Supplier_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	public void validateChartContent_Suppplier() {
 		synchronized (Supplier_Logic.class) {
 			try {
 				if (checkChartContent_Supplier(chartName, rowHeader)) {
-					extentTest.log(LogStatus.PASS, "validateChartContent_Suppplier: ", "Chart <B> " + chartName + " </B> is Visible with Row Header <B> " + rowHeader + " </B>");
+					extentTest.log(LogStatus.PASS, "validateChartContent_Suppplier: ",
+							"Chart <B> " + chartName + " </B> is Visible with Row Header <B> " + rowHeader + " </B>");
 
 				} else {
-					extentTest.log(LogStatus.FAIL, "validateChartContent_Suppplier: ", "Chart <B> " + chartName + " </B> is not Visible with Row Header <B> " + rowHeader + " </B>");
+					extentTest.log(LogStatus.FAIL, "validateChartContent_Suppplier: ", "Chart <B> " + chartName
+							+ " </B> is not Visible with Row Header <B> " + rowHeader + " </B>");
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -749,20 +736,137 @@ public class Supplier_Logic extends WebDriverFactory {
 		}
 	}
 
-	private boolean checkChartContent_Supplier(String chart, String label ) {	
-			 try {
-				List<WebElement> elm = driver.findElements(By.xpath("(//div[contains(text(),'" + chart + "')]//ancestor::transform)[2]//div[text()='" + label + "']"));				
-				if(elm.size() ==1)
-					return true;
-				return false;
+	public void validateChartHasLineGraph_Suppplier() {
+		synchronized (Supplier_Logic.class) {
+			try {
+				if (checkChartHasGraph_Supplier(Supplier_UI.lineGraph, lineGraph)) {
+					extentTest.log(LogStatus.PASS, "Line Graph Validation",
+							"Line Graph <B> " + lineGraph + " </B> is visible");
+				} else {
+					extentTest.log(LogStatus.FAIL, "Line Graph Validation",
+							"Line Graph <B> " + lineGraph + " </B> is not visible");
+				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+	}
+
+	public void validateChartHasBarGraph_Suppplier() {
+		synchronized (Supplier_Logic.class) {
+			try {
+				if (checkChartHasGraph_Supplier(Supplier_UI.barGraph, barGraph)) {
+					extentTest.log(LogStatus.PASS, "Bar Graph Validation",
+							"Bar Graph <B> " + barGraph + " </B> is visible");
+				} else {
+					extentTest.log(LogStatus.FAIL, "Bar Graph Validation",
+							"Bar Graph <B> " + barGraph + " </B> is not visible");
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void validateMatrixHasData_Suppplier() {
+		synchronized (Supplier_Logic.class) {
+			try {
+					if (checkMatrixHasData_Supplier())
+						extentTest.log(LogStatus.PASS, "Matrix should have data", "Matrix is having data");
+					else
+						extentTest.log(LogStatus.FAIL, "Matrix should have data", "Matrix is not having data");				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void validateYaxisHas0to100Range() {
+		synchronized (Supplier_Logic.class) {
+			try {
+					if (checkYaxisRage_Supplier())
+						extentTest.log(LogStatus.PASS, "Check chart appears between 0 to 100", "Check chart is appearing between 0 to 100");
+					else
+						extentTest.log(LogStatus.FAIL, "Check chart appears between 0 to 100", "Check chart is not appearing between 0 to 100");	
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private boolean checkChartHasGraph_Supplier(By graphtype, String graph) {
+		try {
+			String value = driver
+					.findElement(By.xpath("(//*[@class='legend-item-text' and @title='" + graph + "']/..//*)[3]"))
+					.getAttribute("style");
+			String[] str1 = value.split("; stroke:");
+			String[] atrStyle = str1[0].split("rgb");
+			String style = getAttributeValueOf(graphtype, "style");
+			if (style.contains(atrStyle[1]))
+				return true;
 			return false;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+
+	}
+
+	private boolean checkMatrixHasData_Supplier() {
+		try {
+			boolean flag = false;
+			waitForElementTobeClickable(Supplier_UI.iconTableView);
+			clickOn(Supplier_UI.iconTableView);
+			waitForElementTobeLocated(Supplier_UI.matrixRows);
+			int rows = getElementsCount(Supplier_UI.matrixRows);
+			for (int i = 0; i < rows; i++) {
+				String value = getAttributeValueOf(Supplier_UI.matrixRows, "title");
+				if (!(value.equals("")) || value.equals(""))
+					flag = true;
+			if(flag)
+				return true;
+			return false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 
 	}
 	
+	private boolean checkYaxisRage_Supplier() {
+		try {
+			String start = getTextOf(Supplier_UI.Yaxis_StartValue); 
+			String end = getTextOf(Supplier_UI.Yaxis_EndValue);			
+			if(start.equals("0") && end.equals("100"))
+				return true;
+			return false;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	private boolean checkChartContent_Supplier(String chart, String label) {
+		try {
+			List<WebElement> elm = driver.findElements(By.xpath(
+					"(//div[contains(text(),'" + chart + "')]//ancestor::transform)[2]//div[text()='" + label + "']"));
+			if (elm.size() == 1)
+				return true;
+			return false;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+
+	}
+
 	private boolean checkChartScore_Supplier() {
 		try {
 			waitForPageToLoad();
@@ -850,17 +954,6 @@ public class Supplier_Logic extends WebDriverFactory {
 			return false;
 		}
 	}
-
-//				return true;
-//			} else if(status.equalsIgnoreCase("false")) {
-//				option.click();
-//				extentTest.log(LogStatus.INFO, "selectDropDownOption_Supplier: ","Option is selected- <B>[" + opt + "]</B>");
-//				return true;
-//			}
-//		}
-//		extentTest.log(LogStatus.FAIL, "selectDropDownOption_Supplier: ","Option is not present in DropDown - <B>[" + opt + "]</B>");
-
-//	}
 
 	private boolean getDropDownRadioProp_Supplier(String opt) {
 		waitForPageToLoad();

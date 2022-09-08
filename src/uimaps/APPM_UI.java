@@ -5,12 +5,7 @@ import org.openqa.selenium.By;
 
 
 public class APPM_UI {
-	
-	public static final By txt_email=By.xpath("//input[@id='email']");
-	public static final By txt_password=By.name("passwd");
-	public static final By btn_submitPowerBI=By.id("submitBtn");
-	public static final By btn_signinBY=By.xpath("//input[contains(@id,'idSIButton')]");
-	public static final By btn_yesBY=By.xpath("//input[@value='Yes']");
+
 	
 	public static final By dd_productHierarchy=By.xpath("//*[@title='Product Hierarchy']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']");
 	public static final By opt_dropDownRowsData = By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
@@ -39,12 +34,4 @@ public class APPM_UI {
 	public static final By btn_DetailedViewChart=By.xpath("//div[contains(text(),'Detailed view') or contains(text(),'Detailed View')]//ancestor::div[@class='contentOuterContainer']/..");	
 	public static final By btn_SummaryViewChart=By.xpath("//div[contains(text(),'Summary')]//ancestor::div[@class='contentOuterContainer']/..");
 	
-	
-	
-	
-	
-	
-	
-//	public static final By btnlogout=By.xpath("//img[@src='/WebTours/images/in_home.gif']/..");  // UserName
-
 }

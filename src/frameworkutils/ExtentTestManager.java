@@ -5,7 +5,7 @@ import java.util.Map;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
-public class ExtentTestManager { // new
+public class ExtentTestManager { 
 	static Map<Integer, ExtentTest> extentTestMap = new HashMap<Integer, ExtentTest>();
 	// Get the instance of ExtentReport
 	private static ExtentReports extent = ExtentManager.getInstance();
