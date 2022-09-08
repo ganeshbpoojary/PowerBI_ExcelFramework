@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 
 
 public class APPM_UI {
-
 	
 	public static final By dd_productHierarchy=By.xpath("//*[@title='Product Hierarchy']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']");
 	public static final By opt_dropDownRowsData = By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
