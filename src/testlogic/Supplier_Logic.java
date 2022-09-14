@@ -13,6 +13,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -37,6 +38,8 @@ public class Supplier_Logic extends WebDriverFactory {
 	String rowHeader = dataBook.get("Row_Header");
 	String lineGraph = dataBook.get("Line_Graph");
 	String barGraph = dataBook.get("Bar_Graph");
+	String yAxis = dataBook.get("X_Axis");
+	String xAxis = dataBook.get("Y_Axis");
 
 	public static ArrayList<String> months() {
 		ArrayList<String> monthList = new ArrayList<String>();
@@ -79,6 +82,52 @@ public class Supplier_Logic extends WebDriverFactory {
 		}
 	}
 
+	public void validateComponentVersions_Old_Supplier() {
+		synchronized (Supplier_Logic.class) {
+			try {
+				String value = null;
+				if (getElementsCount(Supplier_UI.span_Old_Value) == 1) {
+					value = getTextOf(Supplier_UI.span_Old_Value);
+					if (!value.equals("")) {
+						extentTest.log(LogStatus.PASS, "Chart Component Versions (Count) should show Old value",
+								"Chart Component Versions (Count) is showing Old value - <B> value</B>");
+					} else {
+						extentTest.log(LogStatus.FAIL, "Chart Component Versions (Count) should show Old value",
+								"Chart Component Versions (Count) is not showing Old value - <B> value</B>");
+					}
+				} else {
+					extentTest.log(LogStatus.FAIL, "Chart Component Versions (Count) should show Old value",
+							"Chart Component Versions (Count) is not showing Old value - <B> value</B>");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void validateComponentVersions_Latest_Supplier() {
+		synchronized (Supplier_Logic.class) {
+			try {
+				String value = null;
+				if (getElementsCount(Supplier_UI.span_Latest_Value) == 1) {
+					value = getTextOf(Supplier_UI.span_Latest_Value);
+					if (!value.equals("")) {
+						extentTest.log(LogStatus.PASS, "Chart Component Versions (Count) should show Latest value",
+								"Chart Component Versions (Count) is showing Latest value - <B> value</B>");
+					} else {
+						extentTest.log(LogStatus.FAIL, "Chart Component Versions (Count) should show Latest value",
+								"Chart Component Versions (Count) is not showing Latest value - <B> value</B>");
+					}
+				} else {
+					extentTest.log(LogStatus.FAIL, "Chart Component Versions (Count) should show Latest value",
+							"Chart Component Versions (Count) is not showing Latest value - <B> value</B>");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	public void validateTableViewButtonEnabled_Supplier() {
 		synchronized (Supplier_Logic.class) {
 			try {
@@ -89,6 +138,37 @@ public class Supplier_Logic extends WebDriverFactory {
 				else
 					extentTest.log(LogStatus.FAIL, "Table View icon should be enabled",
 							"Table View icon is not enabled");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void validateChartLabelHasValue_Supplier() {
+		synchronized (Supplier_Logic.class) {
+			try {
+				boolean flag = false;
+				int labelCount = getElementsCount(Supplier_UI.chart_labels);
+				for (int i = 1; i <= labelCount; i++) {
+					waitForPageToLoad();
+					snooze(3000);
+					WebElement elm = driver.findElement(By.xpath(
+							"(//*[@class='mainGraphicsContext']//*[@class='scatterMarker setFocusRing'])[" + i + "]"));
+					Actions action = new Actions(driver);
+					action.moveToElement(elm).click().perform();
+					String label = getTextOf(Supplier_UI.chart_popupText);
+					if (!label.equals("")) {
+//							extentTest.log(LogStatus.INFO, "Chart Values have lables validation ", "<B> " + label + " </B> label is present in Chart");	
+						flag = true;
+					}
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Chart Values have lables validation ",
+							"Chart Values is having lables");
+				else
+					extentTest.log(LogStatus.FAIL, "Chart Values have lables validation ",
+							"Chart Values is not having lables");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -245,6 +325,7 @@ public class Supplier_Logic extends WebDriverFactory {
 			try {
 				clickOn(Supplier_UI.tab_SupplierReview);
 				waitForPageToLoad();
+				snooze(3000);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -370,7 +451,9 @@ public class Supplier_Logic extends WebDriverFactory {
 		synchronized (Supplier_Logic.class) {
 			try {
 				String value = getTextOf(Supplier_UI.dd_to);
-				getDropDownRadioProp_Supplier(value);
+//				getDropDownRadioProp_Supplier(value);
+				extentTest.log(LogStatus.PASS, "getDropDownRadioProp_Supplier: ",
+						"Option - <B>[" + value + "]</B> is apearing as Auto Selected");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -407,6 +490,24 @@ public class Supplier_Logic extends WebDriverFactory {
 			try {
 				clickOn(Supplier_UI.dd_from);
 				waitForPageToLoad();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void validateChartHasDualAxis() {
+		synchronized (Supplier_Logic.class) {
+			try {
+				String x = getTextOf(Supplier_UI.xAxis_label);
+				String y = getTextOf(Supplier_UI.yAxis_label);
+				if (x.trim().equals(xAxis) && y.trim().equals(yAxis))
+					extentTest.log(LogStatus.PASS, "Chart should have dual axis values",
+							"Chart is having dual axis X - <B> " + x + " </B> & Y -<B> " + y + "</B> values");
+				else
+					extentTest.log(LogStatus.FAIL, "Chart should have dual axis values",
+							"Chart is not having dual axis X -<B> " + x + " </B> & Y -<B> " + y + " </B> values");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -773,24 +874,26 @@ public class Supplier_Logic extends WebDriverFactory {
 	public void validateMatrixHasData_Suppplier() {
 		synchronized (Supplier_Logic.class) {
 			try {
-					if (checkMatrixHasData_Supplier())
-						extentTest.log(LogStatus.PASS, "Matrix should have data", "Matrix is having data");
-					else
-						extentTest.log(LogStatus.FAIL, "Matrix should have data", "Matrix is not having data");				
+				if (checkMatrixHasData_Supplier())
+					extentTest.log(LogStatus.PASS, "Matrix should have data", "Matrix is having data");
+				else
+					extentTest.log(LogStatus.FAIL, "Matrix should have data", "Matrix is not having data");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
-	
+
 	public void validateYaxisHas0to100Range() {
 		synchronized (Supplier_Logic.class) {
 			try {
-					if (checkYaxisRage_Supplier())
-						extentTest.log(LogStatus.PASS, "Check chart appears between 0 to 100", "Check chart is appearing between 0 to 100");
-					else
-						extentTest.log(LogStatus.FAIL, "Check chart appears between 0 to 100", "Check chart is not appearing between 0 to 100");	
+				if (checkYaxisRage_Supplier())
+					extentTest.log(LogStatus.PASS, "Check chart appears between 0 to 100",
+							"Check chart is appearing between 0 to 100");
+				else
+					extentTest.log(LogStatus.FAIL, "Check chart appears between 0 to 100",
+							"Check chart is not appearing between 0 to 100");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -827,9 +930,9 @@ public class Supplier_Logic extends WebDriverFactory {
 				String value = getAttributeValueOf(Supplier_UI.matrixRows, "title");
 				if (!(value.equals("")) || value.equals(""))
 					flag = true;
-			if(flag)
-				return true;
-			return false;
+				if (flag)
+					return true;
+				return false;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -837,16 +940,15 @@ public class Supplier_Logic extends WebDriverFactory {
 		return false;
 
 	}
-	
+
 	private boolean checkYaxisRage_Supplier() {
 		try {
-			String start = getTextOf(Supplier_UI.Yaxis_StartValue); 
-			String end = getTextOf(Supplier_UI.Yaxis_EndValue);			
-			if(start.equals("0") && end.equals("100"))
+			String start = getTextOf(Supplier_UI.Yaxis_StartValue);
+			String end = getTextOf(Supplier_UI.Yaxis_EndValue);
+			if (start.equals("0") && end.equals("100"))
 				return true;
 			return false;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -1058,10 +1160,15 @@ public class Supplier_Logic extends WebDriverFactory {
 		}
 	}
 
-	public void validateTop3SupplierSpend_Supplier() {
+	public void validateTop3SupplierSpendDecending_Supplier() {
 		synchronized (APPM_Logic.class) {
 			try {
-				checkTop3SupplierSpend_Supplier();
+				if (checkTop3SupplierSpendDecending_Supplier())
+					extentTest.log(LogStatus.PASS, "Top 3 Supplier spend should be in Decending order",
+							"Top 3 Supplier spend is in Decending order");
+				else
+					extentTest.log(LogStatus.FAIL, "Top 3 Supplier spend should be in Decending order",
+							"Top 3 Supplier spend is not in Decending order");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -1069,42 +1176,21 @@ public class Supplier_Logic extends WebDriverFactory {
 		}
 	}
 
-//	public void validateDeepDiveDrillTrough() {
-//		synchronized (Supplier_Logic.class) {
-//			try {
-//				if (!(getElementsCount(APPM_UI.header_SummaryChart) == 1)) {
-//					checkElementIsEnabled(APPM_UI.btn_DeepDiveProperty);
-//					clickOn(APPM_UI.row_SummaryChart_option1);
-//					clickOn(APPM_UI.row_SummaryChart_option2);
-//					Thread.sleep(2000);
-//					waitForPageToLoad();
-//					checkElementIsEnabled(APPM_UI.btn_DeepDiveProperty);
-//					clickOn(APPM_UI.btn_DeepDive);
-//					waitForPageToLoad();
-//					if (checkChartColumnHeader_Supplier(detailHeader)) {
-//						extentTest.log(LogStatus.PASS, "validateSupplierLeadTimeDeepDiveDrillTrough: ",
-//								"<B> Drill Through martrix chart </B> is visible through Deep Dive button ");
-//					}
-//				} else if (getElementsCount(APPM_UI.header_SummaryChart) == 0) {
-//					checkElementIsEnabled(APPM_UI.btn_DeepDiveProperty);
-//					clickOn(APPM_UI.row_SummaryChart_option1);
-//					Thread.sleep(2000);
-//					waitForPageToLoad();
-//					checkElementIsEnabled(APPM_UI.btn_DeepDiveProperty);
-//					waitForPageToLoad();
-//					clickOn(APPM_UI.btn_DeepDive);
-//					waitForPageToLoad();
-//					if (checkChartColumnHeader_Supplier(detailHeader)) {
-//						extentTest.log(LogStatus.PASS, "validateSupplierLeadTimeDeepDiveDrillTrough: ",
-//								"<B> Drill Through martrix chart </B> is visible through Deep Dive button ");
-//					}
-//				}
-//
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
+	public void validateButtom3SupplierSpendAscending_Supplier() {
+		synchronized (APPM_Logic.class) {
+			try {
+				if (checkButtom3SupplierSpendAscending_Supplier())
+					extentTest.log(LogStatus.PASS, "Butttom 3 Supplier spend should be in Ascending order",
+							"Butttom 3 Supplier spend is in Ascending order");
+				else
+					extentTest.log(LogStatus.FAIL, "Butttom 3 Supplier spend should be in Ascending order",
+							"Butttom 3 Supplier spend is not in Ascending order");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 
 	public void gotoSupplierScore_Suppplier() {
 		synchronized (Supplier_Logic.class) {
@@ -1171,8 +1257,7 @@ public class Supplier_Logic extends WebDriverFactory {
 		}
 	}
 
-	private int getChartTableRowCount_Supplier(By table, By tableRows) {
-		waitForElementTobeLocated(table);
+	private int getChartTableRowCount_Supplier(By tableRows) {
 		try {
 			int size = getElementsCount(tableRows);
 			extentTest.log(LogStatus.INFO, "getChartTableRowCount_Supplier: ",
@@ -1329,28 +1414,21 @@ public class Supplier_Logic extends WebDriverFactory {
 							+ i + "]//span[@class='slicerText']"))
 					.getText();
 			if (value.equals(opt)) {
-//				extentTest.log(LogStatus.PASS, "checkDropDownForOption: ", "Option is present- <B>[" + opt + "]</B>");
 				return true;
 			}
-//				else {
-//				extentTest.log(LogStatus.FAIL, "checkDropDownForOption: ",						"Option is not present- <B>[" + opt + "]</B>");
-//			}
 		}
 		return false;
 	}
 
-	private ArrayList<Float> gettop3TableRowData_Supplier(By table, By tableRows) {
-		waitForElementTobeLocated(table);
-//		int size = getElementsCount(tableRows);
+	private ArrayList<Float> getTop3TableRowData_Supplier(By tableRows) {
 		ArrayList<Float> spendList = new ArrayList<Float>();
-		int rows = getChartTableRowCount_Supplier(table, tableRows);
+		int rows = getChartTableRowCount_Supplier(tableRows);
 		for (int i = 1; i <= rows; i++) {
 			String value = driver
 					.findElement(By.xpath(
 							"(//div[@role='presentation']//div[@role='row'][" + i + "])[1]//div[@aria-colindex='3']"))
 					.getAttribute("title");
 			value = value.substring(1, value.length() - 1);
-			System.out.println(value);
 			float score = Float.parseFloat(value);
 			spendList.add(score);
 			System.out.println(spendList);
@@ -1358,22 +1436,63 @@ public class Supplier_Logic extends WebDriverFactory {
 		return spendList;
 	}
 
-	public void checkTop3SupplierSpend_Supplier() {
-		try {
-			Object temp;
-			ArrayList<Float> spendList = gettop3TableRowData_Supplier(Supplier_UI.table_Top3Supplier,
-					Supplier_UI.rows_Top3Supplier);
-			for (int i = 0; i <= spendList.size(); i++) {
-				Object first = spendList.get(i);
+	private ArrayList<Float> getButtom3TableRowData_Supplier(By tableRows) {
+		ArrayList<Float> spendList = new ArrayList<Float>();
+		int rows = getChartTableRowCount_Supplier(tableRows);
+		for (int i = 1; i <= rows; i++) {
+			String value = driver
+					.findElement(By.xpath(
+							"(//div[@role='presentation']//div[@role='row'][" + i + "])[2]//div[@aria-colindex='3']"))
+					.getAttribute("title");
+			value = value.substring(1, value.length() - 1);
+			float score = Float.parseFloat(value);
+			spendList.add(score);
+			System.out.println(spendList);
+		}
+		return spendList;
+	}
 
-//				if (first > temp) {
-//					 
-//				 }
+	public boolean checkTop3SupplierSpendDecending_Supplier() {
+		try {
+			boolean flag = true;
+			ArrayList<Float> spendList = getTop3TableRowData_Supplier(Supplier_UI.rows_Top3Supplier);
+			for (int i = 0; i < spendList.size(); i++) {
+				for (int j = i + 1; j < spendList.size(); j++) {
+					float first = spendList.get(i);
+					float second = spendList.get(j);
+					if (first < second) {
+						flag = false;
+					}
+				}
 			}
+			if (flag)
+				return true;
+			return false;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
+	}
 
+	public boolean checkButtom3SupplierSpendAscending_Supplier() {
+		try {
+			boolean flag = true;
+			ArrayList<Float> spendList = getButtom3TableRowData_Supplier(Supplier_UI.rows_Buttom3Supplier);
+			for (int i = 0; i < spendList.size(); i++) {
+				for (int j = i + 1; j < spendList.size(); j++) {
+					float first = spendList.get(i);
+					float second = spendList.get(j);
+					if (first > second) {
+						flag = false;
+					}
+				}
+			}
+			if (flag)
+				return true;
+			return false;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }
