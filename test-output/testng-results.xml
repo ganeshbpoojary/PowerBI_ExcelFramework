@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="51" passed="49" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-01T22:22:17 IST" name="Default suite" finished-at="2022-09-01T22:23:17 IST" duration-ms="59621">
+  <suite started-at="2022-09-13T23:23:05 IST" name="Default suite" finished-at="2022-09-14T00:02:40 IST" duration-ms="2374166">
     <groups>
     </groups>
-    <test started-at="2022-09-01T22:22:17 IST" name="Default test" finished-at="2022-09-01T22:23:17 IST" duration-ms="59621">
+    <test started-at="2022-09-13T23:23:05 IST" name="Default test" finished-at="2022-09-14T00:02:40 IST" duration-ms="2374166">
       <class name="testlogic.BaseTestNG">
-        <test-method is-config="true" signature="killProcess()[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-01T22:22:17 IST" name="killProcess" finished-at="2022-09-01T22:22:17 IST" duration-ms="30" status="PASS">
+        <test-method is-config="true" signature="killProcess()[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:23:05 IST" name="killProcess" finished-at="2022-09-13T23:23:05 IST" duration-ms="24" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killProcess -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-01T22:22:20 IST" name="beforeMethod" finished-at="2022-09-01T22:22:20 IST" duration-ms="190" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:23:08 IST" name="beforeMethod" finished-at="2022-09-13T23:23:08 IST" duration-ms="224" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,18 +22,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-01T22:22:20 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-01T22:22:49 IST" duration-ms="29401" status="PASS">
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:23:08 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:23:58 IST" duration-ms="49499" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[{RowNumber=356, Description=TC21_Check if all chart titles are free from typo errors, CallSequence=login, TestCaseID=SpacePlan_TC21, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034567\Documents\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=357, Description=TC21_Check if all chart titles are free from typo errors, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC21, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034567\Documents\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=358, Description=TC21_Check if all chart titles are free from typo errors, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC21, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034567\Documents\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+                <![CDATA[[{RowNumber=407, Description=TC36_Check if all chart titles are free from typo errors, CallSequence=login, TestCaseID=SpacePlan_TC36, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=408, Description=TC36_Check if all chart titles are free from typo errors, CallSequence=validate_CapacityDemand_Chart_Space, TestCaseID=SpacePlan_TC36, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=409, Description=TC36_Check if all chart titles are free from typo errors, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC36, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BaseTestNGExecutor -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-01T22:22:49 IST" name="afterMethod" finished-at="2022-09-01T22:22:50 IST" duration-ms="493" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:23:58 IST" name="afterMethod" finished-at="2022-09-13T23:23:58 IST" duration-ms="773" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,7 +44,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-01T22:22:50 IST" name="beforeMethod" finished-at="2022-09-01T22:22:50 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:23:58 IST" name="beforeMethod" finished-at="2022-09-13T23:23:58 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -55,18 +55,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-01T22:22:50 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-01T22:23:16 IST" duration-ms="26470" status="PASS">
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:23:58 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:24:41 IST" duration-ms="42584" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[{RowNumber=447, Description=TC47_Check if there is data in the drop down, CallSequence=login, TestCaseID=SpacePlan_TC47, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034567\Documents\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=448, Description=TC47_Check if there is data in the drop down, CallSequence=validate_InventoryTurns_Chart_Space, TestCaseID=SpacePlan_TC47, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034567\Documents\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=449, Description=TC47_Check if there is data in the drop down, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC47, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034567\Documents\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+                <![CDATA[[{RowNumber=411, Description=TC37_Check if last updated date is shown or not, CallSequence=login, TestCaseID=SpacePlan_TC37, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=412, Description=TC37_Check if last updated date is shown or not, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC37, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BaseTestNGExecutor -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-01T22:23:16 IST" name="afterMethod" finished-at="2022-09-01T22:23:17 IST" duration-ms="297" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:24:41 IST" name="afterMethod" finished-at="2022-09-13T23:24:41 IST" duration-ms="263" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,7 +77,1700 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-01T22:23:17 IST" name="afterSuite" finished-at="2022-09-01T22:23:18 IST" duration-ms="822" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:24:41 IST" name="beforeMethod" finished-at="2022-09-13T23:24:41 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:24:41 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:25:27 IST" duration-ms="45833" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=400, Description=TC34_Check if the chart represents key count across all the weeks Reset Calendar Chart, CallSequence=login, TestCaseID=SpacePlan_TC34, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=401, Description=TC34_Check if the chart represents key count across all the weeks Reset Calendar Chart, CallSequence=validate_CapacityDemand_ResetCalendarChart_Space, TestCaseID=SpacePlan_TC34, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:25:27 IST" name="afterMethod" finished-at="2022-09-13T23:25:27 IST" duration-ms="271" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:25:27 IST" name="beforeMethod" finished-at="2022-09-13T23:25:27 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:25:27 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:26:14 IST" duration-ms="46889" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=403, Description=TC35_Check if clicking on the icon shows display insights, CallSequence=login, TestCaseID=SpacePlan_TC35, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=404, Description=TC35_Check if clicking on the icon shows display insights, CallSequence=validate_CapacityDemand_Chart_Space, TestCaseID=SpacePlan_TC35, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=405, Description=TC35_Check if clicking on the icon shows display insights, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC35, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:26:14 IST" name="afterMethod" finished-at="2022-09-13T23:26:15 IST" duration-ms="323" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:26:15 IST" name="beforeMethod" finished-at="2022-09-13T23:26:15 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:26:15 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:26:41 IST" duration-ms="26589" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=414, Description=TC38_Check all the navigations working between tabs and the questions, CallSequence=login, TestCaseID=SpacePlan_TC38, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=415, Description=TC38_Check all the navigations working between tabs and the questions, CallSequence=validate_CapacityDemand_Chart_Space, TestCaseID=SpacePlan_TC38, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=416, Description=TC38_Check all the navigations working between tabs and the questions, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC38, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:26:41 IST" name="afterMethod" finished-at="2022-09-13T23:26:41 IST" duration-ms="329" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:26:41 IST" name="beforeMethod" finished-at="2022-09-13T23:26:41 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:26:41 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:27:15 IST" duration-ms="33490" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=418, Description=TC39_Check if toggle button is working properly, CallSequence=login, TestCaseID=SpacePlan_TC39, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=419, Description=TC39_Check if toggle button is working properly, CallSequence=validate_CapacityDemand_Chart_Space, TestCaseID=SpacePlan_TC39, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=420, Description=TC39_Check if toggle button is working properly, CallSequence=verifyCapacityDemandtoggle_Space, TestCaseID=SpacePlan_TC39, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:27:15 IST" name="afterMethod" finished-at="2022-09-13T23:27:15 IST" duration-ms="438" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:27:15 IST" name="beforeMethod" finished-at="2022-09-13T23:27:15 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:27:15 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:28:11 IST" duration-ms="55250" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=422, Description=TC40_Check if the chart represents inventory turns across all the months, CallSequence=login, TestCaseID=SpacePlan_TC40, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=423, Description=TC40_Check if the chart represents inventory turns across all the months, CallSequence=validate_InventoryTurns_Chart_Space, TestCaseID=SpacePlan_TC40, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:28:11 IST" name="afterMethod" finished-at="2022-09-13T23:28:11 IST" duration-ms="259" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:28:11 IST" name="beforeMethod" finished-at="2022-09-13T23:28:11 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:28:11 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:29:05 IST" duration-ms="54128" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=432, Description=TC43_Check if last updated date is shown or not, CallSequence=login, TestCaseID=SpacePlan_TC43, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=433, Description=TC43_Check if last updated date is shown or not, CallSequence=validate_InventoryTurns_Chart_Space, TestCaseID=SpacePlan_TC43, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=434, Description=TC43_Check if last updated date is shown or not, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC43, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:29:05 IST" name="afterMethod" finished-at="2022-09-13T23:29:05 IST" duration-ms="248" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:29:05 IST" name="beforeMethod" finished-at="2022-09-13T23:29:05 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:29:05 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:29:57 IST" duration-ms="51281" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=436, Description=TC44_Check all the navigations working between tabs and the questions, CallSequence=login, TestCaseID=SpacePlan_TC44, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=437, Description=TC44_Check all the navigations working between tabs and the questions, CallSequence=validate_InventoryTurns_Chart_Space, TestCaseID=SpacePlan_TC44, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=438, Description=TC44_Check all the navigations working between tabs and the questions, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC44, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:29:57 IST" name="afterMethod" finished-at="2022-09-13T23:29:57 IST" duration-ms="342" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:29:57 IST" name="beforeMethod" finished-at="2022-09-13T23:29:57 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:29:57 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:30:52 IST" duration-ms="54706" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=425, Description=TC41_Check if clicking on the icon shows display insights, CallSequence=login, TestCaseID=SpacePlan_TC41, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=426, Description=TC41_Check if clicking on the icon shows display insights, CallSequence=validate_InventoryTurns_Chart_Space, TestCaseID=SpacePlan_TC41, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=427, Description=TC41_Check if clicking on the icon shows display insights, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC41, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:30:52 IST" name="afterMethod" finished-at="2022-09-13T23:30:52 IST" duration-ms="289" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:30:52 IST" name="beforeMethod" finished-at="2022-09-13T23:30:52 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:30:52 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:31:38 IST" duration-ms="46041" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=429, Description=TC42_Check if all chart titles are free from typo errors, CallSequence=login, TestCaseID=SpacePlan_TC42, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=430, Description=TC42_Check if all chart titles are free from typo errors, CallSequence=validate_InventoryTurns_Chart_Space, TestCaseID=SpacePlan_TC42, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:31:38 IST" name="afterMethod" finished-at="2022-09-13T23:31:38 IST" duration-ms="312" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:31:38 IST" name="beforeMethod" finished-at="2022-09-13T23:31:38 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:31:38 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:32:10 IST" duration-ms="31929" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=370, Description=TC25_Check if toggle button is working properly, CallSequence=login, TestCaseID=SpacePlan_TC25, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=371, Description=TC25_Check if toggle button is working properly, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC25, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=372, Description=TC25_Check if toggle button is working properly, CallSequence=verifytoggle_Space, TestCaseID=SpacePlan_TC25, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:32:10 IST" name="afterMethod" finished-at="2022-09-13T23:32:10 IST" duration-ms="299" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:32:10 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:32:54 IST" duration-ms="43182" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=374, Description=TC26_Check if the chart represents unit movement across weeks, CallSequence=login, TestCaseID=SpacePlan_TC26, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=375, Description=TC26_Check if the chart represents unit movement across weeks, CallSequence=verifymovementtab_Space, TestCaseID=SpacePlan_TC26, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:32:10 IST" name="beforeMethod" finished-at="2022-09-13T23:32:10 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:32:54 IST" name="afterMethod" finished-at="2022-09-13T23:32:54 IST" duration-ms="269" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:32:54 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:33:45 IST" duration-ms="51431" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=364, Description=TC23_Check all the navigations working between tabs and the questions, CallSequence=login, TestCaseID=SpacePlan_TC23, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=365, Description=TC23_Check all the navigations working between tabs and the questions, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC23, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:32:54 IST" name="beforeMethod" finished-at="2022-09-13T23:32:54 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:33:45 IST" name="afterMethod" finished-at="2022-09-13T23:33:46 IST" duration-ms="377" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:33:46 IST" name="beforeMethod" finished-at="2022-09-13T23:33:46 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:33:46 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:34:39 IST" duration-ms="52994" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=367, Description=TC24_Check if toggle button is working properly, CallSequence=login, TestCaseID=SpacePlan_TC24, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=368, Description=TC24_Check if toggle button is working properly, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC24, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:34:39 IST" name="afterMethod" finished-at="2022-09-13T23:34:39 IST" duration-ms="345" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:34:39 IST" name="beforeMethod" finished-at="2022-09-13T23:34:39 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:34:39 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:35:21 IST" duration-ms="41495" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=383, Description=TC29_Check if all chart titles are free from typo errors, CallSequence=login, TestCaseID=SpacePlan_TC29, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=384, Description=TC29_Check if all chart titles are free from typo errors, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC29, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:35:21 IST" name="afterMethod" finished-at="2022-09-13T23:35:21 IST" duration-ms="418" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:35:21 IST" name="beforeMethod" finished-at="2022-09-13T23:35:21 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:35:21 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:36:17 IST" duration-ms="55555" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=377, Description=TC27_Check if the chart represents unit movement across weeks, CallSequence=login, TestCaseID=SpacePlan_TC27, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=378, Description=TC27_Check if the chart represents unit movement across weeks, CallSequence=verifymovementtab_Space, TestCaseID=SpacePlan_TC27, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:36:17 IST" name="afterMethod" finished-at="2022-09-13T23:36:17 IST" duration-ms="276" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:36:17 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:37:03 IST" duration-ms="46260" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=380, Description=TC28_Check if clicking on the icon shows display insights, CallSequence=login, TestCaseID=SpacePlan_TC28, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=381, Description=TC28_Check if clicking on the icon shows display insights, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC28, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:36:17 IST" name="beforeMethod" finished-at="2022-09-13T23:36:17 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:37:03 IST" name="afterMethod" finished-at="2022-09-13T23:37:03 IST" duration-ms="282" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:37:03 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:37:46 IST" duration-ms="42849" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=393, Description=TC32_Check if toggle button is working properly, CallSequence=login, TestCaseID=SpacePlan_TC32, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=394, Description=TC32_Check if toggle button is working properly, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC32, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=395, Description=TC32_Check if toggle button is working properly, CallSequence=verifyMovementtoggle_Space, TestCaseID=SpacePlan_TC32, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:37:03 IST" name="beforeMethod" finished-at="2022-09-13T23:37:03 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:37:46 IST" name="afterMethod" finished-at="2022-09-13T23:37:46 IST" duration-ms="284" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:37:46 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:38:32 IST" duration-ms="45786" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=397, Description=TC33_Check if the chart represents demand vs capacity across all the weeks, CallSequence=login, TestCaseID=SpacePlan_TC33, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=398, Description=TC33_Check if the chart represents demand vs capacity across all the weeks, CallSequence=validate_CapacityDemand_Chart_Space, TestCaseID=SpacePlan_TC33, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:37:46 IST" name="beforeMethod" finished-at="2022-09-13T23:37:46 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:38:32 IST" name="afterMethod" finished-at="2022-09-13T23:38:33 IST" duration-ms="237" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:38:33 IST" name="beforeMethod" finished-at="2022-09-13T23:38:33 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:38:33 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:39:00 IST" duration-ms="27500" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=386, Description=TC30_Check if last updated date is shown or not, CallSequence=login, TestCaseID=SpacePlan_TC30, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=387, Description=TC30_Check if last updated date is shown or not, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC30, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:39:00 IST" name="afterMethod" finished-at="2022-09-13T23:39:00 IST" duration-ms="283" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:39:00 IST" name="beforeMethod" finished-at="2022-09-13T23:39:00 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:39:00 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:39:28 IST" duration-ms="28139" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=389, Description=TC31_Check all the navigations working between tabs and the questions, CallSequence=login, TestCaseID=SpacePlan_TC31, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=390, Description=TC31_Check all the navigations working between tabs and the questions, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC31, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=391, Description=TC31_Check all the navigations working between tabs and the questions, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC31, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:39:28 IST" name="afterMethod" finished-at="2022-09-13T23:39:29 IST" duration-ms="223" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:39:29 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:40:07 IST" duration-ms="38457" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=326, Description=TC14_Check if the chart represents sales for all the months, CallSequence=login, TestCaseID=SpacePlan_TC14, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=327, Description=TC14_Check if the chart represents sales for all the months, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC14, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=328, Description=TC14_Check if the chart represents sales for all the months, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC14, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=329, Description=TC14_Check if the chart represents sales for all the months, CallSequence=verifysalesModule_Space, TestCaseID=SpacePlan_TC14, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:39:29 IST" name="beforeMethod" finished-at="2022-09-13T23:39:29 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:40:07 IST" name="afterMethod" finished-at="2022-09-13T23:40:08 IST" duration-ms="700" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:40:08 IST" name="beforeMethod" finished-at="2022-09-13T23:40:08 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:40:08 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:41:02 IST" duration-ms="54031" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=331, Description=TC15_Check if the chart represents units for all the months, CallSequence=login, TestCaseID=SpacePlan_TC15, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=332, Description=TC15_Check if the chart represents units for all the months, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC15, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=333, Description=TC15_Check if the chart represents units for all the months, CallSequence=verifysalesModule_Space, TestCaseID=SpacePlan_TC15, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=334, Description=TC15_Check if the chart represents units for all the months, CallSequence=verifyunitsModule_Space, TestCaseID=SpacePlan_TC15, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:41:02 IST" name="afterMethod" finished-at="2022-09-13T23:41:02 IST" duration-ms="277" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:41:02 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:41:27 IST" duration-ms="24638" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=319, Description=TC12_Check if the chart shows 'Live' and 'Published' data for all the months, CallSequence=login, TestCaseID=SpacePlan_TC12, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=320, Description=TC12_Check if the chart shows 'Live' and 'Published' data for all the months, CallSequence=validateProcessEfficiency_Space, TestCaseID=SpacePlan_TC12, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=321, Description=TC12_Check if the chart shows 'Live' and 'Published' data for all the months, CallSequence=verifyResetCalender_Space, TestCaseID=SpacePlan_TC12, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:41:02 IST" name="beforeMethod" finished-at="2022-09-13T23:41:02 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:41:27 IST" name="afterMethod" finished-at="2022-09-13T23:41:27 IST" duration-ms="412" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:41:27 IST" name="beforeMethod" finished-at="2022-09-13T23:41:27 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:41:27 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:42:07 IST" duration-ms="40190" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=323, Description=TC13_Check if last updated date is shown or not, CallSequence=login, TestCaseID=SpacePlan_TC13, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=324, Description=TC13_Check if last updated date is shown or not, CallSequence=validateLastUpdateData_Space, TestCaseID=SpacePlan_TC13, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:42:07 IST" name="afterMethod" finished-at="2022-09-13T23:42:08 IST" duration-ms="331" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:42:08 IST" name="beforeMethod" finished-at="2022-09-13T23:42:08 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:42:08 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:44:32 IST" duration-ms="144028" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=344, Description=TC18_Check if the table has values or not, CallSequence=login, TestCaseID=SpacePlan_TC18, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=345, Description=TC18_Check if the table has values or not, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC18, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=346, Description=TC18_Check if the table has values or not, CallSequence=verifyInvestigateModule_Space, TestCaseID=SpacePlan_TC18, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.fail(Assert.java:106)
+at testlogic.BaseTestNG.BaseTestNGExecutor(BaseTestNG.java:131)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:44:32 IST" name="afterMethod" finished-at="2022-09-13T23:44:32 IST" duration-ms="26" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=FAILURE method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:44:32 IST" name="beforeMethod" finished-at="2022-09-13T23:44:32 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:44:32 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:45:18 IST" duration-ms="46314" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=348, Description=TC19_Check if right clicking 'Investigate' button allows to drill through, CallSequence=login, TestCaseID=SpacePlan_TC19, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=349, Description=TC19_Check if right clicking 'Investigate' button allows to drill through, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC19, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=350, Description=TC19_Check if right clicking 'Investigate' button allows to drill through, CallSequence=verifyInvestigateModule_Space, TestCaseID=SpacePlan_TC19, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:45:18 IST" name="afterMethod" finished-at="2022-09-13T23:45:19 IST" duration-ms="452" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:45:19 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:46:02 IST" duration-ms="43662" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=336, Description=TC16_Check if the chart represents margin for all the months, CallSequence=login, TestCaseID=SpacePlan_TC16, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=337, Description=TC16_Check if the chart represents margin for all the months, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC16, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=338, Description=TC16_Check if the chart represents margin for all the months, CallSequence=verifyunitsModule_Space, TestCaseID=SpacePlan_TC16, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:45:19 IST" name="beforeMethod" finished-at="2022-09-13T23:45:19 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:46:02 IST" name="afterMethod" finished-at="2022-09-13T23:46:02 IST" duration-ms="306" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:46:02 IST" name="beforeMethod" finished-at="2022-09-13T23:46:02 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:46:02 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:46:45 IST" duration-ms="42337" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=340, Description=TC17_Check if the chart shows increase, decrease, total sales units across factors, CallSequence=login, TestCaseID=SpacePlan_TC17, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=341, Description=TC17_Check if the chart shows increase, decrease, total sales units across factors, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC17, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=342, Description=TC17_Check if the chart shows increase, decrease, total sales units across factors, CallSequence=verifyMarginModule_Space, TestCaseID=SpacePlan_TC17, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:46:45 IST" name="afterMethod" finished-at="2022-09-13T23:46:45 IST" duration-ms="316" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:46:45 IST" name="beforeMethod" finished-at="2022-09-13T23:46:45 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:46:45 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:47:33 IST" duration-ms="47918" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=356, Description=TC21_Check if all chart titles are free from typo errors, CallSequence=login, TestCaseID=SpacePlan_TC21, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=357, Description=TC21_Check if all chart titles are free from typo errors, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC21, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=358, Description=TC21_Check if all chart titles are free from typo errors, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC21, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:47:33 IST" name="afterMethod" finished-at="2022-09-13T23:47:33 IST" duration-ms="316" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:47:33 IST" name="beforeMethod" finished-at="2022-09-13T23:47:33 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:47:33 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:48:24 IST" duration-ms="50354" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=360, Description=TC22_Check if last updated date is shown or not, CallSequence=login, TestCaseID=SpacePlan_TC22, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=361, Description=TC22_Check if last updated date is shown or not, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC22, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=362, Description=TC22_Check if last updated date is shown or not, CallSequence=verifyscrolling_Space, TestCaseID=SpacePlan_TC22, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:48:24 IST" name="afterMethod" finished-at="2022-09-13T23:48:24 IST" duration-ms="301" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:48:24 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:51:24 IST" duration-ms="179507" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=352, Description=TC20_Check if clicking on the icon shows display insights, CallSequence=login, TestCaseID=SpacePlan_TC20, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=353, Description=TC20_Check if clicking on the icon shows display insights, CallSequence=clickonSpaceProductivity_Space, TestCaseID=SpacePlan_TC20, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=354, Description=TC20_Check if clicking on the icon shows display insights, CallSequence=verifyDisplayInsights_Space, TestCaseID=SpacePlan_TC20, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.fail(Assert.java:106)
+at testlogic.BaseTestNG.BaseTestNGExecutor(BaseTestNG.java:131)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:48:24 IST" name="beforeMethod" finished-at="2022-09-13T23:48:24 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:51:24 IST" name="afterMethod" finished-at="2022-09-13T23:51:24 IST" duration-ms="23" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=FAILURE method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:51:24 IST" name="beforeMethod" finished-at="2022-09-13T23:51:24 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:51:24 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:52:09 IST" duration-ms="45831" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=310, Description=TC9_Check if the drop down shows all weeks with respective dates To, CallSequence=login, TestCaseID=SpacePlan_TC09, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=311, Description=TC9_Check if the drop down shows all weeks with respective dates To, CallSequence=validateTheSearchButtonAndFromToFilter_Space, TestCaseID=SpacePlan_TC09, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:52:09 IST" name="afterMethod" finished-at="2022-09-13T23:52:10 IST" duration-ms="320" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:52:10 IST" name="beforeMethod" finished-at="2022-09-13T23:52:10 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:52:10 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:52:34 IST" duration-ms="24490" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=292, Description=TC3_Check if the drop down has data, CallSequence=login, TestCaseID=SpacePlan_TC03, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=293, Description=TC3_Check if the drop down has data, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC03, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:52:34 IST" name="afterMethod" finished-at="2022-09-13T23:52:35 IST" duration-ms="342" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:52:35 IST" name="beforeMethod" finished-at="2022-09-13T23:52:35 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:52:35 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:53:05 IST" duration-ms="30376" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=447, Description=TC47_Check if there is data in the drop down, CallSequence=login, TestCaseID=SpacePlan_TC47, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=448, Description=TC47_Check if there is data in the drop down, CallSequence=validate_InventoryTurns_Chart_Space, TestCaseID=SpacePlan_TC47, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=449, Description=TC47_Check if there is data in the drop down, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC47, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:53:05 IST" name="afterMethod" finished-at="2022-09-13T23:53:05 IST" duration-ms="369" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:53:05 IST" name="beforeMethod" finished-at="2022-09-13T23:53:05 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:53:05 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:54:11 IST" duration-ms="65793" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=295, Description=TC4_Check if the drop down has data, CallSequence=login, TestCaseID=SpacePlan_TC04, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=296, Description=TC4_Check if the drop down has data, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC04, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:54:11 IST" name="afterMethod" finished-at="2022-09-13T23:54:11 IST" duration-ms="372" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:54:11 IST" name="beforeMethod" finished-at="2022-09-13T23:54:11 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:54:11 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:55:04 IST" duration-ms="52721" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=451, Description=TC48_Check if the table shows brand for each sub-category, CallSequence=login, TestCaseID=SpacePlan_TC48, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=452, Description=TC48_Check if the table shows brand for each sub-category, CallSequence=verifyAlertandMorePage_Space, TestCaseID=SpacePlan_TC48, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:55:04 IST" name="afterMethod" finished-at="2022-09-13T23:55:04 IST" duration-ms="298" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:55:04 IST" name="beforeMethod" finished-at="2022-09-13T23:55:04 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:55:04 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:55:36 IST" duration-ms="31071" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=286, Description=TC1_Check if the drop down has data, CallSequence=login, TestCaseID=SpacePlan_TC01, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=287, Description=TC1_Check if the drop down has data, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC01, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:55:36 IST" name="afterMethod" finished-at="2022-09-13T23:55:36 IST" duration-ms="268" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:55:36 IST" name="beforeMethod" finished-at="2022-09-13T23:55:36 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:55:36 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:56:34 IST" duration-ms="57705" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=440, Description=TC45_Check if toggle button is working properly, CallSequence=login, TestCaseID=SpacePlan_TC45, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=441, Description=TC45_Check if toggle button is working properly, CallSequence=verifyInventoryTurnsToggle_Space, TestCaseID=SpacePlan_TC45, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:56:34 IST" name="afterMethod" finished-at="2022-09-13T23:56:34 IST" duration-ms="283" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:56:34 IST" name="beforeMethod" finished-at="2022-09-13T23:56:34 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:56:34 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:57:00 IST" duration-ms="25801" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=289, Description=TC2_Check if the drop down has data, CallSequence=login, TestCaseID=SpacePlan_TC02, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=290, Description=TC2_Check if the drop down has data, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC02, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:00 IST" name="afterMethod" finished-at="2022-09-13T23:57:00 IST" duration-ms="483" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:00 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:57:27 IST" duration-ms="26896" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=443, Description=TC46_Check if there is data in the checkbox, CallSequence=login, TestCaseID=SpacePlan_TC46, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=444, Description=TC46_Check if there is data in the checkbox, CallSequence=validate_InventoryTurns_Chart_Space, TestCaseID=SpacePlan_TC46, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=445, Description=TC46_Check if there is data in the checkbox, CallSequence=validateTheSearchButtonAndFromToFilter_Space, TestCaseID=SpacePlan_TC46, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:00 IST" name="beforeMethod" finished-at="2022-09-13T23:57:00 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:27 IST" name="afterMethod" finished-at="2022-09-13T23:57:27 IST" duration-ms="321" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:27 IST" name="beforeMethod" finished-at="2022-09-13T23:57:27 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:27 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:57:54 IST" duration-ms="27047" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=304, Description=TC7_Check if the drop down has data, CallSequence=login, TestCaseID=SpacePlan_TC07, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=305, Description=TC7_Check if the drop down has data, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC07, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:54 IST" name="afterMethod" finished-at="2022-09-13T23:57:55 IST" duration-ms="316" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:55 IST" name="beforeMethod" finished-at="2022-09-13T23:57:55 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:57:55 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:58:18 IST" duration-ms="23671" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=307, Description=TC8_Check if the drop down shows all weeks with respective dates From , CallSequence=login, TestCaseID=SpacePlan_TC08, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=308, Description=TC8_Check if the drop down shows all weeks with respective dates From , CallSequence=validateTheSearchButtonAndFromToFilter_Space, TestCaseID=SpacePlan_TC08, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:58:18 IST" name="afterMethod" finished-at="2022-09-13T23:58:19 IST" duration-ms="279" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:58:19 IST" name="beforeMethod" finished-at="2022-09-13T23:58:19 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:58:19 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:59:04 IST" duration-ms="45284" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=298, Description=TC5_Check if the drop down has data, CallSequence=login, TestCaseID=SpacePlan_TC05, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=299, Description=TC5_Check if the drop down has data, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC05, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:59:04 IST" name="afterMethod" finished-at="2022-09-13T23:59:04 IST" duration-ms="278" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:59:04 IST" name="beforeMethod" finished-at="2022-09-13T23:59:04 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:59:04 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-13T23:59:52 IST" duration-ms="47626" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=454, Description=TC49_Check if the table shows  cluster sub-category, CallSequence=login, TestCaseID=SpacePlan_TC49, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=455, Description=TC49_Check if the table shows  cluster sub-category, CallSequence=verifyAlertandMorePage_Space, TestCaseID=SpacePlan_TC49, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:59:52 IST" name="afterMethod" finished-at="2022-09-13T23:59:52 IST" duration-ms="299" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:59:52 IST" name="beforeMethod" finished-at="2022-09-13T23:59:52 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-13T23:59:52 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-14T00:00:18 IST" duration-ms="25938" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=301, Description=TC6_Check if the drop down has data, CallSequence=login, TestCaseID=SpacePlan_TC06, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=302, Description=TC6_Check if the drop down has data, CallSequence=validateDropDownHasData_Space, TestCaseID=SpacePlan_TC06, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:00:18 IST" name="afterMethod" finished-at="2022-09-14T00:00:18 IST" duration-ms="282" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:00:18 IST" name="beforeMethod" finished-at="2022-09-14T00:00:18 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:00:18 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-14T00:01:04 IST" duration-ms="46062" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=457, Description=TC50_Check if the table shows alerts for each sub-category, CallSequence=login, TestCaseID=SpacePlan_TC50, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=458, Description=TC50_Check if the table shows alerts for each sub-category, CallSequence=verifyAlertandMorePage_Space, TestCaseID=SpacePlan_TC50, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:01:04 IST" name="afterMethod" finished-at="2022-09-14T00:01:05 IST" duration-ms="359" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:01:05 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-14T00:01:51 IST" duration-ms="46629" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=460, Description=TC51_Check if the table shows sub-category label, CallSequence=login, TestCaseID=SpacePlan_TC51, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=461, Description=TC51_Check if the table shows sub-category label, CallSequence=verifyAlertandMorePage_Space, TestCaseID=SpacePlan_TC51, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:01:05 IST" name="beforeMethod" finished-at="2022-09-14T00:01:05 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:01:51 IST" name="afterMethod" finished-at="2022-09-14T00:01:52 IST" duration-ms="300" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:01:52 IST" name="beforeMethod" finished-at="2022-09-14T00:01:52 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:01:52 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-14T00:02:15 IST" duration-ms="22975" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=313, Description=TC10_Check if the search option is enabled for all dropdowns, CallSequence=login, TestCaseID=SpacePlan_TC10, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=314, Description=TC10_Check if the search option is enabled for all dropdowns, CallSequence=validateTheSearchButtonAndFromToFilter_Space, TestCaseID=SpacePlan_TC10, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:02:15 IST" name="afterMethod" finished-at="2022-09-14T00:02:15 IST" duration-ms="326" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:02:15 IST" name="beforeMethod" finished-at="2022-09-14T00:02:15 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:02:15 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-14T00:02:39 IST" duration-ms="24338" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[{RowNumber=316, Description=TC11_Check if the chart represents Planogram ID and reset type for all the months, CallSequence=login, TestCaseID=SpacePlan_TC11, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}, {RowNumber=317, Description=TC11_Check if the chart represents Planogram ID and reset type for all the months, CallSequence=verifyPlanogramStatus_Space, TestCaseID=SpacePlan_TC11, Iteration=Iteration1, DataSheet=SPlanning_Testdata, SuiteFileName=C:\Users\1034514\PowerBI_New\PowerBI_UIAutomation\PowerBI_UIAutomation\test-data\ExecutionController.xlsx}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BaseTestNGExecutor -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:02:39 IST" name="afterMethod" finished-at="2022-09-14T00:02:40 IST" duration-ms="274" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-14T00:02:40 IST" name="afterSuite" finished-at="2022-09-14T00:02:40 IST" duration-ms="713" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

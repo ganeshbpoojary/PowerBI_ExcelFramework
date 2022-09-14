@@ -542,17 +542,18 @@ public void validateLastUpdateData_Space()
 				waitForVisibleElement(SPlanning_UI.alertMorebutton);
 				waitForPageToLoad();
 //				clickOn(SPlanning_UI.alertMorebutton);
-				jsClickOn(SPlanning_UI.alertMorebutton);
-				isDisplayed(SPlanning_UI.alertSubCategory);
-				List<WebElement> Alerttable = driver.findElements(SPlanning_UI.alertSubCategory);
+				actionClick(SPlanning_UI.alertMorebutton);
+//				jsClickOn(SPlanning_UI.alertMorebutton);
+				isDisplayed(SPlanning_UI.alerttable);
+				List<WebElement> Alerttable = driver.findElements(SPlanning_UI.alerttable);
 				if(Alerttable.size()>1)
-				{
-					return;
-				}
-				
-	
-		        
-		       extentTest.log(LogStatus.PASS, "Alert and details page   is enabled", " Alert and details page  is enabled");
+					for(int i=0;i<Alerttable.size();i++)
+					{
+						Alerttable.get(i).getText().trim().contains(filterName);
+						extentTest.log(LogStatus.PASS, "Alert and details page   is enabled", " Alert and details page  is enabled");
+					}
+						        
+		       
 			}				
 			 catch (Exception e) {
 				// TODO Auto-generated catch block
