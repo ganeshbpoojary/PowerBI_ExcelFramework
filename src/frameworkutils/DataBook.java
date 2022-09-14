@@ -107,7 +107,7 @@ public class DataBook {
 		}
 		String strTCExecutableQuery = "SELECT * FROM MasterController WHERE ExecutionRequired ='Yes'";
 		try {
-			recordSet = connection.executeQuery(strTCExecutableQuery);
+				recordSet = connection.executeQuery(strTCExecutableQuery);
 		} catch (FilloException e) {
 			System.out.println("No records found for execution");
 			e.printStackTrace();

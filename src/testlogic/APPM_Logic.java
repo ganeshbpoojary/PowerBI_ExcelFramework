@@ -389,8 +389,7 @@ public class APPM_Logic extends WebDriverFactory {
 		try {
 			waitForPageToLoad();
 			Thread.sleep(2000);
-			WebElement elm = driver.findElement(By.xpath("//*[@title='" + dd
-					+ "']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']"));
+			WebElement elm = driver.findElement(By.xpath("//*[@title='" + dd					+ "']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']"));
 			if (!elm.isDisplayed())
 				return false;
 			elm.click();
@@ -420,8 +419,7 @@ public class APPM_Logic extends WebDriverFactory {
 		int rows = getFilterDropDownRowCount_APPM();
 		for (int i = 1; i <= rows; i++) {
 			String value = driver.findElement(By.xpath(
-					"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
-							+ i + "]//span[@class='slicerText']"))
+					"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["+ i + "]//span[@class='slicerText']"))
 					.getText();
 			if (value.equals(opt)) {
 				extentTest.log(LogStatus.INFO, "checkDropDownForOption: ", "Option is present- <B>[" + opt + "]</B>");

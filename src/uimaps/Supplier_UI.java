@@ -100,6 +100,16 @@ public class Supplier_UI {
 	public static final By lineGraph=By.xpath("//*[@class='lineChartSVG']//*[@class='markerPaths']");
 	public static final By barGraph=By.xpath("//*[@class='columnChartUnclippedGraphicsContext']//*[@class='series']");
 	
+	public static final By xAxis_label=By.xpath("//*[@class='xAxisLabel sub-selectable']");
+	public static final By yAxis_label=By.xpath("//*[@class='yAxisLabel sub-selectable']");
+	
 	public static final By Yaxis_StartValue=By.xpath("(//*[@class='y axis showLinesOnAxis']//*[@fill='currentColor'])[1]");
-	public static final By Yaxis_EndValue=By.xpath("(//*[@class='y axis showLinesOnAxis']//*[@fill='currentColor'])[3]");	
+	public static final By Yaxis_EndValue=By.xpath("(//*[@class='y axis showLinesOnAxis']//*[@fill='currentColor'])[3]");
+	
+	public static final By chart_labels=By.xpath("//*[@class='mainGraphicsContext']//*[@class='scatterMarker setFocusRing']");
+	public static final By chart_popupText=By.xpath("//div[@id='screen_reader_alert_assertive']");
+	
+	public static final By span_Old_Value=By.xpath("(//*[text()='Old']//ancestor::*[contains(@class,'visual-container-component')]/..//visual-container)[3]//*[@class='value']");
+	public static final By span_Latest_Value=By.xpath("(//*[text()='Latest']//ancestor::*[contains(@class,'visual-container-component')]/..//visual-container)[5]//*[@class='value']");
+	
 }
