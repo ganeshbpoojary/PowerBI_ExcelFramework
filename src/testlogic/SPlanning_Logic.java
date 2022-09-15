@@ -24,13 +24,16 @@ public class SPlanning_Logic extends WebDriverFactory{
 		super(driver, dataBook);
 		// TODO Auto-generated constructor stub
 	}
-
+	String url = dataBook.get("Url");
+	String email = dataBook.get("Email");
+	String pwd = dataBook.get("Password");
 	String filterName = dataBook.get("Fliter_Name");
 	String filterOption = dataBook.get("Filter_Option");
 	String chartName = dataBook.get("Chart_Name");
 	String summaryHeader = dataBook.get("SummaryColumn_Header");
 	String detailHeader = dataBook.get("DetailedViewColumn_Header");
 
+		
 	//click on the filter and validate the data
 	public void validateDropDownHasData_Space() {
 
@@ -518,17 +521,18 @@ public void validateLastUpdateData_Space()
 				waitForVisibleElement(SPlanning_UI.alertMorebutton);
 				waitForPageToLoad();
 //				clickOn(SPlanning_UI.alertMorebutton);
-				jsClickOn(SPlanning_UI.alertMorebutton);
-				isDisplayed(SPlanning_UI.alertSubCategory);
-				List<WebElement> Alerttable = driver.findElements(SPlanning_UI.alertSubCategory);
+				actionClick(SPlanning_UI.alertMorebutton);
+//				jsClickOn(SPlanning_UI.alertMorebutton);
+				isDisplayed(SPlanning_UI.alerttable);
+				List<WebElement> Alerttable = driver.findElements(SPlanning_UI.alerttable);
 				if(Alerttable.size()>1)
-				{
-					return;
-				}
-				
-	
-		        
-		       extentTest.log(LogStatus.PASS, "Alert and details page   is enabled", " Alert and details page  is enabled");
+					for(int i=0;i<Alerttable.size();i++)
+					{
+						Alerttable.get(i).getText().trim().contains(filterName);
+						extentTest.log(LogStatus.PASS, "Alert and details page   is enabled", " Alert and details page  is enabled");
+					}
+						        
+		       
 			}				
 			 catch (Exception e) {
 				// TODO Auto-generated catch block

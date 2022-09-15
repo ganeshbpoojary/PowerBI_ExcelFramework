@@ -2,6 +2,8 @@ testlogic\Supplier_Logic.class
 frameworkutils\FileHandler$1.class
 uimaps\Supplier_UI.class
 testlogic\SPlanning_Logic.class
+testlogic\Shopper_Logic.class
+uimaps\AssortInsight_UI.class
 frameworkutils\DataBook.class
 testlogic\BaseTestNG$1.class
 uimaps\LandingPage_UI.class
@@ -12,7 +14,9 @@ testlogic\APPM_Logic.class
 uimaps\APPM_UI.class
 frameworkutils\ExtentManager.class
 frameworkutils\WebDriverFactory.class
+uimaps\Shopper_UI.class
 uimaps\SPlanning_UI.class
 frameworkutils\FileHandler.class
 frameworkutils\WebDriverFactory$1.class
+testlogic\AssortInsight_Logic.class
 uimaps\StoreInsight_UI.class

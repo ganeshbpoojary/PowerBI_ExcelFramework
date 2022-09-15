@@ -3,10 +3,15 @@ package uimaps;
 import org.openqa.selenium.By;
 
 public class SPlanning_UI {
-
+	
+	public static final By txt_email=By.xpath("//input[@id='email']");
+	public static final By txt_password=By.name("passwd");
+	public static final By btn_submitPowerBI=By.id("submitBtn");
+	public static final By btn_signinBY=By.xpath("//input[contains(@id,'idSIButton')]");
+	public static final By btn_yesBY=By.xpath("//input[@value='Yes']");
 	public static final By resetCalenderbutton= By.xpath("//*[text()=\"Reset Calendar\"]");
-	public static final By alertMorebutton=By.xpath("//div[text()='Details']/..");
-	public static final By alertSubCategory=By.xpath("//*[@class='innerContainer']");
+	public static final By alertMorebutton=By.xpath("//div[text()='Details']//ancestor::div[@class='contentTableCell']");
+	public static final By alerttable=By.xpath("//*[@class='innerContainer']");
 	public static final By resetStatus= By.xpath("//text[text()=\"Y\"]");
 	public static final By proeffPublished=By.xpath("//text[text()=\"Published\"]");
 	public static final By proeffLive=By.xpath("(//text[text()=\"Live\"])[2]");
@@ -15,7 +20,8 @@ public class SPlanning_UI {
 	public static final By plstatusPending=By.xpath("//text[text()=\"Pending\"]");
 	public static final By plstatusLive=By.xpath("(//text[text()=\"Live\"])[1]");
 	public static final By planogramchart=By.xpath("//*[@class='slice setFocusRing' and //*[contains(text(),'Planogram Status') ]]");
-	public static final By lasteUpdateDate=By.xpath("//*[@transform=\"translate(141,20.80127136486192)\"]");
+//	public static final By lasteUpdateDate=By.xpath("//*[@transform=\"translate(141,20.80127136486192)\"]");
+	public static final By lasteUpdateDate =By.xpath("//*[contains(text(),'Last updated')]//ancestor::div[@class='visual visual-card allow-deferred-rendering']");
 	public static final By filterSearchButton=By.xpath("//*[@title=\"Search\"]");
 	public static final By sales=By.xpath("//*[@title=\"Sales\"]");
 	public static final By spaceProductivity=By.xpath("(//*[@class=\"fill ui-role-button-fill\"])[2]");
@@ -37,10 +43,9 @@ public class SPlanning_UI {
 	public static final By spaceToggle=By.xpath("(//*[@class=\"visual visual-image allow-deferred-rendering\"])[2]");
 	public static final By chart_ResetCalender = By.xpath("//div[contains(@aria-label,'Reset Calendar') and @role='group']//*[@class='axisGraphicsContext columnChart']");
 	public static final By toggleOffQuestions=By.xpath("//*[@class=\"visual visual-actionButton allow-deferred-rendering\"]");
-	public static final By movement_NPE_AE=By.xpath("//div[@class='content text ui-role-button-text' and contains(text(),'Movement-NPI/AE')]");
-//	public static final By movement_NPE_AE=By.xpath("//*[@class=\"visualContainer unselectable droppableElement ui-droppable readMode hideBorder paddingDisabled noVisualTitle visualHeaderAbove\"]//*[@id=\"containerf287e281-4aca-53b8-2dae-25e246e8d193\"]");
-	public static final By MovementNPIChart=By.xpath("(//*[@class=\"cartesianChart\"])[2]");
-	public static final By MovementAEChart=By.xpath("(//*[@class=\"cartesianChart\"])[2]");
+	public static final By movement_NPE_AE=By.xpath("(//*[@class=\"fill ui-role-button-fill\"])[4]");
+	public static final By MovementNPIChart=By.xpath("(//div[@class='visual visual-clusteredColumnChart allow-deferred-rendering'])[2]");
+	public static final By MovementAEChart=By.xpath("(//div[@class='visual visual-clusteredColumnChart allow-deferred-rendering'])[3]");
 		
 //	Capacity vs Demand ******   InventoryTurns- Branch1
 	
