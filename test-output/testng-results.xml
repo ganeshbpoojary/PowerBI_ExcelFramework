@@ -1,182 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-15T16:18:38 IST" name="Default suite" finished-at="2022-09-15T16:23:41 IST" duration-ms="302697">
+  <suite started-at="2022-09-22T14:57:38 IST" name="Default suite" finished-at="2022-09-22T14:57:39 IST" duration-ms="1072">
     <groups>
     </groups>
-    <test started-at="2022-09-15T16:18:38 IST" name="Default test" finished-at="2022-09-15T16:23:41 IST" duration-ms="302697">
+    <test started-at="2022-09-22T14:57:38 IST" name="Default test" finished-at="2022-09-22T14:57:39 IST" duration-ms="1072">
       <class name="testlogic.BaseTestNG">
-        <test-method is-config="true" signature="killProcess()[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:18:38 IST" name="killProcess" finished-at="2022-09-15T16:18:38 IST" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="killProcess()[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-22T14:57:38 IST" name="killProcess" finished-at="2022-09-22T14:57:38 IST" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killProcess -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:18:40 IST" name="beforeMethod" finished-at="2022-09-15T16:18:40 IST" duration-ms="193" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:18:40 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-15T16:20:32 IST" duration-ms="111781" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[{RowNumber=2, Description=TC01_Check if the Category dropdown has data, CallSequence=login, TestCaseID=AssortInsight_TC01, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=3, Description=TC01_Check if the Category dropdown has data, CallSequence=validateDropDownHasData_Assort, TestCaseID=AssortInsight_TC01, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BaseTestNGExecutor -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:20:32 IST" name="afterMethod" finished-at="2022-09-15T16:20:32 IST" duration-ms="570" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:20:32 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-15T16:21:20 IST" duration-ms="47745" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[{RowNumber=14, Description=TC05_Check if the  Brand dropdown has data, CallSequence=login, TestCaseID=AssortInsight_TC05, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=15, Description=TC05_Check if the  Brand dropdown has data, CallSequence=validateDropDownHasData_Assort, TestCaseID=AssortInsight_TC05, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BaseTestNGExecutor -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:20:32 IST" name="beforeMethod" finished-at="2022-09-15T16:20:32 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:21:20 IST" name="afterMethod" finished-at="2022-09-15T16:21:21 IST" duration-ms="521" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:21:21 IST" name="beforeMethod" finished-at="2022-09-15T16:21:21 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:21:21 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-15T16:22:09 IST" duration-ms="48380" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[{RowNumber=11, Description=TC04_Check if Sub category dropdown select all option is enabled, CallSequence=login, TestCaseID=AssortInsight_TC04, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=12, Description=TC04_Check if Sub category dropdown select all option is enabled, CallSequence=validateValueInDropDown_Assort, TestCaseID=AssortInsight_TC04, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-22T14:57:39 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-22T14:57:39 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.Collection.toArray()" because "c" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "java.util.Collection.toArray()" because "c" is null
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:50)
+at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:146)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:798)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Collection.toArray()" because "c" is null
+at java.base/java.util.ArrayList.addAll(ArrayList.java:670)
+at testlogic.BaseTestNG.getData(BaseTestNG.java:65)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:77)
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:46)
+... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BaseTestNGExecutor -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:22:09 IST" name="afterMethod" finished-at="2022-09-15T16:22:09 IST" duration-ms="540" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:22:09 IST" name="beforeMethod" finished-at="2022-09-15T16:22:09 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:22:09 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-15T16:22:55 IST" duration-ms="45794" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[{RowNumber=8, Description=TC03_Check if the Sub Category dropdown has data, CallSequence=login, TestCaseID=AssortInsight_TC03, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=9, Description=TC03_Check if the Sub Category dropdown has data, CallSequence=validateDropDownHasData_Assort, TestCaseID=AssortInsight_TC03, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BaseTestNGExecutor -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:22:55 IST" name="afterMethod" finished-at="2022-09-15T16:22:55 IST" duration-ms="241" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:22:55 IST" name="beforeMethod" finished-at="2022-09-15T16:22:55 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void testlogic.BaseTestNG.BaseTestNGExecutor(java.util.List)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:22:55 IST" name="BaseTestNGExecutor" data-provider="DataProvider" finished-at="2022-09-15T16:23:41 IST" duration-ms="45313" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[{RowNumber=5, Description=TC02_Check if category dropdown select all option is enabled, CallSequence=login, TestCaseID=AssortInsight_TC02, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=6, Description=TC02_Check if category dropdown select all option is enabled, CallSequence=validateValueInDropDown_Assort, TestCaseID=AssortInsight_TC02, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BaseTestNGExecutor -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:23:41 IST" name="afterMethod" finished-at="2022-09-15T16:23:41 IST" duration-ms="275" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=BaseTestNGExecutor on [BaseTestNG passed=0 failed=0 skipped=0] status=SUCCESS method=BaseTestNG.BaseTestNGExecutor(java.util.List)[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-15T16:23:41 IST" name="afterSuite" finished-at="2022-09-15T16:23:42 IST" duration-ms="772" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:[BaseTestNG passed=0 failed=0 skipped=0]]" started-at="2022-09-22T14:57:39 IST" name="afterSuite" finished-at="2022-09-22T14:57:40 IST" duration-ms="1150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

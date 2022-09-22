@@ -19,6 +19,8 @@ public class AssortInsight_UI {
 	public static final  By label_Lastupdated = By.xpath("//*[contains(text(),'Last updated')]");
 	public static final  By AssortSearch = By.xpath("//input[@aria-label='Search']");
 	
+	
+	
 //	
 	
 	
