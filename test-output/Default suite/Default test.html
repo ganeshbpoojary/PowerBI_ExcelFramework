@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Sep 15 16:18:38 IST 2022</td>
+<td>Started on:</td><td>Thu Sep 22 14:57:38 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>302 seconds (302697 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1072 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,37 +67,90 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testlogic.BaseTestNG.BaseTestNGExecutor()'><b>BaseTestNGExecutor</b><br>Test class: testlogic.BaseTestNG<br>Parameters: [{RowNumber=14, Description=TC05_Check if the  Brand dropdown has data, CallSequence=login, TestCaseID=AssortInsight_TC05, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=15, Description=TC05_Check if the  Brand dropdown has data, CallSequence=validateDropDownHasData_Assort, TestCaseID=AssortInsight_TC05, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]</td>
-<td></td>
-<td>47</td>
-<td>[BaseTestNG passed=0 failed=0 skipped=0]</td></tr>
-<tr>
-<td title='testlogic.BaseTestNG.BaseTestNGExecutor()'><b>BaseTestNGExecutor</b><br>Test class: testlogic.BaseTestNG<br>Parameters: [{RowNumber=11, Description=TC04_Check if Sub category dropdown select all option is enabled, CallSequence=login, TestCaseID=AssortInsight_TC04, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=12, Description=TC04_Check if Sub category dropdown select all option is enabled, CallSequence=validateValueInDropDown_Assort, TestCaseID=AssortInsight_TC04, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]</td>
-<td></td>
-<td>48</td>
-<td>[BaseTestNG passed=0 failed=0 skipped=0]</td></tr>
-<tr>
-<td title='testlogic.BaseTestNG.BaseTestNGExecutor()'><b>BaseTestNGExecutor</b><br>Test class: testlogic.BaseTestNG<br>Parameters: [{RowNumber=5, Description=TC02_Check if category dropdown select all option is enabled, CallSequence=login, TestCaseID=AssortInsight_TC02, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=6, Description=TC02_Check if category dropdown select all option is enabled, CallSequence=validateValueInDropDown_Assort, TestCaseID=AssortInsight_TC02, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]</td>
-<td></td>
-<td>45</td>
-<td>[BaseTestNG passed=0 failed=0 skipped=0]</td></tr>
-<tr>
-<td title='testlogic.BaseTestNG.BaseTestNGExecutor()'><b>BaseTestNGExecutor</b><br>Test class: testlogic.BaseTestNG<br>Parameters: [{RowNumber=8, Description=TC03_Check if the Sub Category dropdown has data, CallSequence=login, TestCaseID=AssortInsight_TC03, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=9, Description=TC03_Check if the Sub Category dropdown has data, CallSequence=validateDropDownHasData_Assort, TestCaseID=AssortInsight_TC03, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]</td>
-<td></td>
-<td>45</td>
-<td>[BaseTestNG passed=0 failed=0 skipped=0]</td></tr>
-<tr>
-<td title='testlogic.BaseTestNG.BaseTestNGExecutor()'><b>BaseTestNGExecutor</b><br>Test class: testlogic.BaseTestNG<br>Parameters: [{RowNumber=2, Description=TC01_Check if the Category dropdown has data, CallSequence=login, TestCaseID=AssortInsight_TC01, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}, {RowNumber=3, Description=TC01_Check if the Category dropdown has data, CallSequence=validateDropDownHasData_Assort, TestCaseID=AssortInsight_TC01, Iteration=Iteration1, DataSheet=TestData, SuiteFileName=C:\Users\1034514\PowerBI_BY\PowerBI_UIAutomation\test-data\Assortment_Insight.xlsx}]</td>
-<td></td>
-<td>111</td>
+<td title='testlogic.BaseTestNG.BaseTestNGExecutor()'><b>BaseTestNGExecutor</b><br>Test class: testlogic.BaseTestNG</td>
+<td><div><pre>java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;java.util.Collection.toArray()&quot; because &quot;c&quot; is null
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:50)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:146)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:798)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;java.util.Collection.toArray()&quot; because &quot;c&quot; is null
+	at java.base/java.util.ArrayList.addAll(ArrayList.java:670)
+	at testlogic.BaseTestNG.getData(BaseTestNG.java:65)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:77)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:46)
+	... 25 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace998242313", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace998242313'><pre>java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;java.util.Collection.toArray()&quot; because &quot;c&quot; is null
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:50)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:146)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:798)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;java.util.Collection.toArray()&quot; because &quot;c&quot; is null
+	at java.base/java.util.ArrayList.addAll(ArrayList.java:670)
+	at testlogic.BaseTestNG.getData(BaseTestNG.java:65)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:77)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:46)
+	... 25 more
+</pre></div></td>
+<td>0</td>
 <td>[BaseTestNG passed=0 failed=0 skipped=0]</td></tr>
 </table><p>
 </body>
