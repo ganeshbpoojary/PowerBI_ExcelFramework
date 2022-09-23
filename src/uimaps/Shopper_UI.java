@@ -17,7 +17,7 @@ public class Shopper_UI {
 	public static final By btn_WhatIsMyBasketValueSizeDuringEventRegularPeriods=By.xpath("//div[contains(text(),'What is my basket value and size during event and regular periods')]");
 	public static final By btn_WhatInsightsCanIGetFromMyMarketBasketAnalysis=By.xpath("//div[contains(text(),'What insights can I get from my market basket analysis')]");
 	
-	public static final By dd_options_supplier=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");	
-	
-	
+	public static final By dd_options=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");	
+
+	public static final By dd_SelectAll_option=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
 }
