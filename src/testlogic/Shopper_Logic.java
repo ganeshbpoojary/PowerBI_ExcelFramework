@@ -36,7 +36,6 @@ public class Shopper_Logic extends WebDriverFactory {
 				waitForElementTobeClickable(Shopper_UI.tab_MarketBasketAnalysis);
 				clickOn(Shopper_UI.tab_MarketBasketAnalysis);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
