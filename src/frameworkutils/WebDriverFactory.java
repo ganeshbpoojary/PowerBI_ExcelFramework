@@ -568,6 +568,24 @@ public class WebDriverFactory {
 			return false;
 		}
 	}
+	//perform the right click
+	public boolean actionRightClick(By by) {
+		// return false if WebElement is not found
+		if (!findElement(by))
+			return false;
+		try {
+			new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(element));
+			Actions action = new Actions(driver);
+			action.contextClick(element).perform();
+			waitForPageToLoad();
+			extentTest.log(LogStatus.INFO, "Action Click On: " + by.toString(), by.toString() + " is clicked");
+			return true;
+		} catch (UnhandledAlertException uaex) {
+			extentTest.log(LogStatus.FAIL, "Action Click On: " + by.toString(),
+					"Unhandled Alert is Present. Please handle it." + captureScreenShot());
+			return false;
+		}
+	}
 
 	/**
 	 * 

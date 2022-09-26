@@ -37,7 +37,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	public void goto_Understand_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
-				actionRightClick(AnamolyDetection_UI.btn_Understand);		
+//				actionClick(AnamolyDetection_UI.btn_Understand);		
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
 				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_Understand);
@@ -80,6 +80,23 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
+	
+	//validate the Stores, units, sales, transactions labels
+	public void validateLabels_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				waitForPageToLoad();
+		isDisplayed(AnamolyDetection_UI.ADOutlierItemStore);
+		isDisplayed(AnamolyDetection_UI.ADOutlierUnits);
+		isDisplayed(AnamolyDetection_UI.ADOutlierSales);
+		isDisplayed(AnamolyDetection_UI.ADOutlierTransactions);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
 
 	public void clickonFilterandchecktheSearchButton_Anamoly()	{
 		synchronized (AnamolyDetection_Logic.class) {
@@ -132,10 +149,10 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		//source tree
 	}
 
-public void goto_FilterOption_AD() {
-	synchronized (Shopper_Logic.class) {
+public void goto_FilterOption_Anamoly() {
+	synchronized (AnamolyDetection_Logic.class) {
 		try {
-			By filter = By.xpath("//*[@title='" + filterName + "']/../../../..//div[@role='combobox']");
+			By filter = By.xpath("//*[@title='"+filterName+"']/../../../..//div[@role='combobox']");
 			waitForElementTobeClickable(filter);
 			clickOn(filter);
 		} catch (Exception e) {
@@ -146,8 +163,32 @@ public void goto_FilterOption_AD() {
 }
 
 
+public void verifyUnderstand_Anamoly() {
+	synchronized (AnamolyDetection_Logic.class) {
+		try {
+			waitForPageToLoad();
+//			actionRightClick(AnamolyDetection_UI.ADUnderstandButton);
+			waitForPageToLoad();
+			waitForElementTobeClickable(AnamolyDetection_UI.ADDrillThrough);
+			waitForPageToLoad();
+			waitForVisibleElement(AnamolyDetection_UI.ADDrillThrough);
+			actionClick(AnamolyDetection_UI.ADDrillThrough);
+			waitForPageToLoad();
+//			clickOn(AnamolyDetection_UI.ADDrillThroughUnderstand);
+			doubleClick(AnamolyDetection_UI.ADDrillThroughUnderstand);
+			waitForVisibleElement(AnamolyDetection_UI.ADunderstandTable);
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+
 public void validate_DropDownHasMultiSelect_Anamoly() {
-	synchronized (Shopper_Logic.class) {
+	synchronized (AnamolyDetection_Logic.class) {
 		try {
 			if (isMultiSelectActive_Anamoly())
 				extentTest.log(LogStatus.PASS, "Drop down should have Multi Select",
@@ -184,7 +225,7 @@ private boolean isMultiSelectActive_Anamoly() {
 				int rows = getFilterDropDownRowCount_Anamoly();
 				for (int i = 1; i <= rows; i++) {
 					String rowState = driver.findElement(By.xpath(
-							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])[4]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["+i+"]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
 							.getAttribute("aria-checked");
 					if (rowState.trim().equals("true")) {
 						flag = true;
@@ -202,6 +243,8 @@ private boolean isMultiSelectActive_Anamoly() {
 	return false;
 
 }
+
+
 
 	private void clickonFilterandValidatethedata_Anamoly() {
 		// TODO Auto-generated method stub
