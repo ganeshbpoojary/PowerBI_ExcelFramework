@@ -189,7 +189,6 @@ public class BaseTestNG extends TestListenerAdapter {
 		}
 		ExtentTestManager.endTest();
 		ExtentManager.getInstance().flush();
-		
 	}
 
 	/**

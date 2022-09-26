@@ -260,8 +260,7 @@ public class Supplier_Logic extends WebDriverFactory {
 		return shortYearList;
 	}
 
-	private boolean checkChartXAxisForMonthsYears_Supplier(ArrayList<String> shortMonthList,
-			ArrayList<String> shortYearList) {
+	private boolean checkChartXAxisForMonthsYears_Supplier(ArrayList<String> shortMonthList,ArrayList<String> shortYearList) {
 		try {
 			boolean flag = false;
 			WebDriverWait wait = new WebDriverWait(driver, 1200);
