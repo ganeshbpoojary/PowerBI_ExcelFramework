@@ -11,9 +11,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.LogStatus;
+import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
 
 import frameworkutils.WebDriverFactory;
 import uimaps.AnamolyDetection_UI;
+import uimaps.Shopper_UI;
 
 
 public class AnamolyDetection_Logic extends WebDriverFactory {
@@ -38,7 +40,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				waitForPageToLoad();
-				clickonFilterandValidatethedata_Anamoly(filterName);
+				clickonFilterandValidatethedata_Anamoly();
 				extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
 			}				
 			 catch (Exception e) {
@@ -54,7 +56,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				waitForPageToLoad();
-				clickonFilterandValidatethedata_Anamoly(filterName);
 				checkDropDownForOption_Anamoly(filterOption);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -115,11 +116,80 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		//source tree
 	}
 
+public void goto_FilterOption_AD() {
+	synchronized (Shopper_Logic.class) {
+		try {
+			By filter = By.xpath("//*[@title='" + filterName + "']/../../../..//div[@role='combobox']");
+			waitForElementTobeClickable(filter);
+			clickOn(filter);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
 
-	private void clickonFilterandValidatethedata_Anamoly(String Filtername) {
+
+public void validate_DropDownHasMultiSelect_Anamoly() {
+	synchronized (Shopper_Logic.class) {
+		try {
+			if (isMultiSelectActive_Anamoly())
+				extentTest.log(LogStatus.PASS, "Drop down should have Multi Select",
+						"Multi Select option is working");
+			else
+				extentTest.log(LogStatus.FAIL, "Drop down should have Multi Select",
+						"Multi Select option is not working");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+private boolean isMultiSelectActive_Anamoly() {
+
+	try {
+		boolean flag = false;
+		String state = driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).getAttribute("aria-checked");
+		if (state.trim().equals("true")) {
+			int rows = getFilterDropDownRowCount_Anamoly();
+			for (int i = 1; i <= rows; i++) {
+				String rowState = driver.findElement(By.xpath(
+						"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])[4]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+						.getAttribute("aria-checked");
+				if (rowState.trim().equals("true")) {
+					flag = true;
+				}
+			}
+			return true;
+		} else if (state.trim().equals("false")) {
+			driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).click();
+			String state2 = driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).getAttribute("aria-checked");
+			if (state2.trim().equals("true")) {
+				int rows = getFilterDropDownRowCount_Anamoly();
+				for (int i = 1; i <= rows; i++) {
+					String rowState = driver.findElement(By.xpath(
+							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])[4]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+							.getAttribute("aria-checked");
+					if (rowState.trim().equals("true")) {
+						flag = true;
+					}
+				}
+				return true;
+			}
+		}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return false;
+	}
+	extentTest.log(LogStatus.FAIL, "isMultiSelectActive: ", "Multi Select option is not working ");
+	return false;
+
+}
+
+	private void clickonFilterandValidatethedata_Anamoly() {
 		// TODO Auto-generated method stub
 		waitForPageToLoad();
-	    driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
 	    List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@class='slicerCheckbox']"));
 	    if (checkboxes.size()>0) {
 //	        driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
