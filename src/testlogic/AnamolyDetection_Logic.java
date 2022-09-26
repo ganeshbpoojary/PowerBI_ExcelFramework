@@ -22,16 +22,33 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		super(driver, dataBook);
 		// TODO Auto-generated constructor stub
 	}
-	
-	String url = dataBook.get("Url");
-	String email = dataBook.get("Email");
-	String pwd = dataBook.get("Password");
+
 	String filterName = dataBook.get("Fliter_Name");
 	String filterOption = dataBook.get("Filter_Option");
 	String chartName = dataBook.get("Chart_Name");
 	String summaryHeader = dataBook.get("SummaryColumn_Header");
 	String detailHeader = dataBook.get("DetailedViewColumn_Header");
 	
+	
+// Added by 1034567
+	
+	public void goto_Understand_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				actionRightClick(AnamolyDetection_UI.btn_Understand);		
+				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
+				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
+				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_Understand);
+				clickOn(AnamolyDetection_UI.navBtn_Understand);
+				waitForElementTobeLocated(AnamolyDetection_UI.title_Understand);
+			}				
+			 catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	//
 	
 	public void validateDropDownHasData_Anamoly() {
 
@@ -63,8 +80,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 	}
 
-	public void clickonFilterandchecktheSearchButton_Anamoly()
-	{
+	public void clickonFilterandchecktheSearchButton_Anamoly()	{
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				 waitForPageToLoad();
