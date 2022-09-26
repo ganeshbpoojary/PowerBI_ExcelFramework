@@ -98,6 +98,8 @@ public class Supplier_UI {
 	public static final By matrixRows=By.xpath("//div[@class='bodyCells']//div[contains(@class,'pivotTableCellWrap')]");
 	
 	public static final By lineGraph=By.xpath("//*[@class='lineChartSVG']//*[@class='markerPaths']");
+
+	
 	public static final By barGraph=By.xpath("//*[@class='columnChartUnclippedGraphicsContext']//*[@class='series']");
 	
 	public static final By xAxis_label=By.xpath("//*[@class='xAxisLabel sub-selectable']");
