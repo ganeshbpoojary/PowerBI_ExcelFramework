@@ -20,14 +20,16 @@ public class AnamolyDetection_UI {
 	public static final By ADDrillThrough=By.xpath("//*[contains(text(),'Drill through')]");
 	public static final By ADDrillThroughUnderstand=By.xpath("//*[contains(text(),'Drill through')]");
 	public static final By ADunderstandTable=By.xpath("//div[@class='visual visual-tableEx allow-deferred-rendering']");
+
+	public static final  By btn_Understand = By.xpath("//*[contains(@aria-label,'DrillDownMeasure Understand')]/..");
+	public static final  By navBtn_DrillThrough = By.xpath("//button[@title='Drill through']");
+	public static final  By navBtn_Understand = By.xpath("//button[@title='Understand']");
 	
-	
-	
-	
-	
-	
-	
+	public static final  By title_Understand = By.xpath("//div[text()='Understand']//ancestor::div[@class='contentTable']");
+
 	
 	
 
+
+	
 }
