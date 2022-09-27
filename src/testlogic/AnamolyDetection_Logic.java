@@ -71,7 +71,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	/**
 	 * Navigates to Price Promotions PLC Inventory Page
 	 * 
@@ -84,7 +84,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_Understand);
 				clickOn(AnamolyDetection_UI.navBtn_Understand);
-				waitForElementTobeLocated(AnamolyDetection_UI.title_Understand);				
+				waitForElementTobeLocated(AnamolyDetection_UI.title_Understand);
 				if (clickOnPriority_Anamoly()) {
 					waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
 					clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
@@ -97,17 +97,18 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
 					waitForElementTobeClickable(AnamolyDetection_UI.navBtn_PricePromotionsPLC);
 					clickOn(AnamolyDetection_UI.navBtn_PricePromotionsPLC);
-					extentTest.log(LogStatus.PASS, "Navigates to Investigate Page", "Navigated to <B>"+"Price, Promotions, PLC & Inventory"+"</B> Page");
+					extentTest.log(LogStatus.PASS, "Navigates to Investigate Page",
+							"Navigated to <B>" + "Price, Promotions, PLC & Inventory" + "</B> Page");
 				} else {
 					extentTest.log(LogStatus.FAIL, "Navigates to Investigate Page",
-							"Not able to navigate to <B>"+"Price, Promotions, PLC & Inventory"+"</B> Page");
+							"Not able to navigate to <B>" + "Price, Promotions, PLC & Inventory" + "</B> Page");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
+
 	/**
 	 * Validate Outlier Investigation Report
 	 * 
@@ -238,14 +239,16 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
 				waitForPageToLoad();
 				int after = getElementsCount(AnamolyDetection_UI.contextMenu);
-				int subMenusize = getElementsCount(By.xpath("(//*[@role='menu'])[" + after + "]//button[@role='menuitem']"));
+				int subMenusize = getElementsCount(
+						By.xpath("(//*[@role='menu'])[" + after + "]//button[@role='menuitem']"));
 				for (int i = 1; i < subMenusize; i++) {
 					By opt = By.xpath("((//*[@role='menu'])[" + after + "]//button[@role='menuitem'])[" + i + "]");
 					if (!getTextOf(opt).equals(""))
 						flag = true;
 				}
 				if (flag)
-					extentTest.log(LogStatus.PASS, "BusinessImpact Right click> drill through should show options","Drill through is showing <B>[" + subMenusize + "]</B> options");
+					extentTest.log(LogStatus.PASS, "BusinessImpact Right click> drill through should show options",
+							"Drill through is showing <B>[" + subMenusize + "]</B> options");
 				else
 					extentTest.log(LogStatus.FAIL, "BusinessImpact Right click> drill through should show options",
 							"Drill through is not showing any options");
@@ -281,8 +284,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
-	
 
 	// check dropdown option in the dropdown list
 	private boolean checkDropDownForOption_Anamoly(String opt) {
@@ -331,8 +332,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 	}
 
-	
-
 	public void validate_DropDownHasMultiSelect_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
@@ -348,35 +347,26 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	
+
 	public boolean verify_UnderstandPage_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				waitForElementTobeLocated(AnamolyDetection_UI.table_Understand);
 				isDisplayed(AnamolyDetection_UI.table_UnderStand_ColumnCount);
-				List<WebElement> tableheader = driver.findElements(By.xpath("//div[@role='presentation']//div[@role='columnheader']"));
+				List<WebElement> tableheader = driver
+						.findElements(By.xpath("//div[@role='presentation']//div[@role='columnheader']"));
 				List<WebElement> tablerowcount = driver.findElements(By.xpath("(//div[@role='row'])"));
-				 return tableheader.size()>0&&tablerowcount.size()>0;
-				
-				
-				
-			}
-			 catch (Exception e) {
+				return tableheader.size() > 0 && tablerowcount.size() > 0;
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		return false;
 	}
-	
-	
-	
+
 	/*
 	 * Private methods
 	 */
-
-	
-
 
 	private void clickonFilterandValidatethedata_Anamoly() {
 		// TODO Auto-generated method stub
@@ -391,7 +381,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	private ArrayList<String> get_UnderstandTableContent_Anamoly() {
 		boolean flag;
 		try {
-			ArrayList<String> tableContent = new ArrayList<String>();			
+			ArrayList<String> tableContent = new ArrayList<String>();
 			int columnCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_ColumnCount);
 			int rowCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_RowCount);
 			for (int col = 3; col <= columnCnt; col++) {
@@ -413,7 +403,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		return null;
 	}
 
-	
 	private boolean clickOnPriority_Anamoly() {
 		boolean flag = false;
 		try {
@@ -438,16 +427,17 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 		return false;
 	}
-  
-  private boolean isMultiSelectActive_Anamoly() {
+
+	private boolean isMultiSelectActive_Anamoly() {
 		boolean flag;
-		try {			
+		try {
 			String state = driver.findElement(AnamolyDetection_UI.dd_SelectAll_option).getAttribute("aria-checked");
 			if (state.trim().equals("true")) {
 				int rows = getFilterDropDownRowCount_Anamoly();
 				for (int i = 1; i <= rows; i++) {
 					String rowState = driver.findElement(By.xpath(
-							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["+ i		+ "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
+									+ i + "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
 							.getAttribute("aria-checked");
 					if (rowState.trim().equals("true")) {
 						flag = true;
@@ -462,7 +452,9 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					int rows = getFilterDropDownRowCount_Anamoly();
 					for (int i = 1; i <= rows; i++) {
 						String rowState = driver.findElement(By.xpath(
-								"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["+ i		+ "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+								"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
+										+ i
+										+ "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
 								.getAttribute("aria-checked");
 						if (rowState.trim().equals("true")) {
 							flag = true;
