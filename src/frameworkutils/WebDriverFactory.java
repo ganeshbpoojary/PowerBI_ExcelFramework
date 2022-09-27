@@ -571,11 +571,9 @@ public class WebDriverFactory {
 	
 	
 	/**
-	 * 
 	 * Right Click on WebElement
 	 *
 	 * @return boolean true if click was successful otherwise false
-	 * 
 	 */
 	
 	public boolean rightClick(By by) {
@@ -1507,25 +1505,6 @@ public class WebDriverFactory {
 
 
 
-
-	public boolean Ctrl_END() {
-		try {
-			Actions action = new Actions(driver);
-			action.sendKeys(Keys.CONTROL).sendKeys(Keys.END).build().perform();
-//			String keysPressed =  Keys.chord(Keys.CONTROL, Keys.END);
-//			   element.sendKeys(keysPressed) ;
-//			new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(element));
-//			Actions action = new Actions(driver);
-//			action.sendKeys(Keys.Ctrl).click().perform();
-			waitForPageToLoad();
-			extentTest.log(LogStatus.INFO, "Ctrl_END", "Action Click on Ctrl + END is  ");
-			return true;
-		} catch (UnhandledAlertException uaex) {
-			extentTest.log(LogStatus.FAIL, "Ctrl_END", "Action Click on Ctrl + END do not work");
-			return false;
-		}
-	}
-
 	public boolean selectFrame(By by) {
 		if (!findElement(by))
 			return false;
@@ -1542,32 +1521,7 @@ public class WebDriverFactory {
 		}
 	}
 	
-//	/**
-//	 * 
-//	 * MouseHover on WebElement
-//	 *
-//	 * 
-//	 * 
-//	 * @return boolean true if click was successful otherwise false
-//	 * 
-//	 */
-//	public boolean mouseHover(By by) {
-//		// return false if WebElement is not found
-//		if (!findElement(by))
-//			return false;
-//		try {
-//			new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(element));
-//			Actions action = new Actions(driver);
-//			action.moveToElement(element).click().perform();
-//			waitForPageToLoad();
-//			extentTest.log(LogStatus.INFO, "Action Click On: " + by.toString(), by.toString() + " is clicked");
-//			return true;
-//		} catch (UnhandledAlertException uaex) {
-//			extentTest.log(LogStatus.FAIL, "Action Click On: " + by.toString(),
-//					"Unhandled Alert is Present. Please handle it." + captureScreenShot());
-//			return false;
-//		}
-//	}
+
 	
 
 	
