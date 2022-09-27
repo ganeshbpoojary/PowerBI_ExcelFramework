@@ -74,7 +74,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
 	
 	/**
 	 * Navigates to Investigate page
@@ -287,37 +286,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 	}
 
-	// validate the Stores, units, sales, transactions labels
-	public void validateLabels_Anamoly() {
-		synchronized (AnamolyDetection_Logic.class) {
-			try {
-				waitForPageToLoad();
-				isDisplayed(AnamolyDetection_UI.ADOutlierItemStore);
-				isDisplayed(AnamolyDetection_UI.ADOutlierUnits);
-				isDisplayed(AnamolyDetection_UI.ADOutlierSales);
-				isDisplayed(AnamolyDetection_UI.ADOutlierTransactions);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-
-	public void clickonFilterandchecktheSearchButton_Anamoly() {
-		synchronized (AnamolyDetection_Logic.class) {
-			try {
-				waitForPageToLoad();
-				isDisplayed(AnamolyDetection_UI.AnamolySearch);
-				extentTest.log(LogStatus.PASS, "Anamoly Search is enabled", "Anamoly Search  has Data");
-
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				extentTest.log(LogStatus.FAIL, "Anamoly Search  disabled", "Anamoly Search  has no Data");
-				e.printStackTrace();
-			}
-		}
-
-	}
+	
 
 	// check dropdown option in the dropdown list
 	private boolean checkDropDownForOption_Anamoly(String opt) {
@@ -366,27 +335,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 	}
 
-	public void verifyUnderstand_Anamoly() {
-		synchronized (AnamolyDetection_Logic.class) {
-			try {
-				waitForPageToLoad();
-//			actionRightClick(AnamolyDetection_UI.ADUnderstandButton);
-				waitForPageToLoad();
-				waitForElementTobeClickable(AnamolyDetection_UI.ADDrillThrough);
-				waitForPageToLoad();
-				waitForVisibleElement(AnamolyDetection_UI.ADDrillThrough);
-				actionClick(AnamolyDetection_UI.ADDrillThrough);
-				waitForPageToLoad();
-//			clickOn(AnamolyDetection_UI.ADDrillThroughUnderstand);
-				doubleClick(AnamolyDetection_UI.ADDrillThroughUnderstand);
-				waitForVisibleElement(AnamolyDetection_UI.ADunderstandTable);
-
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
+	
 
 	public void validate_DropDownHasMultiSelect_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
@@ -402,51 +351,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				e.printStackTrace();
 			}
 		}
-	}
-
-	private boolean isMultiSelectActive_Anamoly() {
-
-		try {
-			boolean flag = false;
-			String state = driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).getAttribute("aria-checked");
-			if (state.trim().equals("true")) {
-				int rows = getFilterDropDownRowCount_Anamoly();
-				for (int i = 1; i <= rows; i++) {
-					String rowState = driver.findElement(By.xpath(
-							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])[4]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
-							.getAttribute("aria-checked");
-					if (rowState.trim().equals("true")) {
-						flag = true;
-					}
-				}
-				return true;
-			} else if (state.trim().equals("false")) {
-				driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).click();
-				String state2 = driver.findElement(AnamolyDetection_UI.AD_SelectAll_option)
-						.getAttribute("aria-checked");
-				if (state2.trim().equals("true")) {
-					int rows = getFilterDropDownRowCount_Anamoly();
-					for (int i = 1; i <= rows; i++) {
-						String rowState = driver.findElement(By.xpath(
-								"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
-										+ i
-										+ "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
-								.getAttribute("aria-checked");
-						if (rowState.trim().equals("true")) {
-							flag = true;
-						}
-					}
-					return true;
-				}
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
-		}
-		extentTest.log(LogStatus.FAIL, "isMultiSelectActive: ", "Multi Select option is not working ");
-		return false;
-
 	}
 
 	private void clickonFilterandValidatethedata_Anamoly() {
