@@ -577,6 +577,7 @@ public class WebDriverFactory {
 	 * @return boolean true if click was successful otherwise false
 	 * 
 	 */
+	
 	public boolean rightClick(By by) {
 		// return false if WebElement is not found
 		if (!findElement(by))

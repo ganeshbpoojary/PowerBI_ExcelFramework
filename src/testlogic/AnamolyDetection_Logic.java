@@ -52,6 +52,25 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 	}
 	
+	public boolean verify_UnderstandPage_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				waitForElementTobeLocated(AnamolyDetection_UI.understandTable);
+				isDisplayed(AnamolyDetection_UI.table_UnderStand_ColumnCount);
+				List<WebElement> tableheader = driver.findElements(By.xpath("//div[@role='presentation']//div[@role='columnheader']"));
+				List<WebElement> tablerowcount = driver.findElements(By.xpath("(//div[@role='row'])"));
+				 return tableheader.size()>0&&tablerowcount.size()>0;
+				
+				
+				
+			}
+			 catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
 	
 	/**
 	 * Navigates to Investigate page
@@ -108,10 +127,10 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				waitForPageToLoad();
-		isDisplayed(AnamolyDetection_UI.ADOutlierItemStore);
-		isDisplayed(AnamolyDetection_UI.ADOutlierUnits);
-		isDisplayed(AnamolyDetection_UI.ADOutlierSales);
-		isDisplayed(AnamolyDetection_UI.ADOutlierTransactions);
+		isDisplayed(AnamolyDetection_UI.outlierItemStore);
+		isDisplayed(AnamolyDetection_UI.outlierUnits);
+		isDisplayed(AnamolyDetection_UI.outlierSales);
+		isDisplayed(AnamolyDetection_UI.outlierTransactions);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -124,7 +143,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				 waitForPageToLoad();
-				 isDisplayed(AnamolyDetection_UI.AnamolySearch);
+				 isDisplayed(AnamolyDetection_UI.anamolySearch);
 				 extentTest.log(LogStatus.PASS, "Anamoly Search is enabled", "Anamoly Search  has Data");
 			
 			}
@@ -191,14 +210,14 @@ public void verifyUnderstand_Anamoly() {
 			waitForPageToLoad();
 //			actionRightClick(AnamolyDetection_UI.ADUnderstandButton);
 			waitForPageToLoad();
-			waitForElementTobeClickable(AnamolyDetection_UI.ADDrillThrough);
+			waitForElementTobeClickable(AnamolyDetection_UI.drillThrough);
 			waitForPageToLoad();
-			waitForVisibleElement(AnamolyDetection_UI.ADDrillThrough);
-			actionClick(AnamolyDetection_UI.ADDrillThrough);
+			waitForVisibleElement(AnamolyDetection_UI.drillThrough);
+			actionClick(AnamolyDetection_UI.drillThrough);
 			waitForPageToLoad();
 //			clickOn(AnamolyDetection_UI.ADDrillThroughUnderstand);
-			doubleClick(AnamolyDetection_UI.ADDrillThroughUnderstand);
-			waitForVisibleElement(AnamolyDetection_UI.ADunderstandTable);
+			doubleClick(AnamolyDetection_UI.drillThroughUnderstand);
+			waitForVisibleElement(AnamolyDetection_UI.understandTable);
 			
 			
 		} catch (Exception e) {
@@ -228,7 +247,7 @@ private boolean isMultiSelectActive_Anamoly() {
 
 	try {
 		boolean flag = false;
-		String state = driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).getAttribute("aria-checked");
+		String state = driver.findElement(AnamolyDetection_UI.selectAll_option).getAttribute("aria-checked");
 		if (state.trim().equals("true")) {
 			int rows = getFilterDropDownRowCount_Anamoly();
 			for (int i = 1; i <= rows; i++) {
@@ -241,8 +260,8 @@ private boolean isMultiSelectActive_Anamoly() {
 			}
 			return true;
 		} else if (state.trim().equals("false")) {
-			driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).click();
-			String state2 = driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).getAttribute("aria-checked");
+			driver.findElement(AnamolyDetection_UI.selectAll_option).click();
+			String state2 = driver.findElement(AnamolyDetection_UI.selectAll_option).getAttribute("aria-checked");
 			if (state2.trim().equals("true")) {
 				int rows = getFilterDropDownRowCount_Anamoly();
 				for (int i = 1; i <= rows; i++) {
