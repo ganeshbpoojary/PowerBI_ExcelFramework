@@ -33,7 +33,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	
 
 	/**
-	 * Navigates to Understand page
+	 * Navigates to Understand Page
 	 * 
 	 **/
 	public void goto_UnderstandPage_Anamoly() {
@@ -280,14 +280,16 @@ private boolean isMultiSelectActive_Anamoly() {
 	
 	
 	private void getTableContent_Anamoly() {
+		boolean flag;
 		int columnCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_ColumnCount);
 		int rowCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_RowCount);
 		for(int col=3; col<=columnCnt; col++) {
 			for(int row =1; row<=rowCnt ;row++) {
-				
-				
-			}
-			
+				By cellValue = By.xpath("(//div[@role='row'])["+rowCnt+"]//div[@aria-colindex='"+columnCnt+"']");
+				if(!getTextOf(cellValue).equals(""))					
+				if(getTextOf(cellValue).contains("%"))
+					rightClick(cellValue);
+			}			
 		}
 	}
 
