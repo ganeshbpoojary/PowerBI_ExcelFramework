@@ -353,7 +353,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	public boolean verify_UnderstandPage_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
-				waitForElementTobeLocated(AnamolyDetection_UI.ADunderstandTable);
+				waitForElementTobeLocated(AnamolyDetection_UI.table_Understand);
 				isDisplayed(AnamolyDetection_UI.table_UnderStand_ColumnCount);
 				List<WebElement> tableheader = driver.findElements(By.xpath("//div[@role='presentation']//div[@role='columnheader']"));
 				List<WebElement> tablerowcount = driver.findElements(By.xpath("(//div[@role='row'])"));
@@ -442,7 +442,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
   private boolean isMultiSelectActive_Anamoly() {
 		boolean flag;
 		try {			
-			String state = driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).getAttribute("aria-checked");
+			String state = driver.findElement(AnamolyDetection_UI.dd_SelectAll_option).getAttribute("aria-checked");
 			if (state.trim().equals("true")) {
 				int rows = getFilterDropDownRowCount_Anamoly();
 				for (int i = 1; i <= rows; i++) {
@@ -455,8 +455,8 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				}
 				return true;
 			} else if (state.trim().equals("false")) {
-				driver.findElement(AnamolyDetection_UI.AD_SelectAll_option).click();
-				String state2 = driver.findElement(AnamolyDetection_UI.AD_SelectAll_option)
+				driver.findElement(AnamolyDetection_UI.dd_SelectAll_option).click();
+				String state2 = driver.findElement(AnamolyDetection_UI.dd_SelectAll_option)
 						.getAttribute("aria-checked");
 				if (state2.trim().equals("true")) {
 					int rows = getFilterDropDownRowCount_Anamoly();
