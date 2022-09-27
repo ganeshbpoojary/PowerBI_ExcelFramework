@@ -26,6 +26,13 @@ public class AnamolyDetection_UI {
 	public static final  By navBtn_Understand = By.xpath("//button[@title='Understand']");
 	
 	public static final  By title_Understand = By.xpath("//div[text()='Understand']//ancestor::div[@class='contentTable']");
+	
+	
+	public static final  By table_UnderStand_ColumnCount = By.xpath("//div[@role='presentation']//div[@role='columnheader']");
+	public static final  By table_UnderStand_RowCount = By.xpath("(//div[@role='row'])");
+	
+
+	
 
 	
 	

@@ -31,29 +31,51 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	String summaryHeader = dataBook.get("SummaryColumn_Header");
 	String detailHeader = dataBook.get("DetailedViewColumn_Header");
 	
-	
-// Added by 1034567
-	
-	public void goto_Understand_Anamoly() {
+
+	/**
+	 * Navigates to Understand page
+	 * 
+	 **/
+	public void goto_UnderstandPage_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
-//				actionClick(AnamolyDetection_UI.btn_Understand);		
+				rightClick(AnamolyDetection_UI.btn_Understand);
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
 				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_Understand);
 				clickOn(AnamolyDetection_UI.navBtn_Understand);
 				waitForElementTobeLocated(AnamolyDetection_UI.title_Understand);
-			}				
+			}
 			 catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 	
-	//
+	
+	/**
+	 * Navigates to Investigate page
+	 * 
+	 **/
+	public void goto_Investigatepage_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				rightClick(AnamolyDetection_UI.btn_Understand);
+				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
+				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
+				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_Understand);
+				clickOn(AnamolyDetection_UI.navBtn_Understand);
+				waitForElementTobeLocated(AnamolyDetection_UI.title_Understand);
+			}
+			 catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+
 	
 	public void validateDropDownHasData_Anamoly() {
-
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				waitForPageToLoad();
@@ -254,6 +276,19 @@ private boolean isMultiSelectActive_Anamoly() {
 //	        driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
 	    	return ;
 	    }
+	}
+	
+	
+	private void getTableContent_Anamoly() {
+		int columnCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_ColumnCount);
+		int rowCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_RowCount);
+		for(int col=3; col<=columnCnt; col++) {
+			for(int row =1; row<=rowCnt ;row++) {
+				
+				
+			}
+			
+		}
 	}
 
 }
