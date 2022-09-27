@@ -57,9 +57,6 @@ public class Shopper_UI {
 	
 	public static final By span_TimeOfDayColumn=By.xpath("(//div[@class='innerContainer'])[1]//div[@class='columnHeaders']//div[contains(@class,'pivotTableCellWrap')]");
 	public static final By span_DayOfWeekColumn=By.xpath("(//div[@class='innerContainer'])[2]//div[@class='columnHeaders']//div[contains(@class,'pivotTableCellWrap')]");
-
-
-			
-			
+	
 	
 }
