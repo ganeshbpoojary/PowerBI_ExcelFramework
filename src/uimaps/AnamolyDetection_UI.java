@@ -41,6 +41,24 @@ public class AnamolyDetection_UI {
 	public static final  By contextMenu = By.xpath("//*[@role='menu']");	
 	public static final  By btn_BusniessImpact = By.xpath("(//div[contains(@class,'pivotTableCellNoWrap')])[4]/..");
 	
+	public static final  By chart_OutlierInvestigation  = By.xpath("((//span[contains(text(),'Trend and Residual')]//ancestor::*[@class='ng-star-inserted'])[4]//*[@class='lineChartSVG']//*[@role='listbox'])[1]");	
+	public static final By chart_OutlierInvestigation_option=By.xpath("((//*[@class='lineChartSVG']//*[@role='listbox'])[1]//*[@class='interactivity-line sub-selectable'])[2]");
+	
+	public static final  By chart_SeasonalityTrendResidual  = By.xpath("((//span[contains(text(),'Trend and Residual')]//ancestor::*[@class='ng-star-inserted'])[4]//*[@class='lineChartSVG']//*[@role='listbox'])[2]");	
+	public static final By chart_SeasonalityTrendResidual_option=By.xpath("((//*[@class='lineChartSVG']//*[@role='listbox'])[2]//*[@class='interactivity-line sub-selectable'])[2]");
+	
+	public static final  By chart_InterPlayBtnSales  = By.xpath("//*[@class='ng-star-inserted']//*[@class='lineChartSVG']//*[@role='listbox']");	
+	public static final By chart_InterPlayBtnSales_option=By.xpath("(//*[@class='ng-star-inserted']//*[@class='lineChartSVG']//*[@role='listbox']//*[@class='interactivity-line sub-selectable'])[2]");
+	
+	public static final By chart_popupText=By.xpath("//div[@id='screen_reader_alert_assertive']");
+	public static final By dd_InsightsFor=By.xpath("(//div[@aria-label='DATE'])[1]");
+	
+	public static final By dd_InsightsFor_Option=By.xpath("//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
+	
+	
+	
+	
+	
 	
 	
 	
@@ -62,3 +80,5 @@ public class AnamolyDetection_UI {
 
 	
 }
+
+

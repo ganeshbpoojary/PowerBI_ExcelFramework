@@ -1,18 +1,17 @@
 package testlogic;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import java.text.ParseException;
 import com.relevantcodes.extentreports.LogStatus;
-
 import frameworkutils.WebDriverFactory;
 import uimaps.AnamolyDetection_UI;
 
@@ -35,13 +34,17 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	public void goto_UnderstandPage_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
+				waitForElementTobeClickable(AnamolyDetection_UI.btn_Understand);
 				rightClick(AnamolyDetection_UI.btn_Understand);
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
 				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_Understand);
 				clickOn(AnamolyDetection_UI.navBtn_Understand);
 				waitForElementTobeLocated(AnamolyDetection_UI.title_Understand);
-				extentTest.log(LogStatus.PASS, "Navigates to Understand Page", "Navigated to Understand Page");
+				if(isDisplayed(AnamolyDetection_UI.title_Understand))
+					extentTest.log(LogStatus.PASS, "Navigates to Understand Page", "Navigated to Understand Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Navigates to Understand Page", "Did not navigate to Understand Page");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -55,6 +58,13 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	public void goto_InvestigatePage_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
+				waitForElementTobeClickable(AnamolyDetection_UI.btn_Understand);
+				rightClick(AnamolyDetection_UI.btn_Understand);
+				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
+				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
+				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_Understand);
+				clickOn(AnamolyDetection_UI.navBtn_Understand);
+				waitForElementTobeLocated(AnamolyDetection_UI.title_Understand);
 				if (clickOnPriority_Anamoly()) {
 					waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
 					clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
@@ -71,6 +81,8 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
+	
+	
 
 	/**
 	 * Navigates to Price Promotions PLC Inventory Page
@@ -137,18 +149,24 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	 * Validate Outlier Investigation Report Date format
 	 * 
 	 **/
-	public void Validate_DateFormat_Anamoly() {
+	public void Validate_TableHeader_DateFormat_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			boolean flag = false;
-			waitForElementTobeLocated(AnamolyDetection_UI.tableHeader_Investigate_option);
 			try {
+			waitForElementTobeLocated(AnamolyDetection_UI.tableHeader_Investigate_option);			
 				int size = getElementsCount(AnamolyDetection_UI.tableHeader_Investigate_option);
 				for (int i = 1; i <= size; i++) {
 					By cellVal = By.xpath(
 							"((//div[@class='columnHeaders'])[2]//div[contains(@class,'pivotTableCellNoWrap cell-interactive')])["
 									+ i + "]");
-					String date = getTextOf(cellVal);
-					if (date.charAt(4) == '-' && date.charAt(7) == '-') {
+					String date = getTextOf(cellVal).trim();
+					if (date.equals("")) {
+						flag = false;
+					} else {
+						SimpleDateFormat sdfrmt = new SimpleDateFormat("yyyy-MM-dd");
+						sdfrmt.setLenient(false);
+						Date javaDate = sdfrmt.parse(date);
+						System.out.println(date + " is valid date format");
 						flag = true;
 					}
 				}
@@ -163,6 +181,106 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
+
+
+	public void Validate_InsightsDropDown_DateFormat_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			boolean flag = false;
+			try {
+				waitForElementTobeLocated(AnamolyDetection_UI.dd_InsightsFor);
+				clickOn(AnamolyDetection_UI.dd_InsightsFor);
+				waitForElementTobeLocated(AnamolyDetection_UI.dd_InsightsFor_Option);
+				int size = getElementsCount(AnamolyDetection_UI.dd_InsightsFor_Option);
+				for (int i = 1; i <= size; i++) {
+					By cellVal = By.xpath(
+							"(//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
+									+ i + "]");
+					String date = getTextOf(cellVal).trim();
+					if (date.equals("")) {
+						flag = false;
+					} else {
+						SimpleDateFormat sdfrmt = new SimpleDateFormat("yyyy-MM-dd");
+						sdfrmt.setLenient(false);
+						Date javaDate = sdfrmt.parse(date);
+						System.out.println(date + " is valid date format");
+						flag = true;
+					}
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Date format validation", "Date is in - <B> YYYY-MM-DD </B> format");
+				else
+					extentTest.log(LogStatus.FAIL, "Date format validation",
+							"Date is not in - <B> YYYY-MM-DD </B> format");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+
+
+	/**
+	 * Validate Seasonality Chart Has Data
+	 * 
+	 **/
+	public void Validate_SeasonalityChartHasData_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				if (getChartStatus_Anamoly(AnamolyDetection_UI.chart_SeasonalityTrendResidual,
+						AnamolyDetection_UI.chart_SeasonalityTrendResidual_option))
+					extentTest.log(LogStatus.PASS, "Seasonality, Trend and Residual Chart should have data",
+							"Seasonality, Trend and Residual Chart is having data");
+				else
+					extentTest.log(LogStatus.FAIL, "Seasonality, Trend and Residual Chart should have data",
+							"Seasonality, Trend and Residual Chart is not having data");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Outlier Investigation Chart Has Data
+	 * 
+	 **/
+	public void Validate_OutlierInvestigationChartHasData_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				if (getChartStatus_Anamoly(AnamolyDetection_UI.chart_OutlierInvestigation,
+						AnamolyDetection_UI.chart_OutlierInvestigation_option))
+					extentTest.log(LogStatus.PASS, "Outlier Investigation Chart should have data",
+							"Outlier Investigation Chart is having data");
+				else
+					extentTest.log(LogStatus.FAIL, "Outlier Investigation Chart should have data",
+							"Outlier Investigation Chart is not having data");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate InterPlay Sales Chart Has Data
+	 * 
+	 **/
+	public void Validate_InterPlayBtnSalesChartHasData_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				if (getChartStatus_Anamoly(AnamolyDetection_UI.chart_InterPlayBtnSales,
+						AnamolyDetection_UI.chart_InterPlayBtnSales_option))
+					extentTest.log(LogStatus.PASS, "InterPlay Sales Chart should have data",
+							"InterPlay Sales Chart is having data");
+				else
+					extentTest.log(LogStatus.FAIL, "InterPlay Sales Chart should have data",
+							"InterPlay Sales Chart is not having data");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+
 
 	/**
 	 * Validate Outlier Investigation Report Date format
@@ -235,7 +353,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				waitForElementTobeLocated(AnamolyDetection_UI.btn_BusniessImpact);
 				rightClick(AnamolyDetection_UI.btn_BusniessImpact);
 				isDisplayed(AnamolyDetection_UI.contextMenu);
-//				int before = getElementsCount(AnamolyDetection_UI.contextMenu);
+				// int before = getElementsCount(AnamolyDetection_UI.contextMenu);
 				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
 				waitForPageToLoad();
 				int after = getElementsCount(AnamolyDetection_UI.contextMenu);
@@ -373,7 +491,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		waitForPageToLoad();
 		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@class='slicerCheckbox']"));
 		if (checkboxes.size() > 0) {
-//	        driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
+			// driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
 			return;
 		}
 	}
@@ -418,8 +536,8 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 						break;
 					}
 				}
-//				flag = true;
-//				break;
+				// flag = true;
+				// break;
 			}
 			return flag;
 		} catch (Exception e) {
@@ -464,7 +582,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
@@ -472,4 +589,28 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		return false;
 
 	}
+
+	private boolean getChartStatus_Anamoly(By graph, By graphPointer) {
+		boolean flag = false;
+		try {
+			waitForElementTobeLocated(graph);
+			actionClick(graphPointer);
+			waitForPageToLoad();
+			snooze(5000);
+			if (!getTextOf(AnamolyDetection_UI.chart_popupText).equals("")) {
+				mouseHover(graphPointer);
+				snooze(5000);
+				captureScreenShot();
+				flag = true;
+			} else {
+				flag = false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+
+
 }
