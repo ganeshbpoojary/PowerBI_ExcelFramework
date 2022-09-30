@@ -3,9 +3,11 @@ package testlogic;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +17,7 @@ import java.text.ParseException;
 import com.relevantcodes.extentreports.LogStatus;
 import frameworkutils.WebDriverFactory;
 import uimaps.AnamolyDetection_UI;
+import uimaps.Supplier_UI;
 
 public class AnamolyDetection_Logic extends WebDriverFactory {
 
@@ -162,8 +165,37 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					extentTest.log(LogStatus.PASS, "Outlier Item Store should have Non Zero value",
 							"Outlier Item Store is having Non Zero value");
 				else
-					extentTest.log(LogStatus.PASS, "Outlier Item Store should have Non Zero value",
+					extentTest.log(LogStatus.FAIL, "Outlier Item Store should have Non Zero value",
 							"Outlier Item Store is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Outlier Item Stores Card
+	 * 
+	 **/
+	public void Validate_InvestigateFilterShowsValue_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				waitForElementTobeLocated(AnamolyDetection_UI.span_Department);
+				String spanDepartment = getTextOf(AnamolyDetection_UI.span_Department);
+				waitForElementTobeLocated(AnamolyDetection_UI.span_Category);
+				String spanCategory = getTextOf(AnamolyDetection_UI.span_Category);
+				waitForElementTobeLocated(AnamolyDetection_UI.span_SubCategory);
+				String spanSubCategory = getTextOf(AnamolyDetection_UI.span_SubCategory);
+				waitForElementTobeLocated(AnamolyDetection_UI.span_Region);
+				String spanRegion = getTextOf(AnamolyDetection_UI.span_Region);
+				if (!(spanDepartment.equals("") && spanCategory.equals("") && spanSubCategory.equals("")
+						&& spanRegion.equals("")))
+					extentTest.log(LogStatus.PASS, "Department, Category, Sub Category, Region should show value",
+							"Department, Category, Sub Category, Region is showing value");
+				else
+					extentTest.log(LogStatus.FAIL, "Department, Category, Sub Category, Region should show value",
+							"Department, Category, Sub Category, Region is not showing value");
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -188,7 +220,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					extentTest.log(LogStatus.PASS, "Outlier Units should have Non Zero value",
 							"Outlier Units is having Non Zero value");
 				else
-					extentTest.log(LogStatus.PASS, "Outlier Units should have Non Zero value",
+					extentTest.log(LogStatus.FAIL, "Outlier Units should have Non Zero value",
 							"Outlier Units is having Zero value");
 
 			} catch (Exception e) {
@@ -214,7 +246,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					extentTest.log(LogStatus.PASS, "Outlier Sales should have Non Zero value",
 							"Outlier Sales is having Non Zero value");
 				else
-					extentTest.log(LogStatus.PASS, "Outlier Sales should have Non Zero value",
+					extentTest.log(LogStatus.FAIL, "Outlier Sales should have Non Zero value",
 							"Outlier Sales is having Zero value");
 
 			} catch (Exception e) {
@@ -240,7 +272,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
 							"Outlier Transactions is having Non Zero value");
 				else
-					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
+					extentTest.log(LogStatus.FAIL, "Outlier Transactions should have Non Zero value",
 							"Outlier Transactions is having Zero value");
 
 			} catch (Exception e) {
@@ -273,10 +305,9 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					}
 				}
 				if (flag)
-					extentTest.log(LogStatus.PASS, "Chart should have data",
-							"Chart is having data");
+					extentTest.log(LogStatus.PASS, "Chart should have data", "Chart is having data");
 				else
-					extentTest.log(LogStatus.FAIL, "Chart should have data","Chart is not having data");
+					extentTest.log(LogStatus.FAIL, "Chart should have data", "Chart is not having data");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -305,7 +336,41 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 						SimpleDateFormat sdfrmt = new SimpleDateFormat("yyyy-MM-dd");
 						sdfrmt.setLenient(false);
 						Date javaDate = sdfrmt.parse(date);
-						System.out.println(date + " is valid date format");
+						flag = true;
+					}
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Date format validation", "Date is in - <B> YYYY-MM-DD </B> format");
+				else
+					extentTest.log(LogStatus.FAIL, "Date format validation",
+							"Date is not in - <B> YYYY-MM-DD </B> format");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * Validate Outlier Investigation Report Date format
+	 * 
+	 **/
+	public void Validate_KeyTrendInsightsHasObservations_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			boolean flag = false;
+			try {
+				waitForElementTobeLocated(AnamolyDetection_UI.tableHeader_Investigate_option);
+				int size = getElementsCount(AnamolyDetection_UI.tableHeader_Investigate_option);
+				for (int i = 1; i <= size; i++) {
+					By cellVal = By.xpath(
+							"((//div[@class='columnHeaders'])[2]//div[contains(@class,'pivotTableCellNoWrap cell-interactive')])["
+									+ i + "]");
+					String date = getTextOf(cellVal).trim();
+					if (date.equals("")) {
+						flag = false;
+					} else {
+						clickOn(cellVal);
+						waitForPageToLoad();
 						flag = true;
 					}
 				}
@@ -464,6 +529,8 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					if (!getTextOf(opt).equals(""))
 						flag = true;
 				}
+				snooze(2000);
+				clickOn(AnamolyDetection_UI.span_Department);
 				if (flag)
 					extentTest.log(LogStatus.PASS, "BusinessImpact Right click should show options",
 							"BusinessImpact Right click is showing <B>[" + options + "]</B> options");
@@ -488,7 +555,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				rightClick(AnamolyDetection_UI.btn_BusniessImpact);
 				isDisplayed(AnamolyDetection_UI.contextMenu);
 				// int before = getElementsCount(AnamolyDetection_UI.contextMenu);
-				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
+				jsClickOn(AnamolyDetection_UI.navBtn_DrillThrough);
 				waitForPageToLoad();
 				int after = getElementsCount(AnamolyDetection_UI.contextMenu);
 				int subMenusize = getElementsCount(
@@ -616,6 +683,8 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		return false;
 	}
 
+
+
 	/*
 	 * Private methods
 	 */
@@ -733,7 +802,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			snooze(5000);
 			if (!getTextOf(AnamolyDetection_UI.chart_popupText).equals("")) {
 				mouseHover(graphPointer);
-				snooze(5000);
+				snooze(10000);
 				captureScreenShot();
 				flag = true;
 			} else {
@@ -744,5 +813,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 		return flag;
 	}
+
+
 
 }
