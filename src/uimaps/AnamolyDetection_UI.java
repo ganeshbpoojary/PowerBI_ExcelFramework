@@ -21,7 +21,7 @@ public class AnamolyDetection_UI {
 	public static final By drillThroughUnderstand=By.xpath("//*[contains(text(),'Drill through')]");
 	public static final By table_Understand=By.xpath("//div[@class='visual visual-tableEx allow-deferred-rendering']");
 
-	
+	public static final By dd_options=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
 	public static final By btn_Understand = By.xpath("//*[contains(@aria-label,'DrillDownMeasure Understand')]/..");
 	public static final By navBtn_DrillThrough = By.xpath("//button[@title='Drill through']");
 	public static final By navBtn_Understand = By.xpath("//button[@title='Understand']");
@@ -79,27 +79,11 @@ public class AnamolyDetection_UI {
 	public static final By card_OutlierTransactions_OutlierValue=By.xpath("(((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[5]/visual-container-group)[2]//*[@class='value'])[3]");
 	public static final By chart_HomePage=By.xpath("//*[@role='treeitem']");
 	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-
-	
-
-	
-	
-
-
+	public static final By span_Department=By.xpath("(//*[@class='value'])[3]");
+	public static final By span_SubCategory=By.xpath("(//*[@class='value'])[4]");
+	public static final By span_Region=By.xpath("(//*[@class='value'])[5]");
+	public static final By span_Category=By.xpath("(//*[@class='value'])[6]");
+	public static final By span_ObervationsFor=By.xpath("(//*[@class='value']//*)[8]");
 	
 }
 
