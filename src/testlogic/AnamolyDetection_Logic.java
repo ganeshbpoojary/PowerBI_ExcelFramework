@@ -394,7 +394,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	public void validateValueInDropDown_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
-				waitForPageToLoad();
 				checkDropDownForOption_Anamoly(filterOption);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -489,14 +488,14 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	private void clickonFilterandValidatethedata_Anamoly() {
 		// TODO Auto-generated method stub
 		waitForPageToLoad();
-		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@class='slicerCheckbox']"));
+		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@class='slicerItemContainer']"));
 		if (checkboxes.size() > 0) {
 			// driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
 			return;
 		}
 	}
 
-	private ArrayList<String> get_UnderstandTableContent_Anamoly() {
+	public ArrayList<String> get_UnderstandTableContent_Anamoly() {
 		boolean flag;
 		try {
 			ArrayList<String> tableContent = new ArrayList<String>();
@@ -519,6 +518,38 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public boolean verify_Importance_forecastability_Anamoly() {
+		
+		try {
+			int columnCnt = getElementsCount(AnamolyDetection_UI.Importance_forecastability_coloumnheader);
+			int rowCnt = getElementsCount(AnamolyDetection_UI.Importance_forecastability_rowheader);
+			if(columnCnt>0&&rowCnt>0)
+			{
+				return true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	
+public boolean verify_exploratory_overview_outlierStores_Anamoly() {
+		
+		try {
+			int number = getElementsCount(AnamolyDetection_UI.exploraryOutlierItemStores);
+			if(number>0&& isDisplayed(AnamolyDetection_UI.exploraryOutlierItemStoresText))
+			{
+				return true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 	private boolean clickOnPriority_Anamoly() {

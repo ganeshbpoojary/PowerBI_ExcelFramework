@@ -30,6 +30,15 @@ public class AnamolyDetection_UI {
 	public static final  By title_Understand = By.xpath("//div[text()='Understand']//ancestor::div[@class='contentTable']");
 	public static final  By title_Investigate = By.xpath("//div[text()='Investigate']//ancestor::div[@class='contentTable']");	
 	public static final  By table_UnderStand_ColumnCount = By.xpath("//div[@role='presentation']//div[@role='columnheader']");
+	public static final  By exploraryOutlierItemStores = By.xpath("//*[@class='y axis hideLinesOnAxis setFocusRing']//ancestor::div//*[@data-sub-selection-object-name=\"data-labels\"]");
+	public static final  By exploraryOutlierItemStoresText = By.xpath("//*[@data-sub-selection-display-name='Visual_Axis_Title']");
+	
+	
+	public static final  By Importance_forecastability_rowheader = By.xpath("//div[@class='rowHeaders']//ancestor::div[@class='pivotTableCellWrap cell-interactive tablixAlignCenter ']");
+	public static final  By Importance_forecastability_coloumnheader=By.xpath("(//div[@class='innerContainer']//ancestor::div[@class='columnHeaders'])[2]");
+	
+	
+	
 	public static final  By table_UnderStand_RowCount = By.xpath("(//div[@role='row'])");	
 	public static final  By span_OutlierInvestigationReportForItem = By.xpath("//span[contains(text(),'Outlier investigation report for Item')]");
 	public static final  By span_AndStore = By.xpath("//span[contains(text(),'and Store')]");	
