@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.text.ParseException;
 import com.relevantcodes.extentreports.LogStatus;
+import com.thoughtworks.selenium.webdriven.commands.GetText;
+
 import frameworkutils.WebDriverFactory;
 import uimaps.AnamolyDetection_UI;
 import uimaps.Supplier_UI;
@@ -136,6 +138,31 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				isDisplayed(AnamolyDetection_UI.span_AndStore);
 				String item = getTextOf(AnamolyDetection_UI.span_FirstITEM);
 				String location = getTextOf(AnamolyDetection_UI.span_FirstLOCATION);
+				if (!(item.equals("") && location.equals("")))
+					extentTest.log(LogStatus.PASS, "Report should appear", "Outlier Investigation Report For Item <B>"
+							+ item + "</B> and Store <B>" + location + "</B> is appearing");
+				else
+					extentTest.log(LogStatus.FAIL, "Report should appear", "Report is not  appear");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	/**
+	 * Validate Outlier Investigation Report
+	 * 
+	 **/
+	public void Validate_InterPlaySalesPricePromo_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				waitForElementTobeLocated(AnamolyDetection_UI.span_InterPlaySalesPricePromo);
+				isDisplayed(AnamolyDetection_UI.span_InterPlaySalesPricePromo);
+				isDisplayed(AnamolyDetection_UI.span_AndStore);
+				String item = getTextOf(AnamolyDetection_UI.span_ItemFromIndex);
+				String location = getTextOf(AnamolyDetection_UI.span_LocationFromIndex);
 				if (!(item.equals("") && location.equals("")))
 					extentTest.log(LogStatus.PASS, "Report should appear", "Outlier Investigation Report For Item <B>"
 							+ item + "</B> and Store <B>" + location + "</B> is appearing");
@@ -352,7 +379,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	}
 	
 	/**
-	 * Validate Outlier Investigation Report Date format
+	 * Validate Insights Has Observations Date format
 	 * 
 	 **/
 	public void Validate_KeyTrendInsightsHasObservations_Anamoly() {
@@ -361,32 +388,44 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			try {
 				waitForElementTobeLocated(AnamolyDetection_UI.tableHeader_Investigate_option);
 				int size = getElementsCount(AnamolyDetection_UI.tableHeader_Investigate_option);
-				for (int i = 1; i <= size; i++) {
+				for (int i = 1; i <= size-1; i++) {
 					By cellVal = By.xpath(
 							"((//div[@class='columnHeaders'])[2]//div[contains(@class,'pivotTableCellNoWrap cell-interactive')])["
 									+ i + "]");
-					String date = getTextOf(cellVal).trim();
-					if (date.equals("")) {
-						flag = false;
-					} else {
-						clickOn(cellVal);
-						waitForPageToLoad();
-						flag = true;
+					String YYYYMMDD = getTextOf(cellVal).trim();
+					String[] dateMomYr = YYYYMMDD.split("-");
+					String year = dateMomYr[0];
+					String month = dateMomYr[1];
+					String date = dateMomYr[2];					
+					if(month.substring(0,1).equals("0")) {
+						month = month.substring(1,2);
 					}
-				}
-				if (flag)
+					if(date.substring(0,1).equals("0")) {
+						  date = date.substring(1,2);						 
+					}					
+					String headerDate = month+"/"+date+"/"+year;
+					clickOn(cellVal);
+					waitForPageToLoad();
+					snooze(5000);					
+					String str = getTextOf(AnamolyDetection_UI.span_ObervationsFor);
+					String[] value = str.split(" ");
+//					System.out.println(value[2]);
+					if(headerDate.equals(value[2])) {
+						flag=true;
+					}
+				
+				}if (flag)
 					extentTest.log(LogStatus.PASS, "Date format validation", "Date is in - <B> YYYY-MM-DD </B> format");
 				else
 					extentTest.log(LogStatus.FAIL, "Date format validation",
 							"Date is not in - <B> YYYY-MM-DD </B> format");
-
-			} catch (Exception e) {
+			}catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	public void Validate_InsightsDropDown_DateFormat_Anamoly() {
+	public void Validate_InsightsDropDownHasDates_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			boolean flag = false;
 			try {
@@ -405,7 +444,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 						SimpleDateFormat sdfrmt = new SimpleDateFormat("yyyy-MM-dd");
 						sdfrmt.setLenient(false);
 						Date javaDate = sdfrmt.parse(date);
-						System.out.println(date + " is valid date format");
+//						System.out.println(date + " is valid date format");
 						flag = true;
 					}
 				}
@@ -732,7 +771,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			for (int col = 3; col <= columnCnt; col++) {
 				for (int row = 1; row <= rowCnt; row++) {
 					By cellValue = By.xpath("(//div[@role='row'])[" + row + "]//div[@aria-colindex='" + col + "']");
-					System.out.println(getTextOf(cellValue));
+//					System.out.println(getTextOf(cellValue));
 					if (getTextOf(cellValue).contains("%")) {
 						rightClick(cellValue);
 						flag = true;
