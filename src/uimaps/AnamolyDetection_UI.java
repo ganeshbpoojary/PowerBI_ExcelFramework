@@ -21,10 +21,6 @@ public class AnamolyDetection_UI {
 	public static final By drillThroughUnderstand=By.xpath("//*[contains(text(),'Drill through')]");
 	public static final By table_Understand=By.xpath("//div[@class='visual visual-tableEx allow-deferred-rendering']");
 
-//<<<<<<< main2
-	
-//=======
-//>>>>>>> master
 	public static final By chart_OutlierInvestigation_option=By.xpath("((//*[@class='lineChartSVG']//*[@role='listbox'])[1]//*[@class='interactivity-line sub-selectable'])[2]");
 	public static final By chart_SeasonalityTrendResidual  = By.xpath("((//span[contains(text(),'Trend and Residual')]//ancestor::*[@class='ng-star-inserted'])[4]//*[@class='lineChartSVG']//*[@role='listbox'])[2]");	
 	public static final By chart_SeasonalityTrendResidual_option=By.xpath("((//*[@class='lineChartSVG']//*[@role='listbox'])[2]//*[@class='interactivity-line sub-selectable'])[2]");
@@ -101,7 +97,6 @@ public class AnamolyDetection_UI {
 	public static final By contextMenu = By.xpath("//*[@role='menu']");	
 	public static final By btn_BusniessImpact = By.xpath("(//div[contains(@class,'pivotTableCellNoWrap')])[4]/..");	
 	public static final By chart_OutlierInvestigation  = By.xpath("((//span[contains(text(),'Trend and Residual')]//ancestor::*[@class='ng-star-inserted'])[4]//*[@class='lineChartSVG']//*[@role='listbox'])[1]");	
-  
   
 	
 }

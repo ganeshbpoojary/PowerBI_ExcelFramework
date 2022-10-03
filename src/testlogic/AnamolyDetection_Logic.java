@@ -779,11 +779,10 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	}
 	
 	
-public boolean verify_exploratory_overview_outlierStores_Anamoly() {
-		
+	public boolean verify_exploratory_overview_outlierStores_Anamoly() {		
 		try {
 			int number = getElementsCount(AnamolyDetection_UI.exploraryOutlierItemStores);
-			if(number>0&& isDisplayed(AnamolyDetection_UI.exploraryOutlierItemStoresText))
+			if(number>0 && isDisplayed(AnamolyDetection_UI.exploraryOutlierItemStoresText))
 			{
 				return true;
 			}
