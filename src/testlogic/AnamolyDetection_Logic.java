@@ -1,4 +1,5 @@
 package testlogic;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.text.ParseException;
 import com.relevantcodes.extentreports.LogStatus;
 import frameworkutils.WebDriverFactory;
 import uimaps.AnamolyDetection_UI;
+import uimaps.AssortInsight_UI;
 
 public class AnamolyDetection_Logic extends WebDriverFactory {
 
@@ -41,10 +43,11 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_Understand);
 				clickOn(AnamolyDetection_UI.navBtn_Understand);
 				waitForElementTobeLocated(AnamolyDetection_UI.title_Understand);
-				if(isDisplayed(AnamolyDetection_UI.title_Understand))
+				if (isDisplayed(AnamolyDetection_UI.title_Understand))
 					extentTest.log(LogStatus.PASS, "Navigates to Understand Page", "Navigated to Understand Page");
 				else
-					extentTest.log(LogStatus.FAIL, "Navigates to Understand Page", "Did not navigate to Understand Page");
+					extentTest.log(LogStatus.FAIL, "Navigates to Understand Page",
+							"Did not navigate to Understand Page");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -81,8 +84,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	
 
 	/**
 	 * Navigates to Price Promotions PLC Inventory Page
@@ -146,6 +147,228 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	}
 
 	/**
+	 * Validate Outlier Item Stores Card
+	 * 
+	 **/
+	public void Validate_Card_OutlierItemStores_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				isDisplayed(AnamolyDetection_UI.card_OutlierItemStores_MainText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierItemStores_ItemStoresText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierItemStores_OutlierText);
+				String mainValue = getTextOf(AnamolyDetection_UI.card_OutlierItemStores_MainValue);
+				String itemStoresValue = getTextOf(AnamolyDetection_UI.card_OutlierItemStores_ItemStoresValue);
+				String outlierValue = getTextOf(AnamolyDetection_UI.card_OutlierItemStores_OutlierValue);
+				if (!(mainValue.equals("0") && itemStoresValue.equals("0")))
+					extentTest.log(LogStatus.PASS, "Outlier Item Store should have Non Zero value",
+							"Outlier Item Store is having Non Zero value");
+				else
+					extentTest.log(LogStatus.PASS, "Outlier Item Store should have Non Zero value",
+							"Outlier Item Store is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Outlier Item Stores Card
+	 * 
+	 **/
+	public void Validate_Card_OutlierUnits_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				isDisplayed(AnamolyDetection_UI.card_OutlierUnits_MainText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierUnits_OutlierText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierUnits_UnitsText);
+				String mainValue = getTextOf(AnamolyDetection_UI.card_OutlierUnits_MainValue);
+				String OutlierUnitsValue = getTextOf(AnamolyDetection_UI.card_OutlierUnits_UnitsValue);
+				String outlierValue = getTextOf(AnamolyDetection_UI.card_OutlierUnits_OutlierValue);
+				if (!(mainValue.equals("0") && OutlierUnitsValue.equals("0")))
+					extentTest.log(LogStatus.PASS, "Outlier Units should have Non Zero value",
+							"Outlier Units is having Non Zero value");
+				else
+					extentTest.log(LogStatus.PASS, "Outlier Units should have Non Zero value",
+							"Outlier Units is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Outlier Sales Card
+	 * 
+	 **/
+	public void Validate_Card_OutlierSales_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				isDisplayed(AnamolyDetection_UI.card_OutlierSales_MainText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierSales_SalesText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierSales_OutlierText);
+				String mainValue = getTextOf(AnamolyDetection_UI.card_OutlierSales_MainValue);
+				String OutlierSalesValue = getTextOf(AnamolyDetection_UI.card_OutlierSales_SalesValue);
+				String outlierValue = getTextOf(AnamolyDetection_UI.card_OutlierSales_OutlierValue);
+				if (!(mainValue.equals("0") && OutlierSalesValue.equals("0")))
+					extentTest.log(LogStatus.PASS, "Outlier Sales should have Non Zero value",
+							"Outlier Sales is having Non Zero value");
+				else
+					extentTest.log(LogStatus.PASS, "Outlier Sales should have Non Zero value",
+							"Outlier Sales is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Outlier Transactions
+	 * 
+	 **/
+	public void Validate_Card_OutlierTransactions_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_MainText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_OutlierText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_TransactionsText);
+				String mainValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_MainValue);
+				String transactionsValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_TransactionsValue);
+				String outlierValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_OutlierValue);
+				if (!(mainValue.equals("0") && transactionsValue.equals("0")))
+					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
+							"Outlier Transactions is having Non Zero value");
+				else
+					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
+							"Outlier Transactions is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	//Verify understand homepage of outlierItemStores
+	public void Validate_Understand_OutlierItemStores_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				isDisplayed(AnamolyDetection_UI.understand_OutlierItemStores_MainText);
+				isDisplayed(AnamolyDetection_UI.understand_OutlierItemStores_ItemStoresText);
+				isDisplayed(AnamolyDetection_UI.understand_OutlierItemStores_OutlierText);
+				String mainValue = getTextOf(AnamolyDetection_UI.understand_OutlierItemStores_MainValue);
+				String itemStoresValue = getTextOf(AnamolyDetection_UI.understand_OutlierItemStores_ItemStoresValue);
+								if (!(mainValue.equals("0") && itemStoresValue.equals("0")))
+					extentTest.log(LogStatus.PASS, " understand Outlier Item Store should have Non Zero value",
+							"Outlier Item Store is having Non Zero value");
+				else
+					extentTest.log(LogStatus.PASS, " understand Outlier Item Store should have Non Zero value",
+							"Outlier Item Store is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	//Verify understand homepage of outlierUnits
+	public void Validate_Undesrstand_OutlierUnits_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				isDisplayed(AnamolyDetection_UI.understand_outlier_MainText);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_ItemStoresText);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_OutlierText);
+				String mainValue = getTextOf(AnamolyDetection_UI.understand_outlier_MainValue);
+				String OutlierUnitsValue = getTextOf(AnamolyDetection_UI.understand_outlier_ItemStoresValue);
+								if (!(mainValue.equals("0") && OutlierUnitsValue.equals("0")))
+					extentTest.log(LogStatus.PASS, "understand Outlier Units should have Non Zero value",
+							"Outlier Units is having Non Zero value");
+				else
+					extentTest.log(LogStatus.PASS, " understand Outlier Units should have Non Zero value",
+							"Outlier Units is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	//Verify understand homepage of OutlierSales
+	public void Validate_Understand_OutlierSales_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				isDisplayed(AnamolyDetection_UI.understand_outlier_sales_MainText);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_sales_ItemStoresText);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_sales_ItemStoresValue);
+				String mainValue = getTextOf(AnamolyDetection_UI.understand_outlier_sales_MainValue);
+				String OutlierSalesValue = getTextOf(AnamolyDetection_UI.understand_outlier_sales_ItemStoresValue);
+								if (!(mainValue.equals("0") && OutlierSalesValue.equals("0")))
+					extentTest.log(LogStatus.PASS, " understand Outlier Sales should have Non Zero value",
+							"Outlier Sales is having Non Zero value");
+				else
+					extentTest.log(LogStatus.PASS, " understand Outlier Sales should have Non Zero value",
+							"Outlier Sales is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	//Verify understand homepage of OutlierTransactions
+	public void Validate_Understand_OutlierTransactions_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_MainText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_OutlierText);
+				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_TransactionsText);
+				String mainValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_MainValue);
+				String transactionsValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_TransactionsValue);
+				String outlierValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_OutlierValue);
+				if (!(mainValue.equals("0") && transactionsValue.equals("0")))
+					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
+							"Outlier Transactions is having Non Zero value");
+				else
+					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
+							"Outlier Transactions is having Zero value");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	public void Validate_HomePageTreeChartHasData_Anamoly() {
+		synchronized (AnamolyDetection_Logic.class) {
+			boolean flag = false;
+			try {
+				int numOfChart = getElementsCount(AnamolyDetection_UI.chart_HomePage);
+				for (int i = 1; i <= numOfChart; i++) {
+					By elm = By.xpath("(//*[@role='treeitem'])[" + i + "]");
+					isDisplayed(elm);
+					actionClick(elm);
+//					mouseHover(elm);
+					waitForPageToLoad();
+					snooze(5000);
+					if (!getTextOf(AnamolyDetection_UI.chart_popupText).equals("")) {
+						mouseHover(elm);
+						snooze(5000);
+						captureScreenShot();
+						flag = true;
+					}
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Chart should have data",
+							"Chart is having data");
+				else
+					extentTest.log(LogStatus.FAIL, "Chart should have data","Chart is not having data");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
 	 * Validate Outlier Investigation Report Date format
 	 * 
 	 **/
@@ -153,7 +376,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		synchronized (AnamolyDetection_Logic.class) {
 			boolean flag = false;
 			try {
-			waitForElementTobeLocated(AnamolyDetection_UI.tableHeader_Investigate_option);			
+				waitForElementTobeLocated(AnamolyDetection_UI.tableHeader_Investigate_option);
 				int size = getElementsCount(AnamolyDetection_UI.tableHeader_Investigate_option);
 				for (int i = 1; i <= size; i++) {
 					By cellVal = By.xpath(
@@ -181,7 +404,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
 
 	public void Validate_InsightsDropDown_DateFormat_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
@@ -217,8 +439,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
-
 
 	/**
 	 * Validate Seasonality Chart Has Data
@@ -279,8 +499,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
-
 
 	/**
 	 * Validate Outlier Investigation Report Date format
@@ -448,6 +666,25 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
+	
+	public void clickonFilterandchecktheSearchButton_Anamoly()
+	{
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				 waitForPageToLoad();
+				 isDisplayed(AnamolyDetection_UI.anamolySearch);
+				 extentTest.log(LogStatus.PASS, "anamoly Search is enabled", "anamoly Search  has Data");
+			
+			}
+			catch (Exception e) {
+				// TODO Auto-generated catch block
+				 extentTest.log(LogStatus.FAIL, "anamoly Search  disabled", "anamoly Search  has no Data");
+				e.printStackTrace();
+			}
+		}
+	    
+	   
+	    }
 
 	public void validate_DropDownHasMultiSelect_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
@@ -641,7 +878,5 @@ public boolean verify_exploratory_overview_outlierStores_Anamoly() {
 		}
 		return flag;
 	}
-
-
 
 }
