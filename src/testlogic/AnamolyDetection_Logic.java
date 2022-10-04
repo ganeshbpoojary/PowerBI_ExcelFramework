@@ -308,7 +308,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
 	//Verify understand homepage of outlierItemStores
 	public void Validate_Understand_OutlierItemStores_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
@@ -336,11 +335,11 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				isDisplayed(AnamolyDetection_UI.understand_outlier_MainText);
-				isDisplayed(AnamolyDetection_UI.understand_outlier_ItemStoresText);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_unitsText);
 				isDisplayed(AnamolyDetection_UI.understand_outlier_OutlierText);
 				String mainValue = getTextOf(AnamolyDetection_UI.understand_outlier_MainValue);
-				String OutlierUnitsValue = getTextOf(AnamolyDetection_UI.understand_outlier_ItemStoresValue);
-								if (!(mainValue.equals("0") && OutlierUnitsValue.equals("0")))
+				String OutlierUnitsValue = getTextOf(AnamolyDetection_UI.understand_outlier_unitsValue);
+												if (!(mainValue.equals("0") && OutlierUnitsValue.equals("0")))
 					extentTest.log(LogStatus.PASS, "understand Outlier Units should have Non Zero value",
 							"Outlier Units is having Non Zero value");
 				else
@@ -357,10 +356,10 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
 				isDisplayed(AnamolyDetection_UI.understand_outlier_sales_MainText);
-				isDisplayed(AnamolyDetection_UI.understand_outlier_sales_ItemStoresText);
-				isDisplayed(AnamolyDetection_UI.understand_outlier_sales_ItemStoresValue);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_sales_salesText);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_sales_salesValue);
 				String mainValue = getTextOf(AnamolyDetection_UI.understand_outlier_sales_MainValue);
-				String OutlierSalesValue = getTextOf(AnamolyDetection_UI.understand_outlier_sales_ItemStoresValue);
+				String OutlierSalesValue = getTextOf(AnamolyDetection_UI.understand_outlier_sales_salesValue);
 								if (!(mainValue.equals("0") && OutlierSalesValue.equals("0")))
 					extentTest.log(LogStatus.PASS, " understand Outlier Sales should have Non Zero value",
 							"Outlier Sales is having Non Zero value");
@@ -378,14 +377,14 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	public void Validate_Understand_OutlierTransactions_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
-				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_MainText);
-				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_OutlierText);
-				isDisplayed(AnamolyDetection_UI.card_OutlierTransactions_TransactionsText);
-				String mainValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_MainValue);
+
+				isDisplayed(AnamolyDetection_UI.understand_outlier_transaction_MainText);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_transactionsOutlierText);
+				isDisplayed(AnamolyDetection_UI.understand_outlier_transactionsValue);
+				String mainValue = getTextOf(AnamolyDetection_UI.understand_outlier_transaction_MainValue);
 				String transactionsValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_TransactionsValue);
-				String outlierValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_OutlierValue);
-				if (!(mainValue.equals("0") && transactionsValue.equals("0")))
-					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
+								if (!(mainValue.equals("0") && transactionsValue.equals("0")))
+									extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
 							"Outlier Transactions is having Non Zero value");
 				else
 					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",

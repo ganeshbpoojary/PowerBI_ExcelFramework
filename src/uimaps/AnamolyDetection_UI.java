@@ -68,25 +68,25 @@ public class AnamolyDetection_UI {
 	//understand outlier units
 	public static final By understand_outlier_MainText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[1]//span[text()='Outlier Units'])");
 	public static final By understand_outlier_MainValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[1]//*[@class='value'])[1]");
-	public static final By understand_outlier_ItemStoresText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[1]//span[text()='Units'])");
-	public static final By understand_outlier_ItemStoresValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[1]//*[@class='value'])[3]");
+	public static final By understand_outlier_unitsText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[1]//span[text()='Units'])");
+	public static final By understand_outlier_unitsValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[1]//*[@class='value'])[3]");
 	public static final By understand_outlier_OutlierText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[1]//span[text()='Outlier %'])");
 	
 	
 	//understand outlier_sales
 	public static final By understand_outlier_sales_MainText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[4]//span[text()='Outlier Sales ($)'])");
 	public static final By understand_outlier_sales_MainValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[4]//*[@class='value'])[1]");
-	public static final By understand_outlier_sales_ItemStoresText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[4]//span[text()='Sales ($)'])");
-	public static final By understand_outlier_sales_ItemStoresValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[4]//*[@class='value'])[3]");
+	public static final By understand_outlier_sales_salesText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[4]//span[text()='Sales ($)'])");
+	public static final By understand_outlier_sales_salesValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[4]//*[@class='value'])[3]");
 	public static final By understand_outlier_sales_OutlierText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[4]//span[text()='Outlier %'])");
 	
 	
 	//understand outlier_transaction
-	public static final By understand_outlier_transaction_sales_MainText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//span[text()='Outlier Transactions'])");
-	public static final By understand_outlier_transaction_sales_MainValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//*[@class='value'])[1]");
-	public static final By understand_outlier_transaction_sales_ItemStoresText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//span[text()='Transactions'])");
-	public static final By understand_outlier_transaction_sales_ItemStoresValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//*[@class='value'])[3]");
-	public static final By understand_outlier_transaction_sales_OutlierText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//span[text()='Outlier %'])");
+	public static final By understand_outlier_transaction_MainText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//span[text()='Outlier Transactions'])");
+	public static final By understand_outlier_transaction_MainValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//*[@class='value'])[1]");
+	public static final By understand_outlier_transactionsText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//span[text()='Transactions'])");
+	public static final By understand_outlier_transactionsValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//*[@class='value'])[3]");
+	public static final By understand_outlier_transactionsOutlierText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//span[text()='Outlier %'])");
 	
 	
 	
