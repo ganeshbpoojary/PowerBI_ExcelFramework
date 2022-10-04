@@ -19,6 +19,7 @@ import com.thoughtworks.selenium.webdriven.commands.GetText;
 
 import frameworkutils.WebDriverFactory;
 import uimaps.AnamolyDetection_UI;
+
 import uimaps.Supplier_UI;
 
 public class AnamolyDetection_Logic extends WebDriverFactory {
@@ -307,8 +308,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
-
 	//Verify understand homepage of outlierItemStores
 	public void Validate_Understand_OutlierItemStores_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
@@ -340,7 +339,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				isDisplayed(AnamolyDetection_UI.understand_outlier_OutlierText);
 				String mainValue = getTextOf(AnamolyDetection_UI.understand_outlier_MainValue);
 				String OutlierUnitsValue = getTextOf(AnamolyDetection_UI.understand_outlier_unitsValue);
-								if (!(mainValue.equals("0") && OutlierUnitsValue.equals("0")))
+												if (!(mainValue.equals("0") && OutlierUnitsValue.equals("0")))
 					extentTest.log(LogStatus.PASS, "understand Outlier Units should have Non Zero value",
 							"Outlier Units is having Non Zero value");
 				else
@@ -378,13 +377,14 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	public void Validate_Understand_OutlierTransactions_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
+
 				isDisplayed(AnamolyDetection_UI.understand_outlier_transaction_MainText);
 				isDisplayed(AnamolyDetection_UI.understand_outlier_transactionsOutlierText);
 				isDisplayed(AnamolyDetection_UI.understand_outlier_transactionsValue);
 				String mainValue = getTextOf(AnamolyDetection_UI.understand_outlier_transaction_MainValue);
 				String transactionsValue = getTextOf(AnamolyDetection_UI.card_OutlierTransactions_TransactionsValue);
 								if (!(mainValue.equals("0") && transactionsValue.equals("0")))
-					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
+									extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
 							"Outlier Transactions is having Non Zero value");
 				else
 					extentTest.log(LogStatus.PASS, "Outlier Transactions should have Non Zero value",
@@ -395,7 +395,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
 	public void Validate_HomePageTreeChartHasData_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			boolean flag = false;
@@ -772,6 +771,25 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
+	
+	public void clickonFilterandchecktheSearchButton_Anamoly()
+	{
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				 waitForPageToLoad();
+				 isDisplayed(AnamolyDetection_UI.anamolySearch);
+				 extentTest.log(LogStatus.PASS, "anamoly Search is enabled", "anamoly Search  has Data");
+			
+			}
+			catch (Exception e) {
+				// TODO Auto-generated catch block
+				 extentTest.log(LogStatus.FAIL, "anamoly Search  disabled", "anamoly Search  has no Data");
+				e.printStackTrace();
+			}
+		}
+	    
+	   
+	    }
 
 	public void validate_DropDownHasMultiSelect_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
