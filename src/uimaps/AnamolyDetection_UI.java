@@ -88,13 +88,6 @@ public class AnamolyDetection_UI {
 	public static final By understand_outlier_transactionsValue=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//*[@class='value'])[3]");
 	public static final By understand_outlier_transactionsOutlierText=By.xpath("((((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])))[7]/visual-container-group[2]//span[text()='Outlier %'])");
 	
-	
-	
-	
-	
-	
-	
-	
 
 	public static final By span_Department=By.xpath("(//*[@class='value'])[3]");
 	public static final By span_SubCategory=By.xpath("(//*[@class='value'])[4]");

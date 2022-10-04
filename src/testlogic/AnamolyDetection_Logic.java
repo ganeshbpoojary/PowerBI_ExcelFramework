@@ -150,8 +150,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	
+
 	/**
 	 * Validate Outlier Investigation Report
 	 * 
@@ -217,8 +216,8 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				String spanSubCategory = getTextOf(AnamolyDetection_UI.span_SubCategory);
 				waitForElementTobeLocated(AnamolyDetection_UI.span_Region);
 				String spanRegion = getTextOf(AnamolyDetection_UI.span_Region);
-				if (!(spanDepartment.equals("") && spanCategory.equals("") && spanSubCategory.equals("")
-						&& spanRegion.equals("")))
+				if (validate_DropDownHasData_AD() && !(spanDepartment.equals("") && spanCategory.equals("")
+						&& spanSubCategory.equals("") && spanRegion.equals("")))
 					extentTest.log(LogStatus.PASS, "Department, Category, Sub Category, Region should show value",
 							"Department, Category, Sub Category, Region is showing value");
 				else
@@ -308,7 +307,10 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	//Verify understand homepage of outlierItemStores
+
+
+	// Verify understand homepage of outlierItemStores
+
 	public void Validate_Understand_OutlierItemStores_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
@@ -317,7 +319,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				isDisplayed(AnamolyDetection_UI.understand_OutlierItemStores_OutlierText);
 				String mainValue = getTextOf(AnamolyDetection_UI.understand_OutlierItemStores_MainValue);
 				String itemStoresValue = getTextOf(AnamolyDetection_UI.understand_OutlierItemStores_ItemStoresValue);
-								if (!(mainValue.equals("0") && itemStoresValue.equals("0")))
+				if (!(mainValue.equals("0") && itemStoresValue.equals("0")))
 					extentTest.log(LogStatus.PASS, " understand Outlier Item Store should have Non Zero value",
 							"Outlier Item Store is having Non Zero value");
 				else
@@ -373,7 +375,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 	}
 
-	//Verify understand homepage of OutlierTransactions
+	// Verify understand homepage of OutlierTransactions
 	public void Validate_Understand_OutlierTransactions_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
@@ -395,6 +397,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
+
 	public void Validate_HomePageTreeChartHasData_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			boolean flag = false;
@@ -460,7 +463,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	/**
 	 * Validate Insights Has Observations Date format
 	 * 
@@ -471,7 +474,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			try {
 				waitForElementTobeLocated(AnamolyDetection_UI.tableHeader_Investigate_option);
 				int size = getElementsCount(AnamolyDetection_UI.tableHeader_Investigate_option);
-				for (int i = 1; i <= size-1; i++) {
+				for (int i = 1; i <= size - 1; i++) {
 					By cellVal = By.xpath(
 							"((//div[@class='columnHeaders'])[2]//div[contains(@class,'pivotTableCellNoWrap cell-interactive')])["
 									+ i + "]");
@@ -479,30 +482,31 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					String[] dateMomYr = YYYYMMDD.split("-");
 					String year = dateMomYr[0];
 					String month = dateMomYr[1];
-					String date = dateMomYr[2];					
-					if(month.substring(0,1).equals("0")) {
-						month = month.substring(1,2);
+					String date = dateMomYr[2];
+					if (month.substring(0, 1).equals("0")) {
+						month = month.substring(1, 2);
 					}
-					if(date.substring(0,1).equals("0")) {
-						  date = date.substring(1,2);						 
-					}					
-					String headerDate = month+"/"+date+"/"+year;
+					if (date.substring(0, 1).equals("0")) {
+						date = date.substring(1, 2);
+					}
+					String headerDate = month + "/" + date + "/" + year;
 					clickOn(cellVal);
 					waitForPageToLoad();
-					snooze(5000);					
+					snooze(5000);
 					String str = getTextOf(AnamolyDetection_UI.span_ObervationsFor);
 					String[] value = str.split(" ");
 //					System.out.println(value[2]);
-					if(headerDate.equals(value[2])) {
-						flag=true;
+					if (headerDate.equals(value[2])) {
+						flag = true;
 					}
-				
-				}if (flag)
+
+				}
+				if (flag)
 					extentTest.log(LogStatus.PASS, "Date format validation", "Date is in - <B> YYYY-MM-DD </B> format");
 				else
 					extentTest.log(LogStatus.FAIL, "Date format validation",
 							"Date is not in - <B> YYYY-MM-DD </B> format");
-			}catch (Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -771,25 +775,22 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	public void clickonFilterandchecktheSearchButton_Anamoly()
-	{
+
+	public void clickonFilterandchecktheSearchButton_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
-				 waitForPageToLoad();
-				 isDisplayed(AnamolyDetection_UI.anamolySearch);
-				 extentTest.log(LogStatus.PASS, "anamoly Search is enabled", "anamoly Search  has Data");
-			
-			}
-			catch (Exception e) {
+				waitForPageToLoad();
+				isDisplayed(AnamolyDetection_UI.anamolySearch);
+				extentTest.log(LogStatus.PASS, "anamoly Search is enabled", "anamoly Search  has Data");
+
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				 extentTest.log(LogStatus.FAIL, "anamoly Search  disabled", "anamoly Search  has no Data");
+				extentTest.log(LogStatus.FAIL, "anamoly Search  disabled", "anamoly Search  has no Data");
 				e.printStackTrace();
 			}
 		}
-	    
-	   
-	    }
+
+	}
 
 	public void validate_DropDownHasMultiSelect_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
@@ -822,8 +823,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 		return false;
 	}
-
-
 
 	/*
 	 * Private methods
@@ -863,32 +862,29 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 		return null;
 	}
-	
+
 	public boolean verify_Importance_forecastability_Anamoly() {
-		
+
 		try {
 			int columnCnt = getElementsCount(AnamolyDetection_UI.Importance_forecastability_coloumnheader);
 			int rowCnt = getElementsCount(AnamolyDetection_UI.Importance_forecastability_rowheader);
-			if(columnCnt>0&&rowCnt>0)
-			{
+			if (columnCnt > 0 && rowCnt > 0) {
 				return true;
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
-	
-	
-	public boolean verify_exploratory_overview_outlierStores_Anamoly() {		
+
+	public boolean verify_exploratory_overview_outlierStores_Anamoly() {
 		try {
 			int number = getElementsCount(AnamolyDetection_UI.exploraryOutlierItemStores);
-			if(number>0 && isDisplayed(AnamolyDetection_UI.exploraryOutlierItemStoresText))
-			{
+			if (number > 0 && isDisplayed(AnamolyDetection_UI.exploraryOutlierItemStoresText)) {
 				return true;
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -985,6 +981,38 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		return flag;
 	}
 
+	public boolean validate_DropDownHasData_AD() {
+		int rows = 0;
+		boolean flag = false;
+		try {
+			String[] filters = filterName.split("\\|");
+			List<String> itemList = Arrays.asList(filters);
+			for (int i = 0; i < itemList.size(); i++) {
+				String filter = itemList.get(i).trim();
+				By elm = By.xpath("//*[@title='" + filter + "']/../../../..//div[@role='combobox']");
+				waitForElementTobeClickable(elm);
+				clickOn(elm);
+				rows = getFilterDropDownRowCount_AD();
+				clickOn(elm);
+				if (rows > 0)
+					flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
 
+	private int getFilterDropDownRowCount_AD() {
+		waitForElementTobeLocated(AnamolyDetection_UI.dd_options);
+		try {
+			List<WebElement> rows = driver.findElements(AnamolyDetection_UI.dd_options);
+			int size = rows.size();
+			extentTest.log(LogStatus.INFO, "getDropDownRowCount: ", "Number of rows is- <B>[" + size + "]</B>");
+			return size;
+		} catch (NoSuchElementException nsex) {
+			return -1;
+		}
+	}
 
 }
