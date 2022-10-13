@@ -96,14 +96,14 @@ public class AnamolyDetection_UI {
 	public static final By span_ObervationsFor=By.xpath("(//*[@class='value']//*)[8]");
 
 
-	public static final  By exploraryOutlierItemStores = By.xpath("//*[@class='y axis hideLinesOnAxis setFocusRing']//ancestor::div//*[@data-sub-selection-object-name=\"data-labels\"]");
+	public static final  By exploraryOutlierItemStores = By.xpath("//*[@class='y axis hideLinesOnAxis setFocusRing']//ancestor::div//*[@data-sub-selection-object-name='data-labels']");
 	public static final  By exploraryOutlierItemStoresText = By.xpath("//*[@data-sub-selection-display-name='Visual_Axis_Title']");
 	
 	
 	public static final  By Importance_forecastability_rowheader = By.xpath("//div[@class='rowHeaders']//ancestor::div[@class='pivotTableCellWrap cell-interactive tablixAlignCenter ']");
 	public static final  By Importance_forecastability_coloumnheader=By.xpath("(//div[@class='innerContainer']//ancestor::div[@class='columnHeaders'])[2]");
 
-	public static final By dd_options=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
+	public static final By dd_options=By.xpath("//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
 	public static final By btn_Understand = By.xpath("//*[contains(@aria-label,'DrillDownMeasure Understand')]/..");
 	public static final By navBtn_DrillThrough = By.xpath("//button[@title='Drill through']");
 	public static final By navBtn_Understand = By.xpath("//button[@title='Understand']");
@@ -124,6 +124,7 @@ public class AnamolyDetection_UI {
 	
 	public static final By tableHeader_Investigate_option = By.xpath("(//div[@class='columnHeaders'])[2]//div[contains(@class,'pivotTableCellNoWrap cell-interactive')]");
 	public static final By table_OutlierInvestigation_option = By.xpath("((//div[@class='bodyCells'])[2]//div[contains(@class,'pivotTableCellWrap')])");
+	public static final By table_InterPlaySales_option = By.xpath("((//div[@class='bodyCells'])[1]//div[contains(@class,'pivotTableCellWrap')])");
 	public static final By contextMenu_Option = By.xpath("//*[@role='menu']//button[@role='menuitem']");
 	public static final By contextMenu = By.xpath("//*[@role='menu']");	
 	public static final By btn_BusniessImpact = By.xpath("(//div[contains(@class,'pivotTableCellNoWrap')])[4]/..");	
