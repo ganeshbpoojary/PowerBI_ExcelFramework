@@ -1,39 +1,19 @@
 package testlogic;
 
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.poi.util.SystemOutLogger;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.relevantcodes.extentreports.LogStatus;
-import com.thoughtworks.selenium.webdriven.commands.GetText;
-import com.thoughtworks.selenium.webdriven.commands.IsVisible;
-
-import frameworkutils.DataBook;
 import frameworkutils.WebDriverFactory;
-import uimaps.APPM_UI;
-import uimaps.AnamolyDetection_UI;
 import uimaps.RPCC_Demand_UI;
-import uimaps.RPCC_Demand_UI;
-import uimaps.Shopper_UI;
-import uimaps.Supplier_UI;
 
 public class RPCC_Demand_Logic extends WebDriverFactory {
 
@@ -500,10 +480,13 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
-	public void goto_UnderStood_OutOfStock_RPCC_Demand() {
+	/**
+	 * Navigates to UnderStand OutOfStock Page
+	 * 
+	 **/
+	public void goto_UnderStand_OutOfStock_RPCC_Demand() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
-				Robot robot = new Robot();
 				boolean flag = false;
 				for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrends); i++) {
 					By bar = By.xpath(
@@ -538,12 +521,58 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 					extentTest.log(LogStatus.FAIL, "Navigate to Understand Out of Stock Page",
 							"Not able to navugate to Out of Stock Page");
 			} catch (NoSuchElementException e) {
-			} catch (AWTException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			} 
 		}
 	}
+	
+	/**
+	 * Navigates to UnderStand UnderStock Page
+	 * 
+	 **/
+	public void goto_UnderStand_UnderStock_RPCC_Demand() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				boolean flag = false;
+				for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrends); i++) {
+					By bar = By.xpath(
+							"((//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing'])["
+									+ i + "]");
+					if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
+						rightClick(bar);
+						isDisplayed(RPCC_Demand_UI.contextMenu);
+						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+						for (int j = 1; j <= options; j++) {
+							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+							if (getTextOf(opt).equals("Drill through")) {
+								clickOn(opt);
+								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_ReviewUnderStock);
+								clickOn(RPCC_Demand_UI.navBtn_ReviewUnderStock);
+								waitForElementTobeLocated(RPCC_Demand_UI.title_UnderstandUnderStock);
+								flag = true;
+								break;
+							}
+						}
+						if (!flag) {
+							actionClick(RPCC_Demand_UI.title_Understand);
+						}
+					}
+					if(flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Navigate to Understand UnderStock Page",
+							"Navigated to Understand Under Stock Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Navigate to Understand UnderStock Page",
+							"Not able to navigate to Under Stock Page");
+			} catch (NoSuchElementException e) {
+				e.printStackTrace();
+			} 
+		}
+	}
+
+	
 
 	/*************************************************************************************************************************************/
 
@@ -587,9 +616,9 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	}
 
 	private int getFilterDropDownRowCount_Shooper() {
-		waitForElementTobeLocated(Shopper_UI.dd_options);
+		waitForElementTobeLocated(RPCC_Demand_UI.dd_options);
 		try {
-			List<WebElement> rows = driver.findElements(Shopper_UI.dd_options);
+			List<WebElement> rows = driver.findElements(RPCC_Demand_UI.dd_options);
 			int size = rows.size();
 			extentTest.log(LogStatus.INFO, "getDropDownRowCount: ", "Number of rows is- <B>[" + size + "]</B>");
 			return size;
