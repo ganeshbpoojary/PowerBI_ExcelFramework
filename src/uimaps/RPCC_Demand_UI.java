@@ -21,6 +21,11 @@ public class RPCC_Demand_UI {
 	public static final By span_LastUpdated = By.xpath("(//*[@class='value'])[1]");
 	public static final By chart_ForecastTrend = By.xpath("//*[contains(text(),'Forecast Trend')]//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid']//*[@class='mainGraphicsContext setFocusRing']//*[@class='column sub-selectable setFocusRing']");
 	public static final By chart_popupText=By.xpath("//div[@id='screen_reader_alert_assertive']");	
+	public static final By dd_options=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
+	public static final By dd_SelectAll_option=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
+	public static final By treeMap_HomePage_Options=By.xpath("(//*[contains(text(),'MAPE (%) across product (left) and location (right) hierarchies')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[1]//*[@role='treeitem']");
+	public static final By dd_OptionWindow=By.xpath("//div[@class='slicerBody']");
+
 	
 	//Card MAPE
 	public static final By card_MAPE = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[3]/visual-container)[1]//*[text()='MAPE']");
