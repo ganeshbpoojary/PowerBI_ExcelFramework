@@ -11,8 +11,17 @@ public class RPCC_Demand_UI {
 	public static final By link_Title = By.xpath("(//*[@class='tileSVG'])[1]");
 	public static final By navBtn_DrillThrough = By.xpath("//button[@title='Drill through']");
 	public static final By navBtn_Understand = By.xpath("//button[@title='Understand']");
+	public static final By navBtn_ReviewOutOfStock = By.xpath("//button[contains(@title,'Review Out-Of-Stock')]");
+	public static final By navBtn_ReviewUnderStock = By.xpath("//button[contains(@title,'Review Under Stock')]");
+	public static final By navBtn_ReviewExcessStock = By.xpath("//button[contains(@title,'Review Excess Stock')]");
+	public static final By navBtn_ReviewOrderVariance = By.xpath("//button[contains(@title,'Review Order Variance')]");
+	public static final By chart_ForecastTrends = By.xpath("(//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing']");
+	
+	
 	public static final By title_LuminateReplenishmentDemandInsights = By.xpath("//span[contains(text(),'Luminate Replenishment Demand Insights')]//ancestor::div[@class='textbox']");
 	public static final By title_Understand = By.xpath("//span[contains(text(),'Understand')]");	
+	public static final By title_UnderstandOutOfStock = By.xpath("//span[contains(text(),'Understand(Out Of Stock)')]");	
+	
 	public static final By btn_NeedsAttention = By.xpath("//span[text()='Needs Attention']//ancestor::div[@role='document']/../..");
 	public static final By btn_NeedsReview = By.xpath("//span[text()='Needs Review']//ancestor::div[@role='document']/../..");
 	public static final By span_XAxis_Options = By.xpath("//*[@class='x axis hideLinesOnAxis setFocusRing']//*[@class='setFocusRing']");	
@@ -25,8 +34,8 @@ public class RPCC_Demand_UI {
 	public static final By dd_SelectAll_option=By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
 	public static final By treeMap_HomePage_Options=By.xpath("(//*[contains(text(),'MAPE (%) across product (left) and location (right) hierarchies')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[1]//*[@role='treeitem']");
 	public static final By dd_OptionWindow=By.xpath("//div[@class='slicerBody']");
-
-	
+	public static final By contextMenu_Option = By.xpath("//*[@role='menu']//button[@role='menuitem']");
+	public static final By contextMenu = By.xpath("//*[@role='menu']");	
 	//Card MAPE
 	public static final By card_MAPE = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[3]/visual-container)[1]//*[text()='MAPE']");
 	public static final By card_MAPEWeekly = By.xpath("(//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[3]//span[@class='textRun']");	

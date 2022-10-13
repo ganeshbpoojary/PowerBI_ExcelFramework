@@ -1,5 +1,8 @@
 package testlogic;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +29,7 @@ import com.thoughtworks.selenium.webdriven.commands.IsVisible;
 import frameworkutils.DataBook;
 import frameworkutils.WebDriverFactory;
 import uimaps.APPM_UI;
+import uimaps.AnamolyDetection_UI;
 import uimaps.RPCC_Demand_UI;
 import uimaps.RPCC_Demand_UI;
 import uimaps.Shopper_UI;
@@ -37,8 +41,8 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		super(driver, dataBook);
 	}
 
-	
 	String filterName = dataBook.get("Fliter_Name");
+
 	/**
 	 * Validate Product Drill Through working
 	 * 
@@ -135,7 +139,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			boolean flag = false;
 			try {
 //				isDisplayed(RPCC_Demand_UI.span_LastUpdated);
-				waitForElementTobeClickable(RPCC_Demand_UI.btn_NeedsAttention);				
+				waitForElementTobeClickable(RPCC_Demand_UI.btn_NeedsAttention);
 				actionClick(RPCC_Demand_UI.btn_NeedsAttention);
 				waitForElementTobeLocated(RPCC_Demand_UI.table_AttentionReview);
 				isDisplayed(RPCC_Demand_UI.table_AttentionReview);
@@ -144,8 +148,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	
+
 	/**
 	 * Validate Needs Attention Button is active
 	 * 
@@ -160,7 +163,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	/**
 	 * Validate Needs Review Button is active
 	 * 
@@ -205,8 +208,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	
+
 	/**
 	 * Validate Needs Review Drill through
 	 * 
@@ -353,7 +355,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	/**
 	 * Validate Bar Chart has data
 	 * 
@@ -362,17 +364,17 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
 				if (checkBarChartData())
-					extentTest.log(LogStatus.PASS, "Chart should have data","Chart - <B>"+"Forecast Trend"+"</B> is having data");
+					extentTest.log(LogStatus.PASS, "Chart should have data",
+							"Chart - <B>" + "Forecast Trend" + "</B> is having data");
 				else
 					extentTest.log(LogStatus.FAIL, "Chart should have data",
-							"Chart - <B>"+"Forecast Trend"+"</B> is not having data");
+							"Chart - <B>" + "Forecast Trend" + "</B> is not having data");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
-	
+
 	/**
 	 * Validate Tree Chart has data
 	 * 
@@ -382,7 +384,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			try {
 				if (checkTreeChartData())
 					extentTest.log(LogStatus.PASS, "Chart should have data",
-							"Chart - <B>" +"Tree Map"+ "</B> is having data");
+							"Chart - <B>" + "Tree Map" + "</B> is having data");
 				else
 					extentTest.log(LogStatus.FAIL, "Chart should have data",
 							"Chart - <B>" + "Tree Map" + "</B> is having data");
@@ -391,7 +393,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	/**
 	 * Validate Filter has Data, Multi Select, Search option
 	 * 
@@ -401,7 +403,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			try {
 				if (validate_DropDownIsWorking_RPCC_Demand())
 //					extentTest.log(LogStatus.PASS, "Chart should have data",							"Chart - <B>" +"Tree Map"+ "</B> is having data");
-				extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
+					extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
 				else
 					extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation", "Drop Down has no Data");
 			} catch (Exception e) {
@@ -409,7 +411,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	/**
 	 * Navigates to Understand Page
 	 * 
@@ -418,24 +420,27 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
 				boolean flag = false;
+				waitForElementTobeLocated(RPCC_Demand_UI.treeMap_HomePage_Options);
 				int treeMapNum = getElementsCount(RPCC_Demand_UI.treeMap_HomePage_Options);
-				if(treeMapNum == -1)
-					flag = false;			
-				waitForElementTobeClickable(RPCC_Demand_UI.treeMap_HomePage_Options);
-				rightClick(RPCC_Demand_UI.treeMap_HomePage_Options);
-				waitForElementTobeClickable(RPCC_Demand_UI.navBtn_DrillThrough);
-				clickOn(RPCC_Demand_UI.navBtn_DrillThrough);
-				waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Understand);
-				clickOn(RPCC_Demand_UI.navBtn_Understand);
-				waitForElementTobeLocated(RPCC_Demand_UI.title_Understand);
-				isDisplayed(RPCC_Demand_UI.title_Understand);
+				if (treeMapNum == -1) {
+					extentTest.log(LogStatus.FAIL, "Navigate to Understand Page",
+							"Not able to Navigate to Understand Page");
+				} else {
+					rightClick(RPCC_Demand_UI.treeMap_HomePage_Options);
+					waitForElementTobeClickable(RPCC_Demand_UI.navBtn_DrillThrough);
+					clickOn(RPCC_Demand_UI.navBtn_DrillThrough);
+					waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Understand);
+					clickOn(RPCC_Demand_UI.navBtn_Understand);
+					waitForElementTobeLocated(RPCC_Demand_UI.title_Understand);
+					isDisplayed(RPCC_Demand_UI.title_Understand);
+					extentTest.log(LogStatus.PASS, "Navigate to Understand Page", "Navigated to Understand Page");
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
-	
+
 	public void validate_DropDownHasData_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
@@ -450,8 +455,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	
+
 	public void goto_FilterOption_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
@@ -464,7 +468,6 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
 
 	public void validate_DropDownHasMultiSelect_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
@@ -481,27 +484,73 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	public void validate_DropDownHasSearchOption_RPCC_Demand() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
-				By searchOpt = By.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']/..//input[@aria-label='Search']");
+				By searchOpt = By.xpath(
+						"//div[@role='listbox' and @aria-label='" + filterName + "']/..//input[@aria-label='Search']");
 				if (isDisplayed(searchOpt))
 					extentTest.log(LogStatus.PASS, "Search option should be present", "Search option is present");
-				 else 
-					 extentTest.log(LogStatus.FAIL, "Search option should be present", "Search option is not present");	
+				else
+					extentTest.log(LogStatus.FAIL, "Search option should be present", "Search option is not present");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
+
+	public void goto_UnderStood_OutOfStock_RPCC_Demand() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				Robot robot = new Robot();
+				boolean flag = false;
+				for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrends); i++) {
+					By bar = By.xpath(
+							"((//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing'])["
+									+ i + "]");
+					if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
+						rightClick(bar);
+						isDisplayed(RPCC_Demand_UI.contextMenu);
+						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+						for (int j = 1; j <= options; j++) {
+							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+							if (getTextOf(opt).equals("Drill through")) {
+								clickOn(opt);
+								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_ReviewOutOfStock);
+								clickOn(RPCC_Demand_UI.navBtn_ReviewOutOfStock);
+								waitForElementTobeLocated(RPCC_Demand_UI.title_UnderstandOutOfStock);
+								flag = true;
+								break;
+							}
+						}
+						if (!flag) {
+							actionClick(RPCC_Demand_UI.title_Understand);
+						}
+					}
+					if(flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Navigate to Understand Out of Stock Page",
+							"Navigated to Understand Out of Stock Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Navigate to Understand Out of Stock Page",
+							"Not able to navugate to Out of Stock Page");
+			} catch (NoSuchElementException e) {
+			} catch (AWTException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
 	/*************************************************************************************************************************************/
-	
+
 	/*
 	 * Private methods
 	 */
-	
+
 	private boolean checkDropDownHasData() {
 		try {
 			if (getFilterDropDownRowCount() > 0)
@@ -513,7 +562,30 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			return false;
 		}
 	}
-	
+
+	private boolean checkBarChartData(String chart) {
+		try {
+			boolean flag = false;
+			By chartElm = By.xpath(
+					"(//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing']");
+			for (int i = 1; i <= getElementsCount(chartElm); i++) {
+				By bar = By.xpath(
+						"((//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing'])["
+								+ i + "]");
+				if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
+					rightClick(bar);
+					if (isDisplayed(RPCC_Demand_UI.navBtn_DrillThrough))
+						clickOn(RPCC_Demand_UI.navBtn_DrillThrough);
+					snooze(3000);
+					clickOn(RPCC_Demand_UI.navBtn_ReviewOutOfStock);
+				}
+			}
+			return flag;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+
 	private int getFilterDropDownRowCount_Shooper() {
 		waitForElementTobeLocated(Shopper_UI.dd_options);
 		try {
@@ -525,7 +597,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			return -1;
 		}
 	}
-	
+
 	private boolean validate_DropDownIsWorking_RPCC_Demand() {
 		int rows = 0;
 		boolean flag = false;
@@ -538,33 +610,36 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 				waitForElementTobeClickable(elm);
 				clickOn(elm);
 //				waitForPageToLoad();
-				int index = i +1;
-				By optionWindow = By.xpath("(//div[@class='slicerBody'])["+index+"]");
+				int index = i + 1;
+				By optionWindow = By.xpath("(//div[@class='slicerBody'])[" + index + "]");
 				waitForElementTobeLocated(optionWindow);
-				By options = By.xpath("(//div[@class='slicerBody'])["+index+"]//div[@class='row']");
+				By options = By.xpath("(//div[@class='slicerBody'])[" + index + "]//div[@class='row']");
 				rows = getElementsCount(options);
-				
-				//DropDown has data
+
+				// DropDown has data
 				if (rows > 0)
 					flag = true;
-				
-				//Drop Down has Search option
+
+				// Drop Down has Search option
 				By search = By.xpath("//div[@aria-label='" + filter + "']/../..//input[@aria-label='Search']");
 				if (isDisplayed(search))
 					flag = true;
-				
-				//Drop had multiSelect Active
-				By selectAll = By.xpath("(//div[@class='slicerBody'])["+index+"]//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
+
+				// Drop had multiSelect Active
+				By selectAll = By.xpath("(//div[@class='slicerBody'])[" + index
+						+ "]//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
 				String state = getAttributeValueOf(selectAll, "aria-checked");
 //				String state = driver.findElement(RPCC_Demand_UI.dd_SelectAll_option).getAttribute("aria-checked");
 				if (state.trim().equals("true")) {
 					for (int j = 1; j <= rows; j++) {
 						String rowState = driver.findElement(By.xpath(
-								"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["+j+"]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+								"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
+										+ j
+										+ "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
 								.getAttribute("aria-checked");
-						if (rowState.trim().equals("true")) 
+						if (rowState.trim().equals("true"))
 							flag = true;
-						
+
 					}
 				} else if (state.trim().equals("false")) {
 					driver.findElement(RPCC_Demand_UI.dd_SelectAll_option).click();
@@ -573,13 +648,15 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 //						int rows = getFilterDropDownRowCount();
 						for (int j = 1; j <= rows; j++) {
 							String rowState = driver.findElement(By.xpath(
-									"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["+j+"]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+									"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
+											+ j
+											+ "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
 									.getAttribute("aria-checked");
 							if (rowState.trim().equals("true"))
 								flag = true;
 						}
 					}
-				}		
+				}
 				// Closing Drop down
 				clickOn(elm);
 			}
@@ -588,7 +665,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 		return flag;
 	}
-	
+
 	private boolean checkBarChartData() {
 		try {
 			boolean flag = false;
@@ -616,10 +693,12 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	private boolean checkTreeChartData() {
 		try {
 			boolean flag = false;
-			By chartElm = By.xpath("(//*[contains(text(),'MAPE (%) across product (left) and location (right) hierarchies')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[1]//*[@role='treeitem']");
+			By chartElm = By.xpath(
+					"(//*[contains(text(),'MAPE (%) across product (left) and location (right) hierarchies')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[1]//*[@role='treeitem']");
 			for (int i = 1; i <= getElementsCount(chartElm); i++) {
-				By tree = By.xpath("((//*[contains(text(),'MAPE (%) across product (left) and location (right) hierarchies')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[1]//*[@role='treeitem'])["
-						+ i + "]");
+				By tree = By.xpath(
+						"((//*[contains(text(),'MAPE (%) across product (left) and location (right) hierarchies')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[1]//*[@role='treeitem'])["
+								+ i + "]");
 				actionClick(tree);
 				waitForPageToLoad();
 				snooze(3000);
@@ -632,7 +711,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			return false;
 		}
 	}
-	
+
 	private int getFilterDropDownRowCount() {
 //		waitForElementTobeLocated(RPCC_Demand_UI.dd_options);
 		try {
@@ -644,18 +723,21 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 			return -1;
 		}
 	}
-	
+
 	private boolean isMultiSelectActive() {
 		boolean flag;
 		try {
-			By selectAll = By.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
+			By selectAll = By.xpath("//div[@role='listbox' and @aria-label='" + filterName
+					+ "']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
 			String state = getAttributeValueOf(selectAll, "aria-checked");
-			if (state.trim().equals("true")) {			
-				By optCount = By.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
-				int rows = getElementsCount(optCount);				
+			if (state.trim().equals("true")) {
+				By optCount = By
+						.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
+				int rows = getElementsCount(optCount);
 				for (int i = 1; i <= rows; i++) {
 					String rowState = driver.findElement(By.xpath(
-							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["								+ i + "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
+									+ i + "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
 							.getAttribute("aria-checked");
 					if (rowState.trim().equals("true")) {
 						flag = true;
@@ -664,10 +746,12 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 				return true;
 			} else if (state.trim().equals("false")) {
 				clickOn(selectAll);
-				By selectAll2 = By.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
+				By selectAll2 = By.xpath("//div[@role='listbox' and @aria-label='" + filterName
+						+ "']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
 				String state2 = getAttributeValueOf(selectAll2, "aria-checked");
 				if (state2.trim().equals("true")) {
-					By optCount = By.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
+					By optCount = By
+							.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
 					int rows = getElementsCount(optCount);
 					for (int i = 1; i <= rows; i++) {
 						String rowState = driver.findElement(By.xpath(
