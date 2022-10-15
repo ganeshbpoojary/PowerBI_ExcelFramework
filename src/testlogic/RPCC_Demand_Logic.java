@@ -1,6 +1,5 @@
 package testlogic;
 
-import java.awt.AWTException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -11,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
 import com.relevantcodes.extentreports.LogStatus;
 import frameworkutils.WebDriverFactory;
 import uimaps.RPCC_Demand_UI;
@@ -27,11 +28,12 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Product Drill Through working
 	 * 
 	 **/
-	public void Validate_ProductDrillThrough_RPCC_Demand() {
+	public void validate_ProductDrillThrough_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
 				waitForElementTobeClickable(RPCC_Demand_UI.treeMap_Product);
 				int num = getElementsCount(RPCC_Demand_UI.treeMap_Product_Options);
+				// Product xpath
 				for (int i = 1; i <= num - 1; i++) {
 					By elem = By.xpath("((//*[@class='treemap'])[1]//*[@class='parentGroup treemapNode setFocusRing'])["
 							+ i + "]");
@@ -53,11 +55,12 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Location Drill Through working
 	 * 
 	 **/
-	public void Validate_LocationDrillThrough_RPCC_Demand() {
+	public void validate_LocationDrillThrough_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
 				waitForElementTobeClickable(RPCC_Demand_UI.treeMap_Location);
 				int num = getElementsCount(RPCC_Demand_UI.treeMap_Location_Options);
+				// Location xpath
 				for (int i = 1; i <= num; i++) {
 					By elem = By.xpath("((//*[@class='treemap'])[2]//*[@class='parentGroup treemapNode setFocusRing'])["
 							+ i + "]");
@@ -76,10 +79,10 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	}
 
 	/**
-	 * Validate X Axi Has Date
+	 * Validate X Axis Has Date
 	 * 
 	 **/
-	public void Validate_XAxisHasDate_RPCC_Demand() {
+	public void validate_XAxisHasDate_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -89,7 +92,6 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 					By elm = By.xpath(
 							"(//*[@class='x axis hideLinesOnAxis setFocusRing']//*[@class='setFocusRing'])[" + i + "]");
 					String date = getTextOf(elm).trim();
-					System.out.println(date);
 					if (date.equals("")) {
 						flag = false;
 					} else {
@@ -114,11 +116,10 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Needs Attention Button is active
 	 * 
 	 **/
-	public void Validate_NeedAttentionIsActive_RPCC_Demand() {
+	public void validate_NeedAttentionIsActive_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
-//				isDisplayed(RPCC_Demand_UI.span_LastUpdated);
 				waitForElementTobeClickable(RPCC_Demand_UI.btn_NeedsAttention);
 				actionClick(RPCC_Demand_UI.btn_NeedsAttention);
 				waitForElementTobeLocated(RPCC_Demand_UI.table_AttentionReview);
@@ -133,7 +134,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Needs Attention Button is active
 	 * 
 	 **/
-	public void Validate_LastUpdatedIsPresent_RPCC_Demand() {
+	public void validate_LastUpdatedIsPresent_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -148,7 +149,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Needs Review Button is active
 	 * 
 	 **/
-	public void Validate_NeedAReviewIsActive_RPCC_Demand() {
+	public void validate_NeedAReviewIsActive_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -167,7 +168,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Needs Attention Drill through
 	 * 
 	 **/
-	public void Validate_NeedsAttention_DrillThrough_RPCC_Demand() {
+	public void validate_NeedsAttention_DrillThrough_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -182,7 +183,6 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 				waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Understand);
 				clickOn(RPCC_Demand_UI.navBtn_Understand);
 				waitForElementTobeLocated(RPCC_Demand_UI.title_Understand);
-				clickOn(RPCC_Demand_UI.link_Title);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -193,7 +193,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Needs Review Drill through
 	 * 
 	 **/
-	public void Validate_NeedsReview_DrillThrough_RPCC_Demand() {
+	public void validate_NeedsReview_DrillThrough_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -208,8 +208,6 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 				waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Understand);
 				clickOn(RPCC_Demand_UI.navBtn_Understand);
 				waitForElementTobeLocated(RPCC_Demand_UI.title_Understand);
-				clickOn(RPCC_Demand_UI.link_Title);
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -220,7 +218,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Card MAP Has Value
 	 * 
 	 **/
-	public void Validate_Card_MAPHasValue_RPCC_Demand() {
+	public void validate_Card_MAPHasValue_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -244,7 +242,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Card WMAP Has Value
 	 * 
 	 **/
-	public void Validate_Card_WMAPHasValue_RPCC_Demand() {
+	public void validate_Card_WMAPHasValue_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -268,7 +266,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Card BIAS Has Value
 	 * 
 	 **/
-	public void Validate_Card_BIASHasValue_RPCC_Demand() {
+	public void validate_Card_BIASHasValue_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -292,7 +290,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Card MAD Has Value
 	 * 
 	 **/
-	public void Validate_Card_MADHasValue_RPCC_Demand() {
+	public void validate_Card_MADHasValue_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -316,7 +314,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * Validate Card RMSE Has Value
 	 * 
 	 **/
-	public void Validate_Card_RMSEHasValue_RPCC_Demand() {
+	public void validate_Card_RMSEHasValue_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
 			try {
@@ -374,23 +372,6 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
-	/**
-	 * Validate Filter has Data, Multi Select, Search option
-	 * 
-	 **/
-	public void validate_FilterIsWorking_RPCC_Demand() {
-		synchronized (RPCC_Demand_Logic.class) {
-			try {
-				if (validate_DropDownIsWorking_RPCC_Demand())
-//					extentTest.log(LogStatus.PASS, "Chart should have data",							"Chart - <B>" +"Tree Map"+ "</B> is having data");
-					extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
-				else
-					extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation", "Drop Down has no Data");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
 
 	/**
 	 * Navigates to Understand Page
@@ -421,21 +402,32 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
+	
+	/**
+	 * Validate Drop down has data
+	 * 
+	 **/
 	public void validate_DropDownHasData_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
-				if (checkDropDownHasData()) {
-					extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
-				} else {
-					extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation", "Drop Down has no Data");
-				}
+				By optCount = By
+						.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
+				int rowCount = getElementsCount(optCount);
+				if (rowCount > 0)
+					extentTest.log(LogStatus.PASS, "Drop Down should have data",
+							"Drop Down has <B>[" + rowCount + "]</B> number of rows");
+				else
+					extentTest.log(LogStatus.FAIL, "Drop Down should have data", "Drop Down has no Data");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
+	/**
+	 * Selection of a filter
+	 * 
+	 **/
 	public void goto_FilterOption_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
@@ -449,6 +441,98 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
+	/**
+	 * Validate From week filter has data
+	 * 
+	 **/
+	public void validate_Understand_FilterFromWeekHasData_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_FromWeek);
+				clickOn(RPCC_Demand_UI.dd_FromWeek);
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_FromWeek_Options);
+				if (getElementsCount(RPCC_Demand_UI.dd_FromWeek_Options) > 0)
+					extentTest.log(LogStatus.PASS, "Drop Down should have data", "Drop Down has <B>["
+							+ getElementsCount(RPCC_Demand_UI.dd_FromWeek_Options) + "]</B> number of rows");
+				else
+					extentTest.log(LogStatus.FAIL, "Drop Down should have data", "Drop Down has no Data");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate To week filter has data
+	 * 
+	 **/
+	public void validate_Understand_FilterToWeekHasData_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_ToWeek);
+				clickOn(RPCC_Demand_UI.dd_ToWeek);
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_ToWeek_Options);
+				if (getElementsCount(RPCC_Demand_UI.dd_ToWeek_Options) > 0)
+					extentTest.log(LogStatus.PASS, "Drop Down should have data", "Drop Down has <B>["
+							+ getElementsCount(RPCC_Demand_UI.dd_ToWeek_Options) + "]</B> number of rows");
+				else
+					extentTest.log(LogStatus.FAIL, "Drop Down should have data", "Drop Down has no Data");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate From Day filter has data
+	 * 
+	 **/
+	public void validate_FilterFromDayHasData_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_FromDay);
+				clickOn(RPCC_Demand_UI.dd_FromDay);
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_FromDay_Options);
+				if (getElementsCount(RPCC_Demand_UI.dd_FromDay_Options) > 0)
+					extentTest.log(LogStatus.PASS, "Drop Down should have data", "Drop Down has <B>["
+							+ getElementsCount(RPCC_Demand_UI.dd_FromDay_Options) + "]</B> number of rows");
+				else
+					extentTest.log(LogStatus.FAIL, "Drop Down should have data", "Drop Down has no Data");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate To Day filter has data
+	 * 
+	 **/
+	public void validate_FilterToDayHasData_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_ToDay);
+				clickOn(RPCC_Demand_UI.dd_ToDay);
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_ToDay_Options);
+				if (getElementsCount(RPCC_Demand_UI.dd_ToDay_Options) > 0)
+					extentTest.log(LogStatus.PASS, "Drop Down should have data", "Drop Down has <B>["
+							+ getElementsCount(RPCC_Demand_UI.dd_ToDay_Options) + "]</B> number of rows");
+				else
+					extentTest.log(LogStatus.FAIL, "Drop Down should have data", "Drop Down has no Data");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Drop down has multi select option
+	 * 
+	 **/
 	public void validate_DropDownHasMultiSelect_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
@@ -465,8 +549,223 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
+	/**
+	 * Validate Play button is working
+	 * 
+	 **/
+	public void validate_PlayBookButtonIsWorking_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.img_Playbook);
+				clickOn(RPCC_Demand_UI.img_Playbook);
+				waitForElementTobeLocated(RPCC_Demand_UI.title_Playbook);
+				if (getElementsCount(RPCC_Demand_UI.title_Playbook) > 0)
+					extentTest.log(LogStatus.PASS, "Playbook Page should be opened", "Navigated to Playbook Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Playbook Page should be opened",
+							"Not able to Navigate to Playbook Page");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Analyze Inventory button is working
+	 * 
+	 **/
+	public void validate_AnalyzeInventoryButtonIsWorking_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.btn_AnalyzeInventory);
+				actionClick(RPCC_Demand_UI.btn_AnalyzeInventory);
+				switchToBrowserTab(1);
+				String url = driver.getCurrentUrl();
+				driver.close();
+				switchToBrowserTab(0);
+				if (url.contains("lumuiportal"))
+					extentTest.log(LogStatus.PASS, "Analyze Inventory button should work",
+							"Analyze Inventory button is working");
+				else
+					extentTest.log(LogStatus.FAIL, "Analyze Inventory button should work",
+							"Analyze Inventory button is not working");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Composit Score filter Has values
+	 * 
+	 **/
+	public void validate_CompositScoreHasValue_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.dd_CompositeScore);
+				clickOn(RPCC_Demand_UI.dd_CompositeScore);
+				int size = getElementsCount(RPCC_Demand_UI.dd_FromWeek_Options);
+				for (int i = 1; i <= size; i++) {
+					By row = By.xpath("((//div[@class='slicerBody'])[9]//div[@class='row'])[" + i + "]");
+
+				}
+				switchToBrowserTab(2);
+				System.out.println(driver.getCurrentUrl());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Back page navigation is working
+	 *  
+	 **/
+	public void validate_BackNavigationIsWorking_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.title_Understand);
+				clickOn(RPCC_Demand_UI.title_Understand);
+				waitForElementTobeLocated(RPCC_Demand_UI.title_Understand);
+				if (isDisplayed(RPCC_Demand_UI.title_Understand))
+					extentTest.log(LogStatus.PASS, "Back Navigation should work", "Navigated to Understand Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Back Navigation should work",
+							"No able to Navigated to Understand Page");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Item Score Table Has DrillTrough is working
+	 * 
+	 **/
+
+	public void validate_ItemScoreTableHasDrillTrough_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				int rowCnt = getElementsCount(RPCC_Demand_UI.table_ItemScore_Options);
+				for (int i = 1; i <= rowCnt; i++) {
+					By elm = By.xpath(
+							"((//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')])["
+									+ i + "]");					
+						rightClick(elm);
+						isDisplayed(RPCC_Demand_UI.contextMenu);
+						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+						for (int j = 1; j <= options; j++) {
+							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+							if (getTextOf(opt).equals("Drill through")) {
+								clickOn(opt);
+								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
+								clickOn(RPCC_Demand_UI.navBtn_Analyze);
+								waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
+								flag = true;
+								break;
+							}
+						}
+						if (!flag) {
+							actionClick(RPCC_Demand_UI.btn_Reset);
+						}					
+					if (flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Table should have Drill through", "Table is having Drill through");
+				else
+					extentTest.log(LogStatus.FAIL, "Table should have Drill through", "Table is not having Drill through");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	
+	/**
+	 * Validate Under stock Table Has DrillTrough is working
+	 * 
+	 **/
+
+	public void validate_UnderStockTableHasDrillTrough_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				int rowCnt = getElementsCount(RPCC_Demand_UI.table_UnderStock_options);
+				for (int i = 1; i <= rowCnt; i++) {
+					By elm = By.xpath(
+							"((//div[@class='innerContainer'])[2]//div[@class='flex-container cell-interactive '])["
+									+ i + "]");					
+						rightClick(elm);
+						isDisplayed(RPCC_Demand_UI.contextMenu);
+						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+						for (int j = 1; j <= options; j++) {
+							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+							if (getTextOf(opt).equals("Drill through")) {
+								clickOn(opt);
+								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
+								clickOn(RPCC_Demand_UI.navBtn_Analyze);
+								waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
+								flag = true;
+								break;
+							}
+						}
+						if (!flag) {
+							actionClick(RPCC_Demand_UI.btn_Reset);
+						}					
+					if (flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Table should have Drill through", "Table is having Drill through");
+				else
+					extentTest.log(LogStatus.FAIL, "Table should have Drill through", "Table is not having Drill through");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * Validate UnderStand Table Has Data
+	 * 
+	 **/
+
+	public void validate_ItemScoreTableHasData_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			int dataCell =0 ;
+			try {
+				waitForElementTobeLocated(RPCC_Demand_UI.table_ItemScore_Options);
+				int rowCnt = getElementsCount(RPCC_Demand_UI.table_ItemScore_Options);
+				for (int i = 1; i <= rowCnt; i++) {
+					By elm = By.xpath(
+							"((//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')])["
+									+ i + "]");
+					if (!getTextOf(elm).equals(""))
+						dataCell = dataCell +1;
+				}
+				if (dataCell > 0)
+					extentTest.log(LogStatus.PASS, "Table should have data", "Table is having data cells - <B>[" + dataCell + "]</B>");
+				else
+					extentTest.log(LogStatus.FAIL, "Table should have data", "Table is not having data");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Filter has Search opiton
+	 * 
+	 **/
 	public void validate_DropDownHasSearchOption_RPCC_Demand() {
-		synchronized (AnamolyDetection_Logic.class) {
+		synchronized (RPCC_Demand_Logic.class) {
 			try {
 				By searchOpt = By.xpath(
 						"//div[@role='listbox' and @aria-label='" + filterName + "']/..//input[@aria-label='Search']");
@@ -485,7 +784,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	 * 
 	 **/
 	public void goto_UnderStand_OutOfStock_RPCC_Demand() {
-		synchronized (AnamolyDetection_Logic.class) {
+		synchronized (RPCC_Demand_Logic.class) {
 			try {
 				boolean flag = false;
 				for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrends); i++) {
@@ -511,7 +810,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 							actionClick(RPCC_Demand_UI.title_Understand);
 						}
 					}
-					if(flag)
+					if (flag)
 						break;
 				}
 				if (flag)
@@ -522,16 +821,16 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 							"Not able to navugate to Out of Stock Page");
 			} catch (NoSuchElementException e) {
 				e.printStackTrace();
-			} 
+			}
 		}
 	}
-	
+
 	/**
 	 * Navigates to UnderStand UnderStock Page
 	 * 
 	 **/
 	public void goto_UnderStand_UnderStock_RPCC_Demand() {
-		synchronized (AnamolyDetection_Logic.class) {
+		synchronized (RPCC_Demand_Logic.class) {
 			try {
 				boolean flag = false;
 				for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrends); i++) {
@@ -557,7 +856,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 							actionClick(RPCC_Demand_UI.title_Understand);
 						}
 					}
-					if(flag)
+					if (flag)
 						break;
 				}
 				if (flag)
@@ -568,31 +867,162 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 							"Not able to navigate to Under Stock Page");
 			} catch (NoSuchElementException e) {
 				e.printStackTrace();
-			} 
+			}
 		}
 	}
 
-	
+	/**
+	 * Navigates to UnderStand OutOfStock Page
+	 * 
+	 **/
+	public void goto_AnalyzePage_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				int rowCnt = getElementsCount(RPCC_Demand_UI.table_ItemScore_Options);
+				for (int i = 1; i <= rowCnt; i++) {
+					By elm = By.xpath(
+							"((//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')])["
+									+ i + "]");					
+						rightClick(elm);
+						isDisplayed(RPCC_Demand_UI.contextMenu);
+						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+						for (int j = 1; j <= options; j++) {
+							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+							if (getTextOf(opt).equals("Drill through")) {
+								clickOn(opt);
+								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
+								clickOn(RPCC_Demand_UI.navBtn_Analyze);
+								waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
+								flag = true;
+								break;
+							}
+						}
+						if (!flag) {
+							actionClick(RPCC_Demand_UI.btn_Reset);
+						}					
+					if (flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Navigate to Analyze Page",
+							"Navigated to Analyze Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Navigate to Analyze Page",
+							"Not able to navigate to Analyze Page");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+		
+		
+		
+	/**
+	 * Validate scatter graph chart has data
+	 * 
+	 **/	
+	public void validate_ScatterChartHasData_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				boolean flag = false;
+				waitForElementTobeLocated(RPCC_Demand_UI.chart_Scatter_Option);
+				int districtNum = getElementsCount(RPCC_Demand_UI.chart_Scatter_Option);
+				if (districtNum > 100) {
+					for (int i = 1; i <= 20; i++) {
+						waitForPageToLoad();
+						snooze(3000);
+						WebElement elm = driver.findElement(By.xpath(
+								"(//*[@class='scatterMarkerSeriesGroup']//*[@class='scatterMarker setFocusRing'])[" + i
+										+ "]"));
+						Actions action = new Actions(driver);
+						action.moveToElement(elm).click().perform();
+						String label = getTextOf(RPCC_Demand_UI.chart_PopMessage);
+						if (!label.equals(""))
+							flag = true;
+					}
+				} else {
+					for (int i = 1; i <= 20; i++) {
+						waitForPageToLoad();
+						snooze(3000);
+						WebElement elm = driver.findElement(By.xpath(
+								"(//*[@class='scatterMarkerSeriesGroup']//*[@class='scatterMarker setFocusRing'])[" + i
+										+ "]"));
+						Actions action = new Actions(driver);
+						action.moveToElement(elm).click().perform();
+						String label = getTextOf(RPCC_Demand_UI.chart_PopMessage);
+						if (!label.equals("")) {
+							flag = true;
+						}
+					}
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Validation - Chart Values have lables",
+							"Chart Values is having lables");
+				else
+					extentTest.log(LogStatus.FAIL, "Validation - Chart values have lables",
+							"Chart Values is not having lables");
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Bar graph chart has data
+	 * 
+	 **/
+	public void validate_BarChartHasDrillThrough_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				boolean flag = false;
+				for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrends); i++) {
+					By bar = By.xpath(
+							"((//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing'])["
+									+ i + "]");
+					if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
+						rightClick(bar);
+						isDisplayed(RPCC_Demand_UI.contextMenu);
+						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+						for (int j = 1; j <= options; j++) {
+							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+							if (getTextOf(opt).equals("Drill through")) {
+								clickOn(opt);
+								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_ReviewUnderStock);
+								clickOn(RPCC_Demand_UI.navBtn_ReviewUnderStock);
+								waitForElementTobeLocated(RPCC_Demand_UI.title_UnderstandUnderStock);
+								flag = true;
+								break;
+							}
+						}
+						if (!flag) {
+							actionClick(RPCC_Demand_UI.title_Understand);
+						}
+					}
+					if (flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Navigate to Understand UnderStock Page",
+							"Navigated to Understand Under Stock Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Navigate to Understand UnderStock Page",
+							"Not able to navigate to Under Stock Page");
+			} catch (NoSuchElementException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 	/*************************************************************************************************************************************/
 
-	/*
-	 * Private methods
-	 */
-
-	private boolean checkDropDownHasData() {
-		try {
-			if (getFilterDropDownRowCount() > 0)
-				return true;
-			else
-				return false;
-		} catch (NoSuchElementException nsex) {
-			extentTest.log(LogStatus.FAIL, "Search Field vaildation", "Search filed is visible for filter");
-			return false;
-		}
-	}
-
-	private boolean checkBarChartData(String chart) {
+	/**
+	 * Private method to Validate Bar graph chart has data
+	 * 
+	 **/
+	private boolean checkBarChartData() {
 		try {
 			boolean flag = false;
 			By chartElm = By.xpath(
@@ -602,113 +1032,10 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 						"((//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing'])["
 								+ i + "]");
 				if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
-					rightClick(bar);
-					if (isDisplayed(RPCC_Demand_UI.navBtn_DrillThrough))
-						clickOn(RPCC_Demand_UI.navBtn_DrillThrough);
-					snooze(3000);
-					clickOn(RPCC_Demand_UI.navBtn_ReviewOutOfStock);
-				}
-			}
-			return flag;
-		} catch (NoSuchElementException e) {
-			return false;
-		}
-	}
-
-	private int getFilterDropDownRowCount_Shooper() {
-		waitForElementTobeLocated(RPCC_Demand_UI.dd_options);
-		try {
-			List<WebElement> rows = driver.findElements(RPCC_Demand_UI.dd_options);
-			int size = rows.size();
-			extentTest.log(LogStatus.INFO, "getDropDownRowCount: ", "Number of rows is- <B>[" + size + "]</B>");
-			return size;
-		} catch (NoSuchElementException nsex) {
-			return -1;
-		}
-	}
-
-	private boolean validate_DropDownIsWorking_RPCC_Demand() {
-		int rows = 0;
-		boolean flag = false;
-		try {
-			String[] filters = filterName.split("\\|");
-			List<String> itemList = Arrays.asList(filters);
-			for (int i = 0; i < itemList.size(); i++) {
-				String filter = itemList.get(i).trim();
-				By elm = By.xpath("//*[@title='" + filter + "']/../../../..//div[@role='combobox']");
-				waitForElementTobeClickable(elm);
-				clickOn(elm);
-//				waitForPageToLoad();
-				int index = i + 1;
-				By optionWindow = By.xpath("(//div[@class='slicerBody'])[" + index + "]");
-				waitForElementTobeLocated(optionWindow);
-				By options = By.xpath("(//div[@class='slicerBody'])[" + index + "]//div[@class='row']");
-				rows = getElementsCount(options);
-
-				// DropDown has data
-				if (rows > 0)
-					flag = true;
-
-				// Drop Down has Search option
-				By search = By.xpath("//div[@aria-label='" + filter + "']/../..//input[@aria-label='Search']");
-				if (isDisplayed(search))
-					flag = true;
-
-				// Drop had multiSelect Active
-				By selectAll = By.xpath("(//div[@class='slicerBody'])[" + index
-						+ "]//*[text()='Select all']//ancestor::div[@class='slicerItemContainer']");
-				String state = getAttributeValueOf(selectAll, "aria-checked");
-//				String state = driver.findElement(RPCC_Demand_UI.dd_SelectAll_option).getAttribute("aria-checked");
-				if (state.trim().equals("true")) {
-					for (int j = 1; j <= rows; j++) {
-						String rowState = driver.findElement(By.xpath(
-								"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
-										+ j
-										+ "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
-								.getAttribute("aria-checked");
-						if (rowState.trim().equals("true"))
-							flag = true;
-
-					}
-				} else if (state.trim().equals("false")) {
-					driver.findElement(RPCC_Demand_UI.dd_SelectAll_option).click();
-					String state2 = driver.findElement(RPCC_Demand_UI.dd_SelectAll_option).getAttribute("aria-checked");
-					if (state2.trim().equals("true")) {
-//						int rows = getFilterDropDownRowCount();
-						for (int j = 1; j <= rows; j++) {
-							String rowState = driver.findElement(By.xpath(
-									"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
-											+ j
-											+ "]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
-									.getAttribute("aria-checked");
-							if (rowState.trim().equals("true"))
-								flag = true;
-						}
-					}
-				}
-				// Closing Drop down
-				clickOn(elm);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return flag;
-	}
-
-	private boolean checkBarChartData() {
-		try {
-			boolean flag = false;
-			isDisplayed(RPCC_Demand_UI.chart_ForecastTrend);
-			for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrend); i++) {
-				By bar = By.xpath(
-						"(//*[contains(text(),'Forecast Trend')]//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid']//*[@class='mainGraphicsContext setFocusRing']//*[@class='column sub-selectable setFocusRing'])["
-								+ i + "]");
-				if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
 					actionClick(bar);
 					waitForPageToLoad();
 					snooze(3000);
 					String label = getTextOf(RPCC_Demand_UI.chart_popupText);
-					System.out.println(label);
 					if (!label.equals(""))
 						flag = true;
 				}
@@ -719,6 +1046,10 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
+	/**
+	 * Private method to Validate Bar graph chart has data
+	 * 
+	 **/
 	private boolean checkTreeChartData() {
 		try {
 			boolean flag = false;
@@ -741,18 +1072,10 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
-	private int getFilterDropDownRowCount() {
-//		waitForElementTobeLocated(RPCC_Demand_UI.dd_options);
-		try {
-			List<WebElement> rows = driver.findElements(RPCC_Demand_UI.dd_options);
-			int size = rows.size();
-			extentTest.log(LogStatus.INFO, "getDropDownRowCount: ", "Number of rows is- <B>[" + size + "]</B>");
-			return size;
-		} catch (NoSuchElementException nsex) {
-			return -1;
-		}
-	}
-
+	/**
+	 * Private method to Validate drop down has multi select
+	 * 
+	 **/
 	private boolean isMultiSelectActive() {
 		boolean flag;
 		try {

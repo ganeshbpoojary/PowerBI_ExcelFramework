@@ -13,14 +13,38 @@ public class RPCC_Demand_UI {
 	public static final By navBtn_Understand = By.xpath("//button[@title='Understand']");
 	public static final By navBtn_ReviewOutOfStock = By.xpath("//button[contains(@title,'Review Out-Of-Stock')]");
 	public static final By navBtn_ReviewUnderStock = By.xpath("//button[contains(@title,'Review Under Stock')]");
+	public static final By navBtn_Analyze = By.xpath("//button[contains(@title,'Analyze')]");
 	public static final By chart_ForecastTrends = By.xpath("(//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing']");
+	public static final By table_Understand_Options = By.xpath("(//div[@class='bodyCells'])[2]//div[contains(@class,'pivotTableCellWrap cell-interactive')]");
+	public static final By table_ItemScore_Options = By.xpath("(//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')]");
+	public static final By table_UnderStock_options = By.xpath("(//div[@class='innerContainer'])[2]//div[@class='flex-container cell-interactive ']");
 	
+	
+	public static final By img_Playbook = By.xpath("(//div[@class='imageBackground'])[2]");
+	public static final By btn_AnalyzeInventory = By.xpath("//div[text()='Analyze Inventory']//ancestor::div[@class='contentOuterContainer']");
+	public static final By dd_CompositeScore = By.xpath("//div[@aria-label='Composite Score' and @role='combobox']");
+	
+	
+	
+	//Understand page filter From & To
+	public static final By dd_FromWeek = By.xpath("//*[text()='From Week']/../../../..//div[@role='combobox']");
+	public static final By dd_ToWeek = By.xpath("//*[text()='To Week']/../../../..//div[@role='combobox']");
+	public static final By dd_FromWeek_Options = By.xpath("(//div[@class='slicerBody'])[9]//div[@class='row']");
+	public static final By dd_ToWeek_Options = By.xpath("(//div[@class='slicerBody'])[10]//div[@class='row']");
+	//Other page filter From & To
+	public static final By dd_FromDay = By.xpath("//*[text()='From Day']/../../../..//div[@role='combobox']");
+	public static final By dd_ToDay = By.xpath("//*[text()='To Day']/../../../..//div[@role='combobox']");	
+	public static final By dd_FromDay_Options = By.xpath("(//div[@class='slicerBody'])[7]//div[@class='row']");
+	public static final By dd_ToDay_Options = By.xpath("(//div[@class='slicerBody'])[8]//div[@class='row']");
 	
 	public static final By title_LuminateReplenishmentDemandInsights = By.xpath("//span[contains(text(),'Luminate Replenishment Demand Insights')]//ancestor::div[@class='textbox']");
-	public static final By title_Understand = By.xpath("//span[contains(text(),'Understand')]");	
+	public static final By title_Understand = By.xpath("//span[contains(text(),'Understand')]");
+	public static final By title_Playbook = By.xpath("(//span[contains(text(),'Playbook')])[2]");
 	public static final By title_UnderstandOutOfStock = By.xpath("//span[contains(text(),'Understand(Out Of Stock)')]");
-	public static final By title_UnderstandUnderStock = By.xpath("//span[contains(text(),'Under Stock')]");	
-
+	public static final By title_UnderstandUnderStock = By.xpath("//span[contains(text(),'Under Stock')]");
+	public static final By title_Analyze = By.xpath("//span[contains(text(),'Analyze')]");	
+	public static final By chart_Scatter_Option=By.xpath("//*[@class='scatterMarkerSeriesGroup']//*[@class='scatterMarker setFocusRing']");
+	public static final By chart_PopMessage=By.xpath("//div[@id='screen_reader_alert_assertive']");
 	
 	public static final By btn_NeedsAttention = By.xpath("//span[text()='Needs Attention']//ancestor::div[@role='document']/../..");
 	public static final By btn_NeedsReview = By.xpath("//span[text()='Needs Review']//ancestor::div[@role='document']/../..");
@@ -35,7 +59,11 @@ public class RPCC_Demand_UI {
 	public static final By treeMap_HomePage_Options=By.xpath("(//*[contains(text(),'MAPE (%) across product (left) and location (right) hierarchies')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[1]//*[@role='treeitem']");
 	public static final By dd_OptionWindow=By.xpath("//div[@class='slicerBody']");
 	public static final By contextMenu_Option = By.xpath("//*[@role='menu']//button[@role='menuitem']");
-	public static final By contextMenu = By.xpath("//*[@role='menu']");	
+	public static final By contextMenu = By.xpath("//*[@role='menu']");
+	public static final By tableHeader_ItemScore = By.xpath("(//div[@role='columnheader' and text()='Item Store'])[1]");
+	public static final By btn_Reset = By.xpath("(//*[@class='tileSVG'])[3]/../..");
+	
+	
 	//Card MAPE
 	public static final By card_MAPE = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[3]/visual-container)[1]//*[text()='MAPE']");
 	public static final By card_MAPEWeekly = By.xpath("(//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[3]//span[@class='textRun']");	
