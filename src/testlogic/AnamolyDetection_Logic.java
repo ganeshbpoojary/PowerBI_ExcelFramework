@@ -1205,17 +1205,31 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		return flag;
 	}
 
-	public boolean verify_Importance_forecastability_Anamoly() {
-
+	public boolean verify_Importance_forecastability_Anamoly() {	
 		try {
-			int columnCnt = getElementsCount(AnamolyDetection_UI.Importance_forecastability_coloumnheader);
-			int rowCnt = getElementsCount(AnamolyDetection_UI.Importance_forecastability_rowheader);
-			if (columnCnt > 0 && rowCnt > 0) {
-				return true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		isDisplayed(AnamolyDetection_UI.Importance_forecastability_coloumnheader);
+		isDisplayed(AnamolyDetection_UI.exploraryOutlierBars);
+		int blankCell = 0;
+		int dataCell = 0;
+		waitForElementTobeLocated(AnamolyDetection_UI.table_OutlierInvestigation_option);
+		int size = getElementsCount(AnamolyDetection_UI.table_OutlierInvestigation_option);
+		for (int i = 1; i <= size; i++) {
+			By cellVal = By.xpath(
+					"((//div[@class='bodyCells'])[2]//div[contains(@class,'pivotTableCellWrap')])[" + i + "]");
+			if (getTextOf(cellVal).equals(" "))
+				blankCell = blankCell + 1;
+			else
+				dataCell = dataCell + 1;
 		}
+		if (!(blankCell == size))
+			extentTest.log(LogStatus.PASS, "Outlier Investigation Table Has Data validation",
+					"Outlier Table has Data");
+		else
+			extentTest.log(LogStatus.FAIL, "Outlier Investigation Table Has Data validation",
+					"Outlier Table does not have Data");
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 		return false;
 	}
 
