@@ -100,6 +100,8 @@ public class AnamolyDetection_UI {
 	public static final  By exploraryOutlierItemStoresText = By.xpath("//*[@data-sub-selection-display-name='Visual_Axis_Title']");
 	
 	
+
+	
 	public static final  By Importance_forecastability_rowheader = By.xpath("//div[@class='rowHeaders']//ancestor::div[@class='pivotTableCellWrap cell-interactive tablixAlignCenter ']");
 	public static final  By Importance_forecastability_coloumnheader=By.xpath("(//div[@class='innerContainer']//ancestor::div[@class='columnHeaders'])[2]");
 
@@ -128,7 +130,8 @@ public class AnamolyDetection_UI {
 	public static final By contextMenu_Option = By.xpath("//*[@role='menu']//button[@role='menuitem']");
 	public static final By contextMenu = By.xpath("//*[@role='menu']");	
 	public static final By btn_BusniessImpact = By.xpath("(//div[contains(@class,'pivotTableCellNoWrap')])[4]/..");	
-	public static final By chart_OutlierInvestigation  = By.xpath("((//span[contains(text(),'Trend and Residual')]//ancestor::*[@class='ng-star-inserted'])[4]//*[@class='lineChartSVG']//*[@role='listbox'])[1]");	
+	public static final By chart_OutlierInvestigation  = By.xpath("((//span[contains(text(),'Trend and Residual')]//ancestor::*[@class='ng-star-inserted'])[4]//*[@class='lineChartSVG']//*[@role='listbox'])[1]");
+	public static final  By exploraryOutlierBars = By.xpath("//*[@class='bar sub-selectable setFocusRing']");
   
 	
 }

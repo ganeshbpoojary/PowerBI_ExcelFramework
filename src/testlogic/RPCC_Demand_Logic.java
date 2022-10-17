@@ -1125,4 +1125,27 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		return false;
 
 	}
+
+
+public void navigate_To_UnderstandFlow()
+{
+			synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.treeMap_Product);
+				int num = getElementsCount(RPCC_Demand_UI.treeMap_Product_Options);
+				for (int i = 1; i <= num - 1; i++) {
+					By elem = By.xpath("((//*[@class='treemap'])[1]//*[@class='parentGroup treemapNode setFocusRing'])");
+					rightClick(elem);
+					waitForElementTobeClickable(RPCC_Demand_UI.navBtn_DrillThrough);
+					clickOn(RPCC_Demand_UI.navBtn_DrillThrough);
+					waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Understand);
+					clickOn(RPCC_Demand_UI.navBtn_Understand);
+					waitForElementTobeLocated(RPCC_Demand_UI.title_Understand);
+					clickOn(RPCC_Demand_UI.link_Title);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
