@@ -711,7 +711,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	private boolean checkDropDownHasData_Shopper() {
 		try {
-			if (getFilterDropDownRowCount_Shooper() > 0)
+			if (getFilterDropDownRowCount_Shopper() > 0)
 				return true;
 			else
 				return false;
@@ -734,7 +734,7 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
-	private int getFilterDropDownRowCount_Shooper() {
+	private int getFilterDropDownRowCount_Shopper() {
 		waitForElementTobeLocated(Shopper_UI.dd_options);
 		try {
 			List<WebElement> rows = driver.findElements(Shopper_UI.dd_options);
@@ -786,18 +786,6 @@ public class Shopper_Logic extends WebDriverFactory {
 		extentTest.log(LogStatus.FAIL, "isMultiSelectActive: ", "Multi Select option is not working ");
 		return false;
 
-	}
-
-	private int getFilterDropDownRowCount_Shopper() {
-		waitForElementTobeLocated(Shopper_UI.dd_options);
-		try {
-			List<WebElement> rows = driver.findElements(Shopper_UI.dd_options);
-			int size = rows.size();
-			extentTest.log(LogStatus.INFO, "getDropDownRowCount: ", "Number of rows is- <B>[" + size + "]</B>");
-			return size;
-		} catch (NoSuchElementException nsex) {
-			return -1;
-		}
 	}
 	
 	private boolean checkTableHasHeader_Shopper(ArrayList<String> weekArrayList) {

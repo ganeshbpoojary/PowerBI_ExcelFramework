@@ -1,17 +1,13 @@
 package testlogic;
 
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
 import com.relevantcodes.extentreports.LogStatus;
 import frameworkutils.WebDriverFactory;
 import uimaps.RPCC_Demand_UI;
