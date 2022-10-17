@@ -982,19 +982,19 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 	}
 
-	public void validateDropDownHasData_Anamoly() {
-		synchronized (AnamolyDetection_Logic.class) {
-			try {
-				waitForPageToLoad();
-				clickonFilterandvalidatethedata_Anamoly();
-				extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation", "Drop Down has no Data");
-				e.printStackTrace();
-			}
-		}
-	}
+//	public void validateDropDownHasData_Anamoly() {
+//		synchronized (AnamolyDetection_Logic.class) {
+//			try {
+//				waitForPageToLoad();
+//				clickonFilterandvalidatethedata_Anamoly();
+//				extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation", "Drop Down has no Data");
+//				e.printStackTrace();
+//			}
+//		}
+//	}
 
 	// validate value in the dropdown
 	public void validateValueInDropDown_Anamoly() {
@@ -1002,7 +1002,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			try {
 				checkDropDownForOption_Anamoly(filterOption);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -1039,7 +1038,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		} catch (NoSuchElementException nsex) {
 			return -1;
 		}
-		// source tree
 	}
 
 	public void goto_FilterOption_Anamoly() {
@@ -1049,7 +1047,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				waitForElementTobeClickable(filter);
 				clickOn(filter);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -1063,7 +1060,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				extentTest.log(LogStatus.PASS, "anamoly Search is enabled", "anamoly Search  has Data");
 
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				extentTest.log(LogStatus.FAIL, "anamoly Search  disabled", "anamoly Search  has no Data");
 				e.printStackTrace();
 			}
@@ -1081,7 +1077,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					extentTest.log(LogStatus.FAIL, "Drop down should have Multi Select",
 							"Multi Select option is not working");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -1168,22 +1163,21 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	 * Private methods
 	 **************************************************************/
 
-	private void clickonFilterandvalidatethedata_Anamoly() {
-		// TODO Auto-generated method stub
-		waitForPageToLoad();
-		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@class='slicerItemContainer']"));
-		if (checkboxes.size() > 0) {
-			// driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
-			return;
-		}
-	}
+//	private void clickonFilterandvalidatethedata_Anamoly() {
+//		// TODO Auto-generated method stub
+//		waitForPageToLoad();
+//		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@class='slicerItemContainer']"));
+//		if (checkboxes.size() > 0) {
+//			// driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
+//			return;
+//		}
+//	}
 
 	private boolean get_UnderstandTableContent() {
 		boolean flag = false;
 		int blankCell = 0;
 		int dataCell = 0;
 		try {
-//				ArrayList<String> tableContent = new ArrayList<String>();
 			int columnCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_ColumnCount);
 			int rowCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_RowCount);
 			for (int col = 3; col <= columnCnt; col++) {
@@ -1199,7 +1193,6 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					flag = true;
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return flag;
