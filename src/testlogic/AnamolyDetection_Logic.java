@@ -1179,6 +1179,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	}
 
 	private boolean get_UnderstandTableContent() {
+		synchronized (AnamolyDetection_Logic.class) {
 		boolean flag = false;
 		int blankCell = 0;
 		int dataCell = 0;
@@ -1204,6 +1205,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 		return flag;
 	}
+	}
 
 	public boolean verify_Importance_forecastability_Anamoly() {	
 		try {
@@ -1222,10 +1224,10 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				dataCell = dataCell + 1;
 		}
 		if (!(blankCell == size))
-			extentTest.log(LogStatus.PASS, "Outlier Investigation Table Has Data validation",
+			extentTest.log(LogStatus.PASS, "Importance_forecastability Table Has Data validation",
 					"Outlier Table has Data");
 		else
-			extentTest.log(LogStatus.FAIL, "Outlier Investigation Table Has Data validation",
+			extentTest.log(LogStatus.FAIL, "Importance_forecastability Table Has Data validation",
 					"Outlier Table does not have Data");
 	} catch (Exception e) {
 		e.printStackTrace();
