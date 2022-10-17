@@ -833,7 +833,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					else
 						dataCell = dataCell + 1;
 				}
-				if (!(blankCell == size))
+				if (dataCell > blankCell)
 					extentTest.log(LogStatus.PASS, "Outlier Investigation Table Has Data validation",
 							"Outlier Table has Data");
 				else
@@ -863,7 +863,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					else
 						dataCell = dataCell + 1;
 				}
-				if (!(blankCell == size))
+				if (dataCell > blankCell)
 					extentTest.log(LogStatus.PASS, "InterPlay Sales Table Has Data validation",
 							"InterPlay Sales Table has Data");
 				else
@@ -1190,7 +1190,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 					else
 						blankCell = blankCell + 1;
 				}
-				if (!(blankCell == rowCnt))
+				if (dataCell > blankCell)
 					flag = true;
 			}
 		} catch (Exception e) {
@@ -1216,7 +1216,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			else
 				dataCell = dataCell + 1;
 		}
-		if (!(blankCell == size))
+		if (dataCell > blankCell)
 			extentTest.log(LogStatus.PASS, "Importance_forecastability Table Has Data validation",
 					"Outlier Table has Data");
 		else
