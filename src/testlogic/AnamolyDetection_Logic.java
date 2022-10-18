@@ -905,7 +905,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	/**
 	 * validate Priority Score right click shows options
 	 * 
@@ -1175,56 +1175,56 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 
 	private boolean get_UnderstandTableContent() {
 		synchronized (AnamolyDetection_Logic.class) {
-		boolean flag = false;
-		int blankCell = 0;
-		int dataCell = 0;
-		try {
-			int columnCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_ColumnCount);
-			int rowCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_RowCount);
-			for (int col = 3; col <= columnCnt; col++) {
-				for (int row = 1; row <= rowCnt; row++) {
-					By cellVal = By
-							.xpath("(//div[@role='row'])[" + rowCnt + "]//div[@aria-colindex='" + columnCnt + "']");
-					if (!(getTextOf(cellVal).equals(" ") && getTextOf(cellVal).equals("0")))
-						dataCell = dataCell + 1;
-					else
-						blankCell = blankCell + 1;
+			boolean flag = false;
+			int blankCell = 0;
+			int dataCell = 0;
+			try {
+				int columnCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_ColumnCount);
+				int rowCnt = getElementsCount(AnamolyDetection_UI.table_UnderStand_RowCount);
+				for (int col = 3; col <= columnCnt; col++) {
+					for (int row = 1; row <= rowCnt; row++) {
+						By cellVal = By
+								.xpath("(//div[@role='row'])[" + rowCnt + "]//div[@aria-colindex='" + columnCnt + "']");
+						if (!(getTextOf(cellVal).equals(" ") && getTextOf(cellVal).equals("0")))
+							dataCell = dataCell + 1;
+						else
+							blankCell = blankCell + 1;
+					}
+					if (dataCell > blankCell)
+						flag = true;
 				}
-				if (dataCell > blankCell)
-					flag = true;
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
+			return flag;
+		}
+	}
+
+	public boolean verify_Importance_forecastability_Anamoly() {
+		try {
+			isDisplayed(AnamolyDetection_UI.Importance_forecastability_coloumnheader);
+			isDisplayed(AnamolyDetection_UI.exploraryOutlierBars);
+			int blankCell = 0;
+			int dataCell = 0;
+			waitForElementTobeLocated(AnamolyDetection_UI.table_OutlierInvestigation_option);
+			int size = getElementsCount(AnamolyDetection_UI.table_OutlierInvestigation_option);
+			for (int i = 1; i <= size; i++) {
+				By cellVal = By.xpath(
+						"((//div[@class='bodyCells'])[2]//div[contains(@class,'pivotTableCellWrap')])[" + i + "]");
+				if (getTextOf(cellVal).equals(" "))
+					blankCell = blankCell + 1;
+				else
+					dataCell = dataCell + 1;
+			}
+			if (dataCell > blankCell)
+				extentTest.log(LogStatus.PASS, "Importance_forecastability Table Has Data validation",
+						"Outlier Table has Data");
+			else
+				extentTest.log(LogStatus.FAIL, "Importance_forecastability Table Has Data validation",
+						"Outlier Table does not have Data");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return flag;
-	}
-	}
-
-	public boolean verify_Importance_forecastability_Anamoly() {	
-		try {
-		isDisplayed(AnamolyDetection_UI.Importance_forecastability_coloumnheader);
-		isDisplayed(AnamolyDetection_UI.exploraryOutlierBars);
-		int blankCell = 0;
-		int dataCell = 0;
-		waitForElementTobeLocated(AnamolyDetection_UI.table_OutlierInvestigation_option);
-		int size = getElementsCount(AnamolyDetection_UI.table_OutlierInvestigation_option);
-		for (int i = 1; i <= size; i++) {
-			By cellVal = By.xpath(
-					"((//div[@class='bodyCells'])[2]//div[contains(@class,'pivotTableCellWrap')])[" + i + "]");
-			if (getTextOf(cellVal).equals(" "))
-				blankCell = blankCell + 1;
-			else
-				dataCell = dataCell + 1;
-		}
-		if (dataCell > blankCell)
-			extentTest.log(LogStatus.PASS, "Importance_forecastability Table Has Data validation",
-					"Outlier Table has Data");
-		else
-			extentTest.log(LogStatus.FAIL, "Importance_forecastability Table Has Data validation",
-					"Outlier Table does not have Data");
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
 		return false;
 	}
 
@@ -1334,6 +1334,5 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 		}
 		return flag;
 	}
-
 
 }
