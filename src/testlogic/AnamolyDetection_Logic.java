@@ -91,6 +91,7 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 	public void goto_PricePromotionsPLC_InventoryPage_Anamoly() {
 		synchronized (AnamolyDetection_Logic.class) {
 			try {
+				waitForElementTobeClickable(AnamolyDetection_UI.btn_Understand);
 				rightClick(AnamolyDetection_UI.btn_Understand);
 				waitForElementTobeClickable(AnamolyDetection_UI.navBtn_DrillThrough);
 				clickOn(AnamolyDetection_UI.navBtn_DrillThrough);
@@ -887,13 +888,13 @@ public class AnamolyDetection_Logic extends WebDriverFactory {
 				rightClick(AnamolyDetection_UI.btn_BusniessImpact);
 				isDisplayed(AnamolyDetection_UI.contextMenu);
 				int options = getElementsCount(AnamolyDetection_UI.contextMenu_Option);
-				for (int i = 1; i < options; i++) {
+				for (int i = 1; i <= options; i++) {
 					By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + i + "]");
 					if (!getTextOf(opt).equals(""))
 						flag = true;
 				}
 				snooze(2000);
-				clickOn(AnamolyDetection_UI.span_Department);
+				actionClick(AnamolyDetection_UI.span_Department);
 				if (flag)
 					extentTest.log(LogStatus.PASS, "BusinessImpact Right click should show options",
 							"BusinessImpact Right click is showing <B>[" + options + "]</B> options");
