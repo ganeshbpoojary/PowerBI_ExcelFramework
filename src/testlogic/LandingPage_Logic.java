@@ -38,7 +38,8 @@ public class LandingPage_Logic extends WebDriverFactory {
 				refreshDataBook();
 				launchAPP(url);
 				waitForPageToLoad();
-				Thread.sleep(1000);
+				Thread.sleep(2000);
+				waitForElementTobeLocated(LandingPage_UI.txt_email);
 				typeIn(LandingPage_UI.txt_email, email);
 				clickOn(LandingPage_UI.btn_submitPowerBI);
 				waitForPageToLoad();
