@@ -1,24 +1,10 @@
 package testlogic;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.FileInputStream;
 import java.util.Map;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.UnhandledAlertException;
+import java.util.Properties;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.relevantcodes.extentreports.LogStatus;
-import com.thoughtworks.selenium.webdriven.commands.IsVisible;
-
-import frameworkutils.DataBook;
 import frameworkutils.WebDriverFactory;
-import uimaps.APPM_UI;
 import uimaps.LandingPage_UI;
 
 public class LandingPage_Logic extends WebDriverFactory {
@@ -26,24 +12,23 @@ public class LandingPage_Logic extends WebDriverFactory {
 	public LandingPage_Logic(WebDriver driver, Map<String, String> dataBook) {
 		super(driver, dataBook);
 	}
-
 	String url = dataBook.get("Url");
-	String email = dataBook.get("Email");
-	String pwd = dataBook.get("Password");
-
-	
 	public void login() {
 		synchronized (LandingPage_Logic.class) {
+			Properties property = new Properties();
 			try {
-				refreshDataBook();
+				property.load(new FileInputStream("SeleniumConstants.properties"));
+				String email = property.getProperty("username");
+				String pwd = property.getProperty("password");
+//				refreshDataBook();				
 				launchAPP(url);
 				waitForPageToLoad();
-				Thread.sleep(2000);
-				waitForElementTobeLocated(LandingPage_UI.txt_email);
+//				Thread.sleep(2000);
+				waitForElementTobeClickable(LandingPage_UI.txt_email);
 				typeIn(LandingPage_UI.txt_email, email);
 				clickOn(LandingPage_UI.btn_submitPowerBI);
 				waitForPageToLoad();
-				typeIn(LandingPage_UI.txt_password, pwd);
+				typeIn_Password(LandingPage_UI.txt_password, pwd);
 				clickOn(LandingPage_UI.btn_signinBY);
 				clickOn(LandingPage_UI.btn_yesBY);
 				waitForPageToLoad();
@@ -53,4 +38,5 @@ public class LandingPage_Logic extends WebDriverFactory {
 			}
 		}
 	}
+
 }
