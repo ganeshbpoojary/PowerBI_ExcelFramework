@@ -473,8 +473,32 @@ public class WebDriverFactory {
 		element.sendKeys(value);
 		enteredTextValue = element.getAttribute("value");
 		if (enteredTextValue.equals(value)) {
-//			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),					"Value has been set with <B>[" + enteredTextValue + "]</B>");
-			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),					"Value has been set");
+			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),					"Value has been set with <B>[" + enteredTextValue + "]</B>");
+			return true;
+		} else {
+			extentTest.log(LogStatus.FAIL, "Type In:= " + by.toString(),
+					"Value has been set with <B>[" + enteredTextValue + "]</B>" + captureScreenShot());
+			return false;
+		}
+	}
+	
+	
+	/**
+	 * 
+	 * Types the value into WebElement without displaying data in report
+	 * 
+	 */
+
+	public boolean typeIn_Password(By by, String value) {
+		String enteredTextValue;
+		// return false if not found
+		if (!findElement(by))
+			return false;
+		element.clear();
+		element.sendKeys(value);
+		enteredTextValue = element.getAttribute("value");
+		if (enteredTextValue.equals(value)) {
+			extentTest.log(LogStatus.INFO, "Type In:= " + by.toString(),"Value has been set");
 			return true;
 		} else {
 			extentTest.log(LogStatus.FAIL, "Type In:= " + by.toString(),
@@ -1535,7 +1559,7 @@ public class WebDriverFactory {
 		try {
 			WebElement frame = driver.findElement(by);
 			driver.switchTo().frame(frame);
-			new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT).until(ExpectedConditions.elementToBeSelected(element));
+//			new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT).until(ExpectedConditions.elementToBeSelected(element));
 			extentTest.log(LogStatus.INFO, "selectFrame: " + by.toString(), by.toString() + " switch frame");
 			return true;
 		} catch (UnhandledAlertException uaex) {
@@ -1545,6 +1569,15 @@ public class WebDriverFactory {
 		}
 	}
 	
+	public void implicitlywait(By by) {
+		try {
+			driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIMEOUT, TimeUnit.SECONDS);
+		} catch (UnhandledAlertException uaex) {
+			extentTest.log(LogStatus.INFO, "implicitlywait: ",					"Implicity Time out");
+		}
+	
+
+	}
 
 	
 
