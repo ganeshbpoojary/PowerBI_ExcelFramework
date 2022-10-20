@@ -485,7 +485,7 @@ public class WebDriverFactory {
 	
 	/**
 	 * 
-	 * Types the value into WebElement with displaying data in report
+	 * Types the value into WebElement without displaying data in report
 	 * 
 	 */
 
