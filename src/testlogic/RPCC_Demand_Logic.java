@@ -330,6 +330,128 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
+	/***********   UnderStand Page      *************/
+	
+	/**
+	 * Validate Card MAP Has Value
+	 * 
+	 **/
+	public void validate_Card_UnderStand_MAPHasValue_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				isDisplayed(RPCC_Demand_UI.card_UnderStand_MAPE);
+				String mainValue = getTextOf(RPCC_Demand_UI.card_UnderStand_MADMainValue);
+				String smallValue = getTextOf(RPCC_Demand_UI.card_UnderStand_MAPESmallValue);
+				String weekly = getTextOf(RPCC_Demand_UI.card_UnderStand_MAPEWeekly);
+				if (!mainValue.equals("") && !smallValue.equals("") && weekly.equals("(% Weekly)"))
+					flag = true;
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Card MAPE should have value", "Card MAPE is having value");
+				else
+					extentTest.log(LogStatus.PASS, "Card MAPE should have value", "Card MAPE is not having value");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Card WMAP Has Value
+	 * 
+	 **/
+	public void validate_Card_UnderStand_WMAPHasValue_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				isDisplayed(RPCC_Demand_UI.card_UnderStand_WMAPE);
+				String mainValue = getTextOf(RPCC_Demand_UI.card_UnderStand_WMAPEMainValue);
+				String smallValue = getTextOf(RPCC_Demand_UI.card_UnderStand_WMAPESmallValue);
+				String weekly = getTextOf(RPCC_Demand_UI.card_UnderStand_WMAPEWeekly);
+				if (!mainValue.equals("") && !smallValue.equals("") && weekly.equals("(% Weekly)"))
+					flag = true;
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Card WMAPE should have value", "Card WMAPE is having value");
+				else
+					extentTest.log(LogStatus.PASS, "Card WMAPE should have value", "Card WMAPE is not having value");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Card BIAS Has Value
+	 * 
+	 **/
+	public void validate_Card_UnderStand_BIASHasValue_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				isDisplayed(RPCC_Demand_UI.card_UnderStand_BIAS);
+				String mainValue = getTextOf(RPCC_Demand_UI.card_UnderStand_BIASMainValue);
+				String smallValue = getTextOf(RPCC_Demand_UI.card_UnderStand_BIASSmallValue);
+				String weekly = getTextOf(RPCC_Demand_UI.card_UnderStand_BIASWeekly);
+				if (!mainValue.equals("") && !smallValue.equals("") && weekly.equals("(% Weekly)"))
+					flag = true;
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Card BIAS should have value", "Card BIAS is having value");
+				else
+					extentTest.log(LogStatus.PASS, "Card BIAS should have value", "Card BIAS is not having value");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Card MAD Has Value
+	 * 
+	 **/
+	public void validate_Card_UnderStand_MADHasValue_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				isDisplayed(RPCC_Demand_UI.card_UnderStand_MAD);
+				String mainValue = getTextOf(RPCC_Demand_UI.card_UnderStand_MADMainValue);
+				String smallValue = getTextOf(RPCC_Demand_UI.card_UnderStand_MADSmallValue);
+				String weekly = getTextOf(RPCC_Demand_UI.card_UnderStand_MADWeekly);
+				if (!mainValue.equals("") && !smallValue.equals("") && weekly.equals("(% Weekly)"))
+					flag = true;
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Card MAD should have value", "Card MAD is having value");
+				else
+					extentTest.log(LogStatus.PASS, "Card MAD should have value", "Card MAD is not having value");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Validate Card RMSE Has Value
+	 * 
+	 **/
+	public void validate_Card_UnderStand_RMSEHasValue_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				isDisplayed(RPCC_Demand_UI.card_UnderStand_RMSE);
+				String mainValue = getTextOf(RPCC_Demand_UI.card_UnderStand_RMSEMainValue);
+				String smallValue = getTextOf(RPCC_Demand_UI.card_UnderStand_RMSESmallValue);
+				String weekly = getTextOf(RPCC_Demand_UI.card_UnderStand_RMSEWeekly);
+				if (!mainValue.equals("") && !smallValue.equals("") && weekly.equals("(% Weekly)"))
+					flag = true;
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Card RMSE should have value", "Card RMSE is having value");
+				else
+					extentTest.log(LogStatus.PASS, "Card RMSE should have value", "Card RMSE is not having value");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	/**
 	 * Validate Bar Chart has data
 	 * 
@@ -361,13 +483,12 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 							"Chart - <B>" + "Tree Map" + "</B> is having data");
 				else
 					extentTest.log(LogStatus.FAIL, "Chart should have data",
-							"Chart - <B>" + "Tree Map" + "</B> is having data");
+							"Chart - <B>" + "Tree Map" + "</B> is not having data");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-
 
 	/**
 	 * Navigates to Understand Page
@@ -398,7 +519,6 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 		}
 	}
 
-	
 	/**
 	 * Validate Drop down has data
 	 * 
@@ -594,6 +714,31 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 	}
 
 	/**
+	 * Validate Analyze Inventory button is working
+	 * 
+	 **/
+	public void validate_ReviewOrdersButtonIsWorking_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			try {
+				waitForElementTobeClickable(RPCC_Demand_UI.btn_ReviewOrders);
+				actionClick(RPCC_Demand_UI.btn_ReviewOrders);
+				switchToBrowserTab(1);
+				String url = driver.getCurrentUrl();
+				driver.close();
+				switchToBrowserTab(0);
+				if (url.contains("lumuiportal"))
+					extentTest.log(LogStatus.PASS, "Review Orders button should work",
+							"Review Orders button is working");
+				else
+					extentTest.log(LogStatus.FAIL, "Review Orders button should work",
+							"Review Orders button is not working");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
 	 * Validate Composit Score filter Has values
 	 * 
 	 **/
@@ -618,7 +763,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 
 	/**
 	 * Validate Back page navigation is working
-	 *  
+	 * 
 	 **/
 	public void validate_BackNavigationIsWorking_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
@@ -651,38 +796,84 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 				for (int i = 1; i <= rowCnt; i++) {
 					By elm = By.xpath(
 							"((//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')])["
-									+ i + "]");					
-						rightClick(elm);
-						isDisplayed(RPCC_Demand_UI.contextMenu);
-						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
-						for (int j = 1; j <= options; j++) {
-							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
-							if (getTextOf(opt).equals("Drill through")) {
-								clickOn(opt);
-								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
-								clickOn(RPCC_Demand_UI.navBtn_Analyze);
-								waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
-								flag = true;
-								break;
-							}
+									+ i + "]");
+					rightClick(elm);
+					isDisplayed(RPCC_Demand_UI.contextMenu);
+					int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+					for (int j = 1; j <= options; j++) {
+						By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+						if (getTextOf(opt).equals("Drill through")) {
+							clickOn(opt);
+							waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
+							clickOn(RPCC_Demand_UI.navBtn_Analyze);
+							waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
+							flag = true;
+							break;
 						}
-						if (!flag) {
-							actionClick(RPCC_Demand_UI.btn_Reset);
-						}					
+					}
+					if (!flag) {
+						actionClick(RPCC_Demand_UI.btn_Reset);
+					}
 					if (flag)
 						break;
 				}
 				if (flag)
 					extentTest.log(LogStatus.PASS, "Table should have Drill through", "Table is having Drill through");
 				else
-					extentTest.log(LogStatus.FAIL, "Table should have Drill through", "Table is not having Drill through");
+					extentTest.log(LogStatus.FAIL, "Table should have Drill through",
+							"Table is not having Drill through");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	
+	/**
+	 * Validate Item Score Table Has DrillTrough is working
+	 * 
+	 **/
+
+	public void goto_InventoryCockpitOutOfStock_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				int rowCnt = getElementsCount(RPCC_Demand_UI.table_ItemScore_Options);
+				for (int i = 1; i <= rowCnt; i++) {
+					By elm = By.xpath(
+							"((//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')])["
+									+ i + "]");
+					rightClick(elm);
+					isDisplayed(RPCC_Demand_UI.contextMenu);
+					int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+					for (int j = 1; j <= options; j++) {
+						By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+						if (getTextOf(opt).equals("Drill through")) {
+							clickOn(opt);
+							waitForElementTobeClickable(RPCC_Demand_UI.navBtn_ReviewOutOfStock);
+							clickOn(RPCC_Demand_UI.navBtn_ReviewOutOfStock);
+							waitForElementTobeLocated(RPCC_Demand_UI.title_OutOfStock);
+							flag = true;
+							break;
+						}
+					}
+					if (!flag) {
+						actionClick(RPCC_Demand_UI.btn_Reset);
+					}
+					if (flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Should Navigate to Inventory Cockpit Out Of Stock",
+							"Navigated to Inventory Cockpit Out Of Stock");
+				else
+					extentTest.log(LogStatus.FAIL, "Should Navigate to Inventory Cockpit Out Of Stock",
+							"Not able to Navigate to Inventory Cockpit Out Of Stock");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	/**
 	 * Validate Under stock Table Has DrillTrough is working
 	 * 
@@ -695,38 +886,39 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 				int rowCnt = getElementsCount(RPCC_Demand_UI.table_UnderStock_options);
 				for (int i = 1; i <= rowCnt; i++) {
 					By elm = By.xpath(
-							"((//div[@class='innerContainer'])[2]//div[@class='flex-container cell-interactive '])["
-									+ i + "]");					
-						rightClick(elm);
-						isDisplayed(RPCC_Demand_UI.contextMenu);
-						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
-						for (int j = 1; j <= options; j++) {
-							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
-							if (getTextOf(opt).equals("Drill through")) {
-								clickOn(opt);
-								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
-								clickOn(RPCC_Demand_UI.navBtn_Analyze);
-								waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
-								flag = true;
-								break;
-							}
+							"((//div[@class='innerContainer'])[2]//div[@class='flex-container cell-interactive '])[" + i
+									+ "]");
+					rightClick(elm);
+					isDisplayed(RPCC_Demand_UI.contextMenu);
+					int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+					for (int j = 1; j <= options; j++) {
+						By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+						if (getTextOf(opt).equals("Drill through")) {
+							clickOn(opt);
+							waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
+							clickOn(RPCC_Demand_UI.navBtn_Analyze);
+							waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
+							flag = true;
+							break;
 						}
-						if (!flag) {
-							actionClick(RPCC_Demand_UI.btn_Reset);
-						}					
+					}
+					if (!flag) {
+						actionClick(RPCC_Demand_UI.btn_Reset);
+					}
 					if (flag)
 						break;
 				}
 				if (flag)
 					extentTest.log(LogStatus.PASS, "Table should have Drill through", "Table is having Drill through");
 				else
-					extentTest.log(LogStatus.FAIL, "Table should have Drill through", "Table is not having Drill through");
+					extentTest.log(LogStatus.FAIL, "Table should have Drill through",
+							"Table is not having Drill through");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
+
 	/**
 	 * Validate UnderStand Table Has Data
 	 * 
@@ -734,7 +926,7 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 
 	public void validate_ItemScoreTableHasData_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
-			int dataCell =0 ;
+			int dataCell = 0;
 			try {
 				waitForElementTobeLocated(RPCC_Demand_UI.table_ItemScore_Options);
 				int rowCnt = getElementsCount(RPCC_Demand_UI.table_ItemScore_Options);
@@ -743,10 +935,11 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 							"((//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')])["
 									+ i + "]");
 					if (!getTextOf(elm).equals(""))
-						dataCell = dataCell +1;
+						dataCell = dataCell + 1;
 				}
 				if (dataCell > 0)
-					extentTest.log(LogStatus.PASS, "Table should have data", "Table is having data cells - <B>[" + dataCell + "]</B>");
+					extentTest.log(LogStatus.PASS, "Table should have data",
+							"Table is having data cells - <B>[" + dataCell + "]</B>");
 				else
 					extentTest.log(LogStatus.FAIL, "Table should have data", "Table is not having data");
 
@@ -879,45 +1072,41 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 				for (int i = 1; i <= rowCnt; i++) {
 					By elm = By.xpath(
 							"((//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')])["
-									+ i + "]");					
-						rightClick(elm);
-						isDisplayed(RPCC_Demand_UI.contextMenu);
-						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
-						for (int j = 1; j <= options; j++) {
-							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
-							if (getTextOf(opt).equals("Drill through")) {
-								clickOn(opt);
-								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
-								clickOn(RPCC_Demand_UI.navBtn_Analyze);
-								waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
-								flag = true;
-								break;
-							}
+									+ i + "]");
+					rightClick(elm);
+					isDisplayed(RPCC_Demand_UI.contextMenu);
+					int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+					for (int j = 1; j <= options; j++) {
+						By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+						if (getTextOf(opt).equals("Drill through")) {
+							clickOn(opt);
+							waitForElementTobeClickable(RPCC_Demand_UI.navBtn_Analyze);
+							clickOn(RPCC_Demand_UI.navBtn_Analyze);
+							waitForElementTobeLocated(RPCC_Demand_UI.title_Analyze);
+							flag = true;
+							break;
 						}
-						if (!flag) {
-							actionClick(RPCC_Demand_UI.btn_Reset);
-						}					
+					}
+					if (!flag) {
+						actionClick(RPCC_Demand_UI.btn_Reset);
+					}
 					if (flag)
 						break;
 				}
 				if (flag)
-					extentTest.log(LogStatus.PASS, "Navigate to Analyze Page",
-							"Navigated to Analyze Page");
+					extentTest.log(LogStatus.PASS, "Navigate to Analyze Page", "Navigated to Analyze Page");
 				else
-					extentTest.log(LogStatus.FAIL, "Navigate to Analyze Page",
-							"Not able to navigate to Analyze Page");
+					extentTest.log(LogStatus.FAIL, "Navigate to Analyze Page", "Not able to navigate to Analyze Page");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-		
-		
-		
+
 	/**
 	 * Validate scatter graph chart has data
 	 * 
-	 **/	
+	 **/
 	public void validate_ScatterChartHasData_RPCC_Demand() {
 		synchronized (RPCC_Demand_Logic.class) {
 			try {
@@ -1006,6 +1195,98 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 				else
 					extentTest.log(LogStatus.FAIL, "Navigate to Understand UnderStock Page",
 							"Not able to navigate to Under Stock Page");
+			} catch (NoSuchElementException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Navigates to UnderStand Excess Stock Page
+	 * 
+	 **/
+	public void goto_UnderStand_ExcessStock_RPCC_Demand() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				boolean flag = false;
+				for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrends); i++) {
+					By bar = By.xpath(
+							"((//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing'])["
+									+ i + "]");
+					if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
+						rightClick(bar);
+						isDisplayed(RPCC_Demand_UI.contextMenu);
+						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+						for (int j = 1; j <= options; j++) {
+							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+							if (getTextOf(opt).equals("Drill through")) {
+								clickOn(opt);
+								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_ReviewExcessStock);
+								clickOn(RPCC_Demand_UI.navBtn_ReviewExcessStock);
+								waitForElementTobeLocated(RPCC_Demand_UI.title_UnderstandExcessStock);
+								flag = true;
+								break;
+							}
+						}
+						if (!flag) {
+							actionClick(RPCC_Demand_UI.title_Understand);
+						}
+					}
+					if (flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Navigate to Understand Excess Stock Page",
+							"Navigated to Understand Excess Stock Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Navigate to Understand Excess Stock Page",
+							"Not able to navigate to Excess Stock Page");
+			} catch (NoSuchElementException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * Navigates to UnderStand Order Variance Page
+	 * 
+	 **/
+	public void goto_UnderStand_OrderVariance_RPCC_Demand() {
+		synchronized (AnamolyDetection_Logic.class) {
+			try {
+				boolean flag = false;
+				for (int i = 1; i <= getElementsCount(RPCC_Demand_UI.chart_ForecastTrends); i++) {
+					By bar = By.xpath(
+							"((//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing'])["
+									+ i + "]");
+					if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
+						rightClick(bar);
+						isDisplayed(RPCC_Demand_UI.contextMenu);
+						int options = getElementsCount(RPCC_Demand_UI.contextMenu_Option);
+						for (int j = 1; j <= options; j++) {
+							By opt = By.xpath("//*[@role='menu']//button[@role='menuitem'][" + j + "]");
+							if (getTextOf(opt).equals("Drill through")) {
+								clickOn(opt);
+								waitForElementTobeClickable(RPCC_Demand_UI.navBtn_ReviewOrderVariance);
+								clickOn(RPCC_Demand_UI.navBtn_ReviewOrderVariance);
+								waitForElementTobeLocated(RPCC_Demand_UI.title_UnderstandOrderVariance);
+								flag = true;
+								break;
+							}
+						}
+						if (!flag) {
+							actionClick(RPCC_Demand_UI.title_Understand);
+						}
+					}
+					if (flag)
+						break;
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Navigate to Understand Order VariancePage",
+							"Navigated to Understand Order VariancePage Page");
+				else
+					extentTest.log(LogStatus.FAIL, "Navigate to Understand Order VariancePage",
+							"Not able to navigate to Order Variance Page");
 			} catch (NoSuchElementException e) {
 				e.printStackTrace();
 			}
@@ -1122,15 +1403,14 @@ public class RPCC_Demand_Logic extends WebDriverFactory {
 
 	}
 
-
-public void navigate_To_UnderstandFlow()
-{
-			synchronized (RPCC_Demand_Logic.class) {
+	public void navigate_To_UnderstandFlow() {
+		synchronized (RPCC_Demand_Logic.class) {
 			try {
 				waitForElementTobeClickable(RPCC_Demand_UI.treeMap_Product);
 				int num = getElementsCount(RPCC_Demand_UI.treeMap_Product_Options);
 				for (int i = 1; i <= num - 1; i++) {
-					By elem = By.xpath("((//*[@class='treemap'])[1]//*[@class='parentGroup treemapNode setFocusRing'])");
+					By elem = By
+							.xpath("((//*[@class='treemap'])[1]//*[@class='parentGroup treemapNode setFocusRing'])");
 					rightClick(elem);
 					waitForElementTobeClickable(RPCC_Demand_UI.navBtn_DrillThrough);
 					clickOn(RPCC_Demand_UI.navBtn_DrillThrough);

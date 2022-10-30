@@ -1,7 +1,11 @@
 package testlogic;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import org.apache.xmlbeans.impl.xb.xsdschema.Public;
@@ -19,6 +23,7 @@ import com.thoughtworks.selenium.webdriven.commands.IsVisible;
 
 import frameworkutils.DataBook;
 import frameworkutils.WebDriverFactory;
+import uimaps.RPCC_Demand_UI;
 import uimaps.Shopper_UI;
 import uimaps.Supplier_UI;
 
@@ -34,8 +39,7 @@ public class Shopper_Logic extends WebDriverFactory {
 	String yAxis = dataBook.get("Y_Axis");
 	String xAxis = dataBook.get("X_Axis");
 	String cardName = dataBook.get("Card_Name");
-	
-	
+
 	public static ArrayList<String> weeks() {
 		ArrayList<String> WeekList = new ArrayList<String>();
 		WeekList.add("Mon");
@@ -47,13 +51,37 @@ public class Shopper_Logic extends WebDriverFactory {
 		WeekList.add("Sun");
 		return WeekList;
 	}
-	
+		
+	public static ArrayList<String> months() {
+		ArrayList<String> monthList = new ArrayList<String>();
+		monthList.add("Jan");
+		monthList.add("Feb");
+		monthList.add("Mar");
+		monthList.add("Apr");
+		monthList.add("May");
+		monthList.add("Jun");
+		monthList.add("Jul");
+		monthList.add("Aug");
+		monthList.add("Sep");
+		monthList.add("Oct");
+		monthList.add("Nov");
+		monthList.add("Dec");
+		return monthList;
+	}
+
+	public static ArrayList<String> short_months(ArrayList<String> monthList) {
+		ArrayList<String> shortMonthList = new ArrayList<String>();
+		for (int i = 0; i < monthList.size(); i++) {
+			shortMonthList.add(monthList.get(i).substring(0, 3));
+		}
+		return shortMonthList;
+	}
 
 	public void goto_Tab_MarketBasketAnalysis_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
 				waitForElementTobeClickable(Shopper_UI.tab_MarketBasketAnalysis);
-				clickOn(Shopper_UI.tab_MarketBasketAnalysis);
+				actionClick(Shopper_UI.tab_MarketBasketAnalysis);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -64,7 +92,7 @@ public class Shopper_Logic extends WebDriverFactory {
 		synchronized (Shopper_Logic.class) {
 			try {
 				waitForElementTobeClickable(Shopper_UI.tab_MissionTripAnalysis);
-				clickOn(Shopper_UI.tab_MissionTripAnalysis);
+				actionClick(Shopper_UI.tab_MissionTripAnalysis);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -76,6 +104,17 @@ public class Shopper_Logic extends WebDriverFactory {
 		synchronized (Shopper_Logic.class) {
 			try {
 				doubleClick(Shopper_UI.btn_HowHaveMyBasketMetricsPerformed);
+				waitForPageToLoad();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void goto_Btn_WhatIsMyBasketValueSizeDuringEventRegularPeriods_Shopper() {
+		synchronized (Shopper_Logic.class) {
+			try {
+				doubleClick(Shopper_UI.btn_WhatIsMyBasketValueSizeDuringEventRegularPeriods);
 				waitForPageToLoad();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -132,13 +171,15 @@ public class Shopper_Logic extends WebDriverFactory {
 	public void validate_DropDownHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
-				if (checkDropDownHasData_Shopper()) {
-					extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
-				} else {
-					extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation", "Drop Down has no Data");
-				}
+				By optCount = By
+						.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
+				int rowCount = getElementsCount(optCount);
+				if (rowCount > 0)
+					extentTest.log(LogStatus.PASS, "Drop Down should have data",
+							"Drop Down has <B>[" + rowCount + "]</B> number of rows");
+				else
+					extentTest.log(LogStatus.FAIL, "Drop Down should have data", "Drop Down has no Data");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -163,10 +204,12 @@ public class Shopper_Logic extends WebDriverFactory {
 	public void validate_DropDownHasSearchOption_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
-				if (checkDropDownHasSearchOption_Shopper())
-					extentTest.log(LogStatus.PASS, "Search Field vaildation", "Search filed is visible for filter");
+				By searchOpt = By.xpath(
+						"//div[@role='listbox' and @aria-label='" + filterName + "']/..//input[@aria-label='Search']");
+				if (isDisplayed(searchOpt))
+					extentTest.log(LogStatus.PASS, "Search option should be present", "Search option is present");
 				else
-					extentTest.log(LogStatus.FAIL, "Search Field vaildation", "Search filed is not visible for filter");
+					extentTest.log(LogStatus.FAIL, "Search option should be present", "Search option is not present");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -180,6 +223,9 @@ public class Shopper_Logic extends WebDriverFactory {
 				boolean flag = false;
 				waitForElementTobeLocated(Shopper_UI.chart_TopDistrictContribution_Option);
 				int districtNum = getElementsCount(Shopper_UI.chart_TopDistrictContribution_Option);
+				if(districtNum > 50) {
+					districtNum = 10;
+				}
 				for (int i = 1; i <= districtNum; i++) {
 					waitForPageToLoad();
 					snooze(3000);
@@ -321,7 +367,7 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
-	public void validate_ChartMeausingUnitsAppear_Shopper() {
+	public void validate_ChartMeasuringUnitsAppear_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
 				if (checkChartShowsUnit(chartName, chartUnit))
@@ -403,11 +449,11 @@ public class Shopper_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	public void validate_DayOfWeekTableHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
-				
+
 				if (getTableDayOfWeek())
 					extentTest.log(LogStatus.PASS, "Table should have Value", "Table is having data");
 				else
@@ -417,8 +463,7 @@ public class Shopper_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	
+
 	public void validate_TimeOfDayTableHasHeader_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -434,8 +479,7 @@ public class Shopper_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
-	
+
 	public void validate_DayOfWeekTableHasHeader_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -458,7 +502,7 @@ public class Shopper_Logic extends WebDriverFactory {
 				if (getYaxisValue(chartName))
 					extentTest.log(LogStatus.PASS, "Chart should have proper Y axis", "Chart is having proper Y axis");
 				else
-					extentTest.log(LogStatus.FAIL, "Chart should have proper Y axis", "Chart is having proper Y axis");
+					extentTest.log(LogStatus.FAIL, "Chart should have proper Y axis", "Chart is not having proper Y axis");
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -512,16 +556,199 @@ public class Shopper_Logic extends WebDriverFactory {
 			}
 		}
 	}
-
+	
+	
 	/*
-	 * Private methods section
+	 * Validate Filter has months
 	 */
+	
+	public void validate_FilterHasMonths_Shopper() {
+		synchronized (Shopper_Logic.class) {
+			try {
+				if (checkFilterHasMonth_Shopper(months()))
+					extentTest.log(LogStatus.PASS, "Filter should have Month & Date", "Filter is having Month & Date");
+				else
+					extentTest.log(LogStatus.FAIL, "Filter should have Month & Date", "Filter is not having Month & Date");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *   Validate Card percentage value has proper color
+	 */
+	
+	public void validate_AvgBasketValueColor_Suppplier() {
+		synchronized (Shopper_Logic.class) {
+			try {
+				checkPercentColor(Shopper_UI.card_AvgBasketValue_Percent, Shopper_UI.card_AvgBasketValue_Color);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *   Validate Card percentage value has proper color
+	 */
+	
+	public void validate_AvgBasketSizeColor_Suppplier() {
+		synchronized (Shopper_Logic.class) {
+			try {
+				checkPercentColor(Shopper_UI.card_AvgBasketSize_Percent, Shopper_UI.card_AvgBasketSize_Color);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *   Validate Card percentage value has proper color
+	 */
+	
+	public void validate_CustomersColor_Suppplier() {
+		synchronized (Shopper_Logic.class) {
+			try {
+				checkPercentColor(Shopper_UI.card_CustomersValue_Percent, Shopper_UI.card_CustomersValue_Color);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *   Validate Card percentage value has proper color
+	 */
+	
+	public void validate_DiscountColor_Suppplier() {
+		synchronized (Shopper_Logic.class) {
+			try {
+				checkPercentColor(Shopper_UI.card_DiscountsValue_Percent, Shopper_UI.card_DiscountsValue_Color);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * 
+	 * **/
+	
+	public void validate_MyBasketBarChartHasData_Shopper() {
+		synchronized (Shopper_Logic.class) {
+			try {
+				boolean flag = false;
+				By chartElm = By.xpath("//*[contains(text(),'" + chartName+ "')]//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid']//*[@class='series']//*");
+				for (int i = 1; i <= getElementsCount(chartElm); i++) {
+					By bar = By.xpath("(//*[contains(text(),'" + chartName+ "')]//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid']//*[@class='series']//*)["
+							+ i + "]");
+					if (!(getAttributeValueOf(bar, "aria-label").equals("null"))) {
+						actionClick(bar);
+						waitForPageToLoad();
+						snooze(3000);
+						String label = getTextOf(Shopper_UI.chart_popupText);
+						if (!label.equals("") && !label.contains("Report Zoomed"))
+							flag = true;
+						else
+							flag = false;
+					} else {
+						actionClick(By.xpath("(//*[@cursor='crosshair'])[1]"));
+					}
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Chart should have data",
+							"Chart - <B>" + chartName + "</B> is having data");
+				else
+					extentTest.log(LogStatus.FAIL, "Chart should have data",
+							"Chart - <B>" + chartName + "</B> is not having data");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+
+	/**
+	 * Validate X Axis Has Date
+	 * 
+	 **/
+	public void validate_XAxisHasDate_RPCC_Demand1() {
+		synchronized (RPCC_Demand_Logic.class) {
+			boolean flag = false;
+			try {
+				By chart = By.xpath("//div[text()='"+chartName+"']//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid']//*[@class='x axis hideLinesOnAxis setFocusRing']//*[@class='setFocusRing']");
+				waitForElementTobeLocated(chart);
+				int size = getElementsCount(chart);
+				for (int i = 1; i <= size; i++) {
+					By elm = By.xpath(
+							"(//div[text()='"+chartName+"']//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid']//*[@class='x axis hideLinesOnAxis setFocusRing']//*[@class='setFocusRing'])[" + i + "]");
+					String date = getTextOf(elm).trim();
+					if (date.equals("")) {
+						flag = false;
+					} else {
+//						validateDate("dd,MM,yyyy",date);
+
+						}
+						//	SimpleDateFormat sdfrmt = new SimpleDateFormat("dd/MM/yyyy");
+//						sdfrmt.setLenient(false);
+//						Date javaDate = sdfrmt.parse(date);
+//						flag = true;
+					
+				}
+				if (flag)
+					extentTest.log(LogStatus.PASS, "Date format validation", "Date is in - <B> DD/MM/YYYY </B> format");
+				else
+					extentTest.log(LogStatus.FAIL, "Date format validation",
+							"Date is not in - <B> DD/MM/YYYY </B> format");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	public void validate_XAxisHasDate_RPCC_Demand() {
+		synchronized (RPCC_Demand_Logic.class) {
+		boolean flag = false;
+		try {
+			By chart = By.xpath("//div[text()='"+chartName+"']//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid']//*[@class='x axis hideLinesOnAxis setFocusRing']//*[@class='setFocusRing']");
+			waitForElementTobeLocated(chart);
+			int size = getElementsCount(chart);
+			for (int i = 1; i <= size; i++) {
+				By elm = By.xpath(
+						"(//div[text()='"+chartName+"']//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid']//*[@class='x axis hideLinesOnAxis setFocusRing']//*[@class='setFocusRing'])[" + i + "]");
+				String date = getTextOf(elm).trim();
+				if (date.equals("")) {
+					flag = false;
+				} else {
+//				validateDate("dd,MM,yyyy",date);
+
+					}
+					//	SimpleDateFormat sdfrmt = new SimpleDateFormat("dd/MM/yyyy");
+//				sdfrmt.setLenient(false);
+//				Date javaDate = sdfrmt.parse(date);
+//				flag = true;
+				
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	}
+	
+	/************************************************* Private methods section  *********************************************/
 
 	private boolean checkChartShowsUnit(String chart, String measureUnit) {
 		try {
 			boolean flag = false;
 			chart = chart.trim();
-			String[] units = chartUnit.split("\\|");
+			String[] units = measureUnit.split("\\|");
 			List<String> unitsList = Arrays.asList(units);
 			for (int i = 0; i < unitsList.size(); i++) {
 				String unit = unitsList.get(i).trim();
@@ -600,7 +827,7 @@ public class Shopper_Logic extends WebDriverFactory {
 					waitForPageToLoad();
 					snooze(3000);
 					String label = getTextOf(Shopper_UI.chart_popupText);
-					if (!label.equals(""))
+					if (!label.equals("") && !label.contains("Report Zoomed"))
 						flag = true;
 					else
 						flag = false;
@@ -617,8 +844,7 @@ public class Shopper_Logic extends WebDriverFactory {
 	private boolean checkLineChartData(String chart) {
 		try {
 			boolean flag = false;
-			By chartElm = By.xpath("(//*[contains(text(),'" + chart
-					+ "')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[2]//*[@role='listbox']");
+			By chartElm = By.xpath("(//*[contains(text(),'" + chart	+ "')]//ancestor::div[contains(@class,'themableBorderColorSolid')])[2]//*[@role='listbox']");
 			if ((isDisplayed(chartElm)))
 				flag = true;
 			else
@@ -643,7 +869,7 @@ public class Shopper_Logic extends WebDriverFactory {
 						.xpath("(//div[@class='bodyCells']//div[contains(@class,'pivotTableCellWrap')])[" + i + "]");
 				if (getTextOf(cell).contains("%")) {
 					flag = true;
-				}else {
+				} else {
 					emptCell = emptCell + 1;
 					flag = true;
 				}
@@ -653,7 +879,7 @@ public class Shopper_Logic extends WebDriverFactory {
 		} catch (NoSuchElementException e) {
 			return false;
 		}
-		
+
 		return flag;
 	}
 
@@ -671,7 +897,7 @@ public class Shopper_Logic extends WebDriverFactory {
 						.xpath("(//div[@class='bodyCells']//div[contains(@class,'pivotTableCellWrap')])[" + i + "]");
 				if (getTextOf(cell).contains("%")) {
 					flag = true;
-				}else {
+				} else {
 					emptCell = emptCell + 1;
 					flag = true;
 				}
@@ -681,7 +907,7 @@ public class Shopper_Logic extends WebDriverFactory {
 		} catch (NoSuchElementException e) {
 			return false;
 		}
-		
+
 		return flag;
 	}
 
@@ -705,18 +931,6 @@ public class Shopper_Logic extends WebDriverFactory {
 			}
 			return flag;
 		} catch (NoSuchElementException e) {
-			return false;
-		}
-	}
-
-	private boolean checkDropDownHasData_Shopper() {
-		try {
-			if (getFilterDropDownRowCount_Shopper() > 0)
-				return true;
-			else
-				return false;
-		} catch (NoSuchElementException nsex) {
-			extentTest.log(LogStatus.FAIL, "Search Field vaildation", "Search filed is visible for filter");
 			return false;
 		}
 	}
@@ -747,15 +961,20 @@ public class Shopper_Logic extends WebDriverFactory {
 	}
 
 	private boolean isMultiSelectActive_Shopper() {
-
+		boolean flag;
 		try {
-			boolean flag = false;
-			String state = driver.findElement(Shopper_UI.dd_SelectAll_option).getAttribute("aria-checked");
+			By selectAll = By.xpath("//div[@role='listbox' and @aria-label='" + filterName
+					+ "']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[contains(@class,'slicerItemContainer')]");
+			String state = getAttributeValueOf(selectAll, "aria-checked");
 			if (state.trim().equals("true")) {
-				int rows = getFilterDropDownRowCount_Shopper();
+				By optCount = By
+						.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
+				int rows = getElementsCount(optCount);
 				for (int i = 1; i <= rows; i++) {
 					String rowState = driver.findElement(By.xpath(
-							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])[4]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+							"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
+									+ i
+									+ "]//span[@class='slicerText']//ancestor::div[contains(@class,'slicerItemContainer')]"))
 							.getAttribute("aria-checked");
 					if (rowState.trim().equals("true")) {
 						flag = true;
@@ -763,13 +982,19 @@ public class Shopper_Logic extends WebDriverFactory {
 				}
 				return true;
 			} else if (state.trim().equals("false")) {
-				driver.findElement(Shopper_UI.dd_SelectAll_option).click();
-				String state2 = driver.findElement(Shopper_UI.dd_SelectAll_option).getAttribute("aria-checked");
+				clickOn(selectAll);
+				By selectAll2 = By.xpath("//div[@role='listbox' and @aria-label='" + filterName
+						+ "']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[contains(@class,'slicerItemContainer')]");
+				String state2 = getAttributeValueOf(selectAll2, "aria-checked");
 				if (state2.trim().equals("true")) {
-					int rows = getFilterDropDownRowCount_Shopper();
+					By optCount = By
+							.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
+					int rows = getElementsCount(optCount);
 					for (int i = 1; i <= rows; i++) {
 						String rowState = driver.findElement(By.xpath(
-								"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])[4]//span[@class='slicerText']//ancestor::div[@class='slicerItemContainer']"))
+								"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])["
+										+ i
+										+ "]//span[@class='slicerText']//ancestor::div[contains(@class,'slicerItemContainer')]"))
 								.getAttribute("aria-checked");
 						if (rowState.trim().equals("true")) {
 							flag = true;
@@ -787,17 +1012,19 @@ public class Shopper_Logic extends WebDriverFactory {
 		return false;
 
 	}
-	
+
 	private boolean checkTableHasHeader_Shopper(ArrayList<String> weekArrayList) {
 		boolean flag = false;
-		try {			
+		try {
 			System.out.println(weekArrayList);
 			int rows = getElementsCount(Shopper_UI.span_TimeOfDayColumn);
 			for (int i = 1; i <= rows; i++) {
-				By header = By.xpath("((//div[@class='innerContainer'])[1]//div[@class='columnHeaders']//div[contains(@class,'pivotTableCellWrap')])[" + i + "]");
-				String head = getAttributeValueOf(header, "title");				
+				By header = By.xpath(
+						"((//div[@class='innerContainer'])[1]//div[@class='columnHeaders']//div[contains(@class,'pivotTableCellWrap')])["
+								+ i + "]");
+				String head = getAttributeValueOf(header, "title");
 				if (weekArrayList.contains(head)) {
-					flag = true;				
+					flag = true;
 				}
 			}
 		} catch (Exception e) {
@@ -806,5 +1033,88 @@ public class Shopper_Logic extends WebDriverFactory {
 		return flag;
 
 	}
+	
+	private boolean checkFilterHasMonth_Shopper(ArrayList<String> monthList) {
+		boolean flag = false;
+		try {
+			System.out.println(monthList);				
+			By optCount = By.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
+			int rowCount = getElementsCount(optCount);
+			for (int i = 1; i <= rowCount; i++) {
+				By row = By.xpath(
+						"(//div[@role='listbox' and @aria-label='" + filterName + "']//span[@class='slicerText'])["
+								+ i + "]");
+				String monthYear = getAttributeValueOf(row, "title");
+				String[] month = monthYear.split(" ");
+				System.out.println(month[1].substring(1, 4));
+				if (monthList.contains(month[1].substring(1, 4))) {
+					flag = true;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
 
+	private boolean checkPercentColor(By percen, By color) {
+		synchronized (Shopper_Logic.class) {
+			try {
+				String percentage = getTextOf(percen);
+				String perColor = getAttributeValueOf(color, "style");
+				if (!percentage.trim().contains("-") && perColor.trim().contains("171")) {
+					extentTest.log(LogStatus.PASS, "Positive percentage value should be in GREEN",
+							"Positive percentage value is in GREEN");
+					return true;
+				} else if (percentage.trim().contains("-") && perColor.trim().contains("242")) {
+					extentTest.log(LogStatus.PASS, "Negitive percentage value should be in RED",
+							"Negitive percentage value is in RED");
+					return true;
+				} else {
+					extentTest.log(LogStatus.FAIL, "Failed to Identify Percentage with color");
+					return false;
+				}
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
+	   private  boolean validateDate(String format, String date)
+	   {
+		/* Check if date is 'null' */
+		if (date.trim().equals(""))
+		{
+		    return true;
+		}
+		/* Date is not 'null' */
+		else
+		{
+		    /*
+		     * Set preferred date format,
+		     * For example MM-dd-yyyy, MM.dd.yyyy,dd.MM.yyyy etc.*/
+		    SimpleDateFormat sdfrmt = new SimpleDateFormat(format);
+		    sdfrmt.setLenient(false);
+		    /* Create Date object
+		     * parse the string into date 
+	             */
+		    try
+		    {
+		        Date javaDate = sdfrmt.parse(date); 
+		        System.out.println(date+" is valid date format");
+		    }
+		    /* Date format is invalid */
+		    catch (ParseException e)
+		    {
+		        System.out.println(date+" is Invalid Date format");
+		        return false;
+		    }
+		    /* Return true if date format is valid */
+		    return true;
+		}
+	   }
+	
 }
