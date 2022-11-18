@@ -51,7 +51,7 @@ public class SPlanning_Logic extends WebDriverFactory {
 	public void validateTheSearchButtonAndFromToFilter_Space() {
 		synchronized (SPlanning_Logic.class) {
 			try {
-
+				waitForPageToLoad();
 				clickonFilterandchecktheSearchButton_Space(filterName);
 				extentTest.log(LogStatus.PASS, "Search Buttton is enabled", "Search Buttton has Data");
 			} catch (Exception e) {
@@ -86,6 +86,7 @@ public class SPlanning_Logic extends WebDriverFactory {
 	public void validateLastUpdateData_Space() {
 		synchronized (SPlanning_Logic.class) {
 			try {
+				waitForPageToLoad();
 				waitForElementTobeLocated(SPlanning_UI.lasteUpdateDate);
 				waitForPageToLoad();
 				driver.findElement(SPlanning_UI.lasteUpdateDate).isDisplayed();
@@ -102,9 +103,16 @@ public class SPlanning_Logic extends WebDriverFactory {
 	public void clickonSpaceProductivity_Space() {
 		synchronized (SPlanning_Logic.class) {
 			try {
-				waitForElementTobeClickable(SPlanning_UI.spaceProductivity);
-				clickOn(SPlanning_UI.spaceProductivity);
 				waitForPageToLoad();
+				waitForElementTobeClickable(SPlanning_UI.spaceProductivity);
+				
+//				WebDriverWait wait=new WebDriverWait(driver, 2000);
+//				wait.until(ExpectedConditions.elementToBeClickable(SPlanning_UI.spaceProductivity));
+				clickOn(SPlanning_UI.spaceProductivity);
+//				jsClickOn(SPlanning_UI.spaceProductivity);
+//				doubleClick(SPlanning_UI.spaceProductivity);
+				
+				//				waitForElementTobeClickable(SPlanning_UI.sales);
 				if (isDisplayed(SPlanning_UI.sales))
 					extentTest.log(LogStatus.PASS, "SpaceProductivity button  is enabled",
 							"SpaceProductivity has Data");
@@ -121,6 +129,8 @@ public class SPlanning_Logic extends WebDriverFactory {
 	public void verifysalesModule_Space() {
 		synchronized (SPlanning_Logic.class) {
 			try {
+				waitForPageToLoad();
+				clickOn(SPlanning_UI.spaceProductivity);
 				waitForPageToLoad();
 				waitForVisibleElement(SPlanning_UI.saleslinear);
 				isDisplayed(SPlanning_UI.saleslinear);
@@ -142,17 +152,20 @@ public class SPlanning_Logic extends WebDriverFactory {
 		synchronized (SPlanning_Logic.class) {
 			try {
 				waitForPageToLoad();
-				waitForVisibleElement(SPlanning_UI.unitsOthers);
-
+				clickOn(SPlanning_UI.spaceProductivity);
+				waitForPageToLoad();
+//				waitForVisibleElement(SPlanning_UI.unitsOthers);
 				isDisplayed(SPlanning_UI.unitsOthers);
 				isDisplayed(SPlanning_UI.unitlinear);
-				isDisplayed(SPlanning_UI.unitlinearOthers);
+				if(isDisplayed(SPlanning_UI.unitlinearOthers))
 				extentTest.log(LogStatus.PASS, "SpaceProductivity sales  button  is enabled",
 						"SpaceProductivity sales has Data");
+				else
+					extentTest.log(LogStatus.FAIL, "SpaceProductivity button disabled","SpaceProductivity sales has no Data");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				extentTest.log(LogStatus.FAIL, "SpaceProductivity button disabled",
-						"SpaceProductivity sales has no Data");
+				
+						
 				e.printStackTrace();
 			}
 		}
@@ -164,14 +177,17 @@ public class SPlanning_Logic extends WebDriverFactory {
 				WebDriverWait wait = new WebDriverWait(driver, 20);
 				waitForPageToLoad();
 				// verify the Margin module
-				driver.findElement(SPlanning_UI.profit).isDisplayed();
-				driver.findElement(SPlanning_UI.profitOthers).isDisplayed();
-				driver.findElement(SPlanning_UI.marginlinear).isDisplayed();
-				driver.findElement(SPlanning_UI.marginlinearOthers).isDisplayed();
+				clickOn(SPlanning_UI.spaceProductivity);
+				isDisplayed(SPlanning_UI.profit);
+				isDisplayed(SPlanning_UI.profitOthers);
+                isDisplayed(SPlanning_UI.marginlinear);
+               if( isDisplayed(SPlanning_UI.marginlinearOthers))
 				extentTest.log(LogStatus.PASS, "MarginModule  button  is enabled", "MarginModule  has Data");
+				else
+				extentTest.log(LogStatus.FAIL, "MarginModule button is disabled", "MarginModule  has no Data");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				extentTest.log(LogStatus.FAIL, "MarginModule button is disabled", "MarginModule  has no Data");
+				
 				e.printStackTrace();
 			}
 		}
@@ -182,15 +198,18 @@ public class SPlanning_Logic extends WebDriverFactory {
 		synchronized (SPlanning_Logic.class) {
 			try {
 				waitForPageToLoad();
+				doubleClick(SPlanning_UI.spaceProductivity);
+				waitForPageToLoad();
 				waitForVisibleElement(SPlanning_UI.unitsOthers);
 				clickOn(SPlanning_UI.unitsOthers);
 				waitForPageToLoad();
-				jsClickOn(SPlanning_UI.investigateButton);
-
+				if(jsClickOn(SPlanning_UI.investigateButton))
 				extentTest.log(LogStatus.PASS, "MarginModule  button  is enabled", "MarginModule  has Data");
+				else
+					extentTest.log(LogStatus.FAIL, "MarginModule button is disabled", "MarginModule  has no Data");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				extentTest.log(LogStatus.FAIL, "MarginModule button is disabled", "MarginModule  has no Data");
+				
 				e.printStackTrace();
 			}
 		}
@@ -242,6 +261,7 @@ public class SPlanning_Logic extends WebDriverFactory {
 				waitForVisibleElement(SPlanning_UI.spaceProductivity);
 				waitForPageToLoad();
 				clickOn(SPlanning_UI.spaceProductivity);
+//				jsClickOn(SPlanning_UI.spaceProductivity);
 				clickOn(SPlanning_UI.spaceToggle);
 				isDisplayed(SPlanning_UI.toggleOffQuestions);
 				extentTest.log(LogStatus.PASS, "Toggle  is enabled", "Toggle is enabled");
@@ -414,16 +434,25 @@ public class SPlanning_Logic extends WebDriverFactory {
 		synchronized (SPlanning_Logic.class) {
 			try {
 				waitForPageToLoad();
-				waitForElementTobeLocated(SPlanning_UI.movement_NPE_AE);
+				clickOn(SPlanning_UI.spaceProductivity);
+//				wait(2000);
+				waitForVisibleElement(SPlanning_UI.movement_NPE_AE);
+//				clickOn(SPlanning_UI.movement_NPE_AE);
 				clickOn(SPlanning_UI.movement_NPE_AE);
 				waitForPageToLoad();
 				isDisplayed(SPlanning_UI.MovementAEChart);
-				isDisplayed(SPlanning_UI.MovementNPIChart);
+				if(isDisplayed(SPlanning_UI.MovementNPIChart))
 				extentTest.log(LogStatus.PASS, "movement tab is enabled", "movement tab is enabled");
+				
+				else
+					extentTest.log(LogStatus.FAIL, "movement tab is disabled", "movement tab has no Data");
+				
+				
+				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				extentTest.log(LogStatus.FAIL, "movement tab is disabled", "movement tab has no Data");
 				e.printStackTrace();
+				
 			}
 		}
 
