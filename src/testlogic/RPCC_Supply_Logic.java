@@ -291,6 +291,7 @@ public class RPCC_Supply_Logic extends WebDriverFactory {
 					clickOn(RPCC_Supply_UI.navBtn_DrillThrough);
 					waitForElementTobeClickable(RPCC_Supply_UI.drill_Understand);
 					clickOn(RPCC_Supply_UI.drill_Understand);
+					waitForPageToLoad();
 //					waitForElementTobeLocated(RPCC_Supply_UI.understandpage_title);
 					if (isDisplayed(RPCC_Supply_UI.understandpage_title))
 						extentTest.log(LogStatus.PASS, "Navigates to Understand Page through out of scope", "Navigated to Understand Page through out of scope");
