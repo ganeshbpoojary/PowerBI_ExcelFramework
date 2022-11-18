@@ -18,6 +18,7 @@ public class LandingPage_Logic extends WebDriverFactory {
 			Properties property = new Properties();
 			try {
 				property.load(new FileInputStream("SeleniumConstants.properties"));
+				waitForPageToLoad();
 				String email = property.getProperty("username");
 				String pwd = property.getProperty("password");
 //				refreshDataBook();				

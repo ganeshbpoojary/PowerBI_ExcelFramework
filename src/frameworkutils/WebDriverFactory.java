@@ -59,7 +59,7 @@ public class WebDriverFactory {
 	private final static int ALERT_TIMEOUT = 30000; // in milliseconds
 	private final static int MAX_ATTEMP = 100; // in milliseconds
 	private final static int WAIT_TIMEOUT = 5000;
-	private final static int WEBDRIVER_WAIT_TIMEOUT = 60; // in seconds
+	private final static int WEBDRIVER_WAIT_TIMEOUT = 120; // in seconds
 	protected final static int IMPLICIT_WAIT_TIMEOUT = 120; // in seconds
 	private final static int PAGELOAD_WAIT_TIMEOUT = 120; // in seconds
 	public WebElement tblElement;

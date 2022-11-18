@@ -54,6 +54,22 @@ public void validateDropDownHasData_Assort() {
 	}
 }
 
+public void validate_LiveAssortmentDropdown_Assort() {
+
+	synchronized (AssortInsight_Logic.class) {
+		try {
+			waitForPageToLoad();
+			clickonFilterandValidatethedata_Asoort(filterName);
+			extentTest.log(LogStatus.PASS, "Drop Down Data presence validation", "Drop Down has Data");
+		}				
+		 catch (Exception e) {
+			// TODO Auto-generated catch block
+			 extentTest.log(LogStatus.FAIL, "Drop Down Data presence validation", "Drop Down has no Data");
+			e.printStackTrace();
+		}
+	}
+}
+
 
 
 //Validate value in the dropdown
@@ -93,6 +109,7 @@ public void validateLastUpdateData_Assort()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.label_Lastupdated);
         waitForPageToLoad();
         isDisplayed(AssortInsight_UI.label_Lastupdated);
@@ -132,6 +149,7 @@ public void validate_AssortPerfor_actualvsbudget_salesAssort()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_AssortmentPerformance);
 //		clickOn(AssortInsight_UI.title_AssortmentPerformance);
         waitForPageToLoad();
@@ -151,6 +169,7 @@ public void validate_AssortPerfor_actualvsbudget_MarginAssort()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_AssortmentPerformance);
 		waitForPageToLoad();
 //		jsClickOn(AssortInsight_UI.title_AssortmentPerformance);
@@ -173,6 +192,7 @@ public void validate_AssortPerformSalesButton_Assort()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_AssortmentPerformance);
 //		clickOn(AssortInsight_UI.title_AssortmentPerformance);
 		jsClickOn(AssortInsight_UI.title_AssortmentPerformance);
@@ -195,6 +215,7 @@ public void validate_AssortPerformMarginAssort()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_AssortmentPerformance);
 //		jsClickOn(AssortInsight_UI.title_AssortmentPerformance);
 		waitForPageToLoad();
@@ -218,6 +239,7 @@ public void validate_AssortProductPrform_chart()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_ProductPerformance);
 		clickOn(AssortInsight_UI.title_ProductPerformance);
         waitForPageToLoad();
@@ -239,6 +261,7 @@ public void validate_AssortPereto_chart()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_ProductPerformance);
 		clickOn(AssortInsight_UI.title_ProductPerformance);
         waitForPageToLoad();
@@ -259,6 +282,7 @@ public void validate_AssortPereto_CumilativeSales()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_ProductPerformance);
 		clickOn(AssortInsight_UI.title_ProductPerformance);
         waitForPageToLoad();
@@ -279,6 +303,7 @@ public void validate_AssortStorePerformance()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_StorePerformance);
 		clickOn(AssortInsight_UI.title_StorePerformance);
         waitForPageToLoad();
@@ -298,6 +323,7 @@ public void validate_AssortStoreStoreID()
 {
 synchronized (AssortInsight_UI.class) {
 	try {
+		waitForPageToLoad();
 		waitForElementTobeLocated(AssortInsight_UI.title_StorePerformance);
 		clickOn(AssortInsight_UI.title_StorePerformance);
         waitForPageToLoad();
@@ -341,7 +367,7 @@ private boolean checkDropDownForOption_Assort(String opt) {
 						+ i + "]//span[@class='slicerText']"))
 				.getText();
 		if (value.equals(opt)) {
-			extentTest.log(LogStatus.INFO, "checkDropDownForOption: ", "Option is present- <B>[" + opt + "]</B>");
+			extentTest.log(LogStatus.PASS, "checkDropDownForOption: ", "Option is present- <B>[" + opt + "]</B>");
 			return true;
 		} else {
 			extentTest.log(LogStatus.FAIL, "checkDropDownForOption: ",
@@ -352,6 +378,7 @@ private boolean checkDropDownForOption_Assort(String opt) {
 }
 //get the filter dropdown 	
 private int getFilterDropDownRowCount_Assort() {
+	waitForPageToLoad();
 	WebDriverWait wait = new WebDriverWait(driver, 1200);
 	wait.until(ExpectedConditions.visibilityOfElementLocated(AssortInsight_UI.opt_dropDownRowsData));
 	try {
@@ -362,13 +389,13 @@ private int getFilterDropDownRowCount_Assort() {
 	} catch (NoSuchElementException nsex) {
 		return -1;
 	}
-
 }
 
 //click on the filter validation 
 public void clickonFilterandValidatethedata_Asoort(String Filtername)
 {
 	waitForPageToLoad();
+   
     driver.findElement(By.xpath("//*[@aria-label='"+Filtername+"']//ancestor::div[contains(@class,'slicer-container')]//div[@class='slicer-dropdown-menu']")).click();
     List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@class='slicerCheckbox']"));
     if (checkboxes.size()>0) {
