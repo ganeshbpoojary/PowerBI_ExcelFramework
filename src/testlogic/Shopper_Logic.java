@@ -58,6 +58,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		return monthList;
 	}
 
+	/*
+	 * Creating list of short month names
+	 */
 	public static ArrayList<String> short_months(ArrayList<String> monthList) {
 		ArrayList<String> shortMonthList = new ArrayList<String>();
 		for (int i = 0; i < monthList.size(); i++) {
@@ -68,7 +71,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Navigate to Market Basket Analysis Tab
-	 * */
+	 */
 	public void goto_Tab_MarketBasketAnalysis_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -79,17 +82,16 @@ public class Shopper_Logic extends WebDriverFactory {
 			}
 		}
 	}
-	
+
 	/*
 	 * Navigate to Mission Trip Analysis Tab
-	 * */
+	 */
 	public void goto_Tab_MissionTripAnalysis_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
 				waitForElementTobeClickable(Shopper_UI.tab_MissionTripAnalysis);
 				actionClick(Shopper_UI.tab_MissionTripAnalysis);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -97,7 +99,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Navigate to Shopper Segment Tab
-	 * */
+	 */
 	public void goto_Tab_ShopperSegment_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -111,7 +113,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Navigate to CDT Need State Analysis Tab
-	 * */
+	 */
 	public void goto_Tab_CDTNeedStateAnalysis_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -125,7 +127,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Clicking on button How Have My Basket Metrics Performed
-	 * */
+	 */
 	public void goto_Btn_HowHaveMyBasketMetricsPerformed_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -139,7 +141,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Clicking on button What Is My Basket Value Size During Event Regular Periods
-	 * */
+	 */
 	public void goto_Btn_WhatIsMyBasketValueSizeDuringEventRegularPeriods_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -153,7 +155,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Clicking on button What Is My Basket Value Size During Event Regular Periods
-	 * */
+	 */
 	public void goto_Btn_WhatInsightsCanIGetFromMyMarketBasketAnalysis_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -167,7 +169,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Clicking on button How Are My Key Basket Metrics Trending
-	 * */
+	 */
 	public void goto_Btn_HowAreMyKeyBasketMetricsTrending_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -181,7 +183,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Clicking on button How Are My Trip Missions trending
-	 * */
+	 */
 	public void goto_Btn_HowAreMyTripMissionstrending_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -195,7 +197,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Open required filter
-	 * */
+	 */
 	public void goto_FilterOption_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -203,7 +205,6 @@ public class Shopper_Logic extends WebDriverFactory {
 				waitForElementTobeClickable(filter);
 				jsClickOn(filter);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -211,7 +212,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Validate filter has data
-	 * */
+	 */
 	public void validate_DropDownHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -231,7 +232,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Validate filter has Multi select option
-	 * */
+	 */
 	public void validate_DropDownHasMultiSelect_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -242,7 +243,6 @@ public class Shopper_Logic extends WebDriverFactory {
 					extentTest.log(LogStatus.FAIL, "Drop down should have Multi Select",
 							"Multi Select option is not working");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -250,7 +250,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Validate filter has Search option
-	 * */
+	 */
 	public void validate_DropDownHasSearchOption_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -261,7 +261,6 @@ public class Shopper_Logic extends WebDriverFactory {
 				else
 					extentTest.log(LogStatus.FAIL, "Search option should be present", "Search option is not present");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -269,7 +268,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Validate Scatter Chart has data
-	 * */
+	 */
 	public void validate_ScatterChartHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -300,7 +299,6 @@ public class Shopper_Logic extends WebDriverFactory {
 							"Chart Values is not having lables");
 
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -308,7 +306,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Validate Table has data
-	 * */
+	 */
 	public void validate_PopularSubCategoriesHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -328,7 +326,6 @@ public class Shopper_Logic extends WebDriverFactory {
 					snooze(3000);
 					switchToDefaultContent();
 					String label = getTextOf(Shopper_UI.chart_popupText);
-					// System.out.println(label);
 					if (!label.equals("")) {
 						flag = true;
 					}
@@ -341,7 +338,6 @@ public class Shopper_Logic extends WebDriverFactory {
 							"Chart Values is not having lables");
 
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -349,7 +345,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Validate Chart has dual axis
-	 * */
+	 */
 	public void validate_ChartHasDualAxis() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -369,7 +365,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Validate Table has row header
-	 * */
+	 */
 	public void validate_TableHasRowHeader() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -390,7 +386,7 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	/*
 	 * Validate DoNut Charts exists
-	 * */
+	 */
 	public void validate_DoNutchartVisible() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -408,8 +404,8 @@ public class Shopper_Logic extends WebDriverFactory {
 	}
 
 	/*
-	 * Validate View Demographic Profile 
-	 * */
+	 * Validate View Demographic Profile
+	 */
 	public void validate_ViewDemogrpahicProfileIsActive() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -433,8 +429,8 @@ public class Shopper_Logic extends WebDriverFactory {
 	}
 
 	/*
-	 * Validate KPI Card Appears 
-	 * */
+	 * Validate KPI Card Appears
+	 */
 	public void validate_KPICardAppears_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -450,8 +446,8 @@ public class Shopper_Logic extends WebDriverFactory {
 	}
 
 	/*
-	 * Validate KPI Card Appears 
-	 * */
+	 * Validate Bar Chart Appears with data
+	 */
 	public void validate_BarChartHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -467,6 +463,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate Data Bar Appears with data
+	 */
 	public void validate_DataBarHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -480,6 +479,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate Line chart Appears with data
+	 */
 	public void validate_LineChartAppear_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -495,6 +497,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate Tree chart Appears with data
+	 */
 	public void validate_TreeChartHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -510,6 +515,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate Chart measure units Appears
+	 */
 	public void validate_ChartMeasuringUnitsAppear_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -525,6 +533,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate KPI Card Appears with Value
+	 */
 	public void validate_KPICardHasValue_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -547,6 +558,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate KPI Card Appears with proper value color
+	 */
 	public void validate_KPICardPercentColor_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -562,6 +576,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate All KPI Chart Appears
+	 */
 	public void validate_KPIChartAppears_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -576,6 +593,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate Time of Day Table Appears with data
+	 */
 	public void validate_TimeOfDayTableHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -607,7 +627,7 @@ public class Shopper_Logic extends WebDriverFactory {
 	}
 
 	/*
-	 * Validate Table has data
+	 * Validate Basket Analysis Insight Table Has Data
 	 */
 	public void validate_BasketAnalysisInsightTableHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
@@ -622,6 +642,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate Day Of Week Table Has Data
+	 */
 	public void validate_DayOfWeekTableHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -636,6 +659,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate Time Of Day Table Has Header values
+	 */
 	public void validate_TimeOfDayTableHasHeader_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -652,6 +678,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate Day Of Week Table Has Header values
+	 */
 	public void validate_DayOfWeekTableHasHeader_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -668,6 +697,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate KPI Chart Y axis data
+	 */
 	public void validate_KPIChartYaxis_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -684,7 +716,7 @@ public class Shopper_Logic extends WebDriverFactory {
 	}
 
 	/*
-	 * KPI Card
+	 * Navigate to Card Avg. Basket Value
 	 */
 	public void goto_Card_AvgBasketValue_Shopper() {
 		synchronized (Shopper_Logic.class) {
@@ -697,6 +729,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Navigate to Card Avg. Basket Size
+	 */
 	public void goto_Card_AvgBasketSize_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -708,6 +743,10 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Navigate to Card Customer
+	 * 
+	 */
 	public void goto_Card_Customer_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -719,6 +758,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Validate KPI Card Discounts
+	 */
 	public void goto_Card_Discount_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -733,7 +775,6 @@ public class Shopper_Logic extends WebDriverFactory {
 	/*
 	 * Validate Filter has months
 	 */
-
 	public void validate_FilterHasMonths_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -748,70 +789,61 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
-	/**
-	 * Validate Card percentage value has proper color
+	/*
+	 * Validate Avg. Basket Value has proper Color
 	 */
-
 	public void validate_AvgBasketValueColor_Suppplier() {
 		synchronized (Shopper_Logic.class) {
 			try {
 				checkPercentColor(Shopper_UI.card_AvgBasketValue_Percent, Shopper_UI.card_AvgBasketValue_Color);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
-	/**
-	 * Validate Card percentage value has proper color
+	/*
+	 * Validate Avg. Basket Size has proper Color
 	 */
-
 	public void validate_AvgBasketSizeColor_Suppplier() {
 		synchronized (Shopper_Logic.class) {
 			try {
 				checkPercentColor(Shopper_UI.card_AvgBasketSize_Percent, Shopper_UI.card_AvgBasketSize_Color);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
-	/**
-	 * Validate Card percentage value has proper color
+	/*
+	 * Validate Customers Color has proper Color
 	 */
-
 	public void validate_CustomersColor_Suppplier() {
 		synchronized (Shopper_Logic.class) {
 			try {
 				checkPercentColor(Shopper_UI.card_CustomersValue_Percent, Shopper_UI.card_CustomersValue_Color);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
-	/**
-	 * Validate Card percentage value has proper color
+	/*
+	 * Validate Discount has proper Color
 	 */
-
 	public void validate_DiscountColor_Suppplier() {
 		synchronized (Shopper_Logic.class) {
 			try {
 				checkPercentColor(Shopper_UI.card_DiscountsValue_Percent, Shopper_UI.card_DiscountsValue_Color);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
-	/**
-	 * 
-	 * **/
-
+	/*
+	 * Validate My Basket Bar Chart Has Data
+	 */
 	public void validate_MyBasketBarChartHasData_Shopper() {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -912,6 +944,9 @@ public class Shopper_Logic extends WebDriverFactory {
 //		}
 //	}
 
+	/*
+	 * Validate X Axis Has Date
+	 */
 	public void validate_XAxisHasDate_Shopper() {
 		synchronized (RPCC_Demand_Logic.class) {
 			boolean flag = false;
@@ -937,7 +972,6 @@ public class Shopper_Logic extends WebDriverFactory {
 
 				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -947,6 +981,9 @@ public class Shopper_Logic extends WebDriverFactory {
 	 * Private methods section
 	 *********************************************/
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkChartShowsUnit(String chart, String measureUnit) {
 		try {
 			boolean flag = false;
@@ -960,15 +997,16 @@ public class Shopper_Logic extends WebDriverFactory {
 						+ "']");
 				if (isDisplayed(elm))
 					flag = true;
-				else
-					flag = false;
 			}
 			return flag;
-		} catch (NoSuchElementException nsex) {
+		} catch (NoSuchElementException e) {
 			return false;
 		}
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkKPIChartAppear(String allChart) {
 		boolean flag = false;
 		String[] chart = allChart.split("\\|");
@@ -981,23 +1019,25 @@ public class Shopper_Logic extends WebDriverFactory {
 			By chartElm = By.xpath("//*[contains(text(),'" + label + "')]");
 			if (isDisplayed(chartElm))
 				flag = true;
-			else
-				flag = false;
 		}
 		return flag;
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean getYaxisValue(String chart) {
 		boolean flag = false;
 		By elm = By.xpath("(//*[contains(text(),'" + chart
 				+ "')]//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[2]//*[@class='yAxisLabel sub-selectable']");
 		if (getTextOf(elm).equals(yAxis))
 			flag = true;
-		else
-			flag = false;
 		return flag;
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkCardValueColor(String card) {
 		boolean flag = false;
 		By percentVal = By.xpath("((//span[contains(text(),'" + card
@@ -1016,6 +1056,9 @@ public class Shopper_Logic extends WebDriverFactory {
 
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkBarChartData(String chart) {
 		try {
 			boolean flag = false;
@@ -1033,7 +1076,6 @@ public class Shopper_Logic extends WebDriverFactory {
 					if (!(label.equals("") || label.contains("Report Zoomed")))
 						flag = true;
 				} else {
-//					actionClick(By.xpath("(//*[@cursor='crosshair'])[1]"));
 					actionClick(By.xpath("(//*[contains(text(),'" + chart
 							+ "')]//ancestor::div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[2]//*[@cursor='crosshair']"));
 //					int move = 30;
@@ -1070,6 +1112,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Private method used in - validate_DataBarHasData_Shopper
+	 */
 	private boolean checkDataBarData() {
 		try {
 			boolean flag = false;
@@ -1087,6 +1132,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Private method used in - validate_LineChartAppear_Shopper
+	 */
 	private boolean checkLineChartData(String chart) {
 		try {
 			boolean flag = false;
@@ -1100,6 +1148,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean getTableTimeOfDay() {
 		boolean flag = false;
 		int emptCell = 0;
@@ -1130,6 +1181,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		return flag;
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean getTableContent() {
 		boolean flag = false;
 		int emptCell = 0;
@@ -1141,7 +1195,6 @@ public class Shopper_Logic extends WebDriverFactory {
 			for (int i = 1; i <= rows; i++) {
 				By cell = By
 						.xpath("(//div[@class='bodyCells']//div[contains(@class,'pivotTableCellWrap')])[" + i + "]");
-//				System.out.println(getTextOf(cell));
 				if (!getTextOf(cell).equals(" ")) {
 					dataCell = dataCell + 1;
 					flag = true;
@@ -1155,10 +1208,12 @@ public class Shopper_Logic extends WebDriverFactory {
 		} catch (NoSuchElementException e) {
 			return false;
 		}
-
 		return flag;
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean getBasketAnalysisTableContent() {
 		boolean flag = false;
 		int emptCell = 0;
@@ -1170,7 +1225,6 @@ public class Shopper_Logic extends WebDriverFactory {
 			for (int i = 1; i <= rows; i++) {
 				By cell = By.xpath(
 						"(//div[contains(@class,'pivotTableCellWrap cell-interactive tablixAlignRight')])[" + i + "]");
-//				System.out.println(getTextOf(cell));
 				if (!getTextOf(cell).equals(" ")) {
 					dataCell = dataCell + 1;
 					flag = true;
@@ -1184,10 +1238,12 @@ public class Shopper_Logic extends WebDriverFactory {
 		} catch (NoSuchElementException e) {
 			return false;
 		}
-
 		return flag;
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean getTableDayOfWeek() {
 		boolean flag = false;
 		int emptCell = 0;
@@ -1214,10 +1270,12 @@ public class Shopper_Logic extends WebDriverFactory {
 		} catch (NoSuchElementException e) {
 			return false;
 		}
-
 		return flag;
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkTreeChartData(String chart) {
 		try {
 			boolean flag = false;
@@ -1233,8 +1291,6 @@ public class Shopper_Logic extends WebDriverFactory {
 				String label = getTextOf(Shopper_UI.chart_popupText);
 				if (!label.equals(""))
 					flag = true;
-				else
-					flag = false;
 			}
 			return flag;
 		} catch (NoSuchElementException e) {
@@ -1242,6 +1298,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkDropDownHasSearchOption_Shopper() {
 		try {
 			By search = By.xpath("//div[@aria-label='" + filterName + "']/../..//input[@aria-label='Search']");
@@ -1255,6 +1314,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private int getFilterDropDownRowCount_Shopper() {
 		waitForElementTobeLocated(Shopper_UI.dd_options);
 		try {
@@ -1267,8 +1329,12 @@ public class Shopper_Logic extends WebDriverFactory {
 		}
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean isMultiSelectActive_Shopper() {
 		boolean flag;
+		waitForPageToLoad();
 		try {
 			By selectAll = By.xpath("//div[@role='listbox' and @aria-label='" + filterName
 					+ "']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[contains(@class,'slicerItemContainer')]");
@@ -1290,6 +1356,7 @@ public class Shopper_Logic extends WebDriverFactory {
 				return true;
 			} else if (state.trim().equals("false")) {
 				clickOn(selectAll);
+				waitForPageToLoad();
 				By selectAll2 = By.xpath("//div[@role='listbox' and @aria-label='" + filterName
 						+ "']//ancestor::div[@class='slicer-dropdown-content']//*[text()='Select all']//ancestor::div[contains(@class,'slicerItemContainer')]");
 				String state2 = getAttributeValueOf(selectAll2, "aria-checked");
@@ -1311,19 +1378,19 @@ public class Shopper_Logic extends WebDriverFactory {
 				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
 		extentTest.log(LogStatus.FAIL, "isMultiSelectActive: ", "Multi Select option is not working ");
 		return false;
-
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkTableHasHeader_Shopper(ArrayList<String> weekArrayList) {
 		boolean flag = false;
 		try {
-//			System.out.println(weekArrayList);
 			int rows = getElementsCount(Shopper_UI.span_TimeOfDayColumn);
 			for (int i = 1; i <= rows; i++) {
 				By header = By.xpath(
@@ -1338,13 +1405,14 @@ public class Shopper_Logic extends WebDriverFactory {
 			e.printStackTrace();
 		}
 		return flag;
-
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkFilterHasMonth_Shopper(ArrayList<String> monthList) {
 		boolean flag = false;
 		try {
-//			System.out.println(monthList);
 			By optCount = By.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
 			int rowCount = getElementsCount(optCount);
 			for (int i = 1; i <= rowCount; i++) {
@@ -1352,7 +1420,6 @@ public class Shopper_Logic extends WebDriverFactory {
 						+ "']//span[@class='slicerText'])[" + i + "]");
 				String monthYear = getAttributeValueOf(row, "title");
 				String[] month = monthYear.split(" ");
-//				System.out.println(month[1].substring(1, 4));
 				if (monthList.contains(month[1].substring(1, 4))) {
 					flag = true;
 				}
@@ -1363,6 +1430,9 @@ public class Shopper_Logic extends WebDriverFactory {
 		return flag;
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean checkPercentColor(By percen, By color) {
 		synchronized (Shopper_Logic.class) {
 			try {
@@ -1382,13 +1452,15 @@ public class Shopper_Logic extends WebDriverFactory {
 				}
 
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		return false;
 	}
 
+	/*
+	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
+	 */
 	private boolean validateDate(String format, String date) {
 		/* Check if date is 'null' */
 		if (date.trim().equals("")) {
