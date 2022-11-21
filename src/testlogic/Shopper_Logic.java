@@ -1458,6 +1458,7 @@ public class Shopper_Logic extends WebDriverFactory {
 		return false;
 	}
 
+	
 	/*
 	 * Private method used in - validate_ChartMeasuringUnitsAppear_Shopper
 	 */
