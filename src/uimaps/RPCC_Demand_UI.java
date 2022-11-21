@@ -14,6 +14,11 @@ public class RPCC_Demand_UI {
 	public static final By navBtn_ReviewOutOfStock = By.xpath("//button[contains(@title,'Review Out-Of-Stock')]");
 	public static final By navBtn_ReviewUnderStock = By.xpath("//button[contains(@title,'Review Under Stock')]");
 	public static final By navBtn_Analyze = By.xpath("//button[contains(@title,'Analyze')]");
+	public static final By title_UnderstandExcessStock = By.xpath("//span[contains(text(),'Excess Stock')]");	
+	public static final By title_UnderstandOrderVariance = By.xpath("//span[contains(text(),'Order Variance')]");	
+	public static final By title_OutOfStock = By.xpath("//span[contains(text(),'Out Of Stock')]");
+	public static final By navBtn_ReviewExcessStock = By.xpath("//button[contains(@title,'Review Excess Stock')]");
+	public static final By navBtn_ReviewOrderVariance = By.xpath("//button[contains(@title,'Review Order Variance')]");
 	public static final By chart_ForecastTrends = By.xpath("(//*[@class='columnChartUnclippedGraphicsContext'])[6]//*[@class='column sub-selectable setFocusRing']");
 	public static final By table_Understand_Options = By.xpath("(//div[@class='bodyCells'])[2]//div[contains(@class,'pivotTableCellWrap cell-interactive')]");
 	public static final By table_ItemScore_Options = By.xpath("(//div[@role='columnheader' and text()='Item Store'])[1]//ancestor::div[@class='innerContainer']//div[contains(@class,'pivotTableCellWrap cell-interactive') or contains(@class,'cell-interactive')]");
@@ -23,6 +28,8 @@ public class RPCC_Demand_UI {
 	public static final By img_Playbook = By.xpath("(//div[@class='imageBackground'])[2]");
 	public static final By btn_AnalyzeInventory = By.xpath("//div[text()='Analyze Inventory']//ancestor::div[@class='contentOuterContainer']");
 	public static final By dd_CompositeScore = By.xpath("//div[@aria-label='Composite Score' and @role='combobox']");
+	public static final By btn_ReviewOrders = By.xpath("//div[text()='Review Orders']//ancestor::div[@class='contentOuterContainer']");
+	
 	
 	
 	
@@ -100,4 +107,47 @@ public class RPCC_Demand_UI {
 	public static final By card_RMSEArrow = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[7]/visual-container)[6]//*[@class='value']");
 	
 	
+	/*******************   UnderStand Page Card   ******************/
+	
+	//Card MAPE
+		public static final By card_UnderStand_MAPE = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[4]/visual-container)[1]//*[text()='MAPE']");
+		public static final By card_UnderStand_MAPEWeekly = By.xpath("(//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[4]//span[@class='textRun']");	
+		public static final By card_UnderStand_MAPEMainValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[4]/visual-container)[5]//*[@class='value']");
+		public static final By card_UnderStand_MAPESmallValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[4]/visual-container)[4]//*[@class='value']");
+		public static final By card_UnderStand_MAPEArrow = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[4]/visual-container)[6]//*[@class='value']");
+		
+		//Card WMAPE
+		public static final By card_UnderStand_WMAPE = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[5]/visual-container)[1]//*[text()='WMAPE']");
+		public static final By card_UnderStand_WMAPEWeekly = By.xpath("(//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[5]//span[@class='textRun']");
+		public static final By card_UnderStand_WMAPEMainValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[5]/visual-container)[5]//*[@class='value']");
+		public static final By card_UnderStand_WMAPESmallValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[5]/visual-container)[4]//*[@class='value']");
+		public static final By card_UnderStand_WMAPEArrow = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[5]/visual-container)[6]//*[@class='value']");
+
+		//Card BIAS
+		public static final By card_UnderStand_BIAS = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[6]/visual-container)[1]//*[text()='BIAS']");
+		public static final By card_UnderStand_BIASWeekly = By.xpath("(//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[6]//span[@class='textRun']");
+		public static final By card_UnderStand_BIASSmallValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[6]/visual-container)[5]//*[@class='value']");
+		public static final By card_UnderStand_BIASMainValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[6]/visual-container)[4]//*[@class='value']");
+		public static final By card_UnderStand_BIASArrow = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[6]/visual-container)[6]//*[@class='value']");
+		
+		//Card MAD
+		public static final By card_UnderStand_MAD = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[7]/visual-container)[1]//*[text()='MAD']");
+		public static final By card_UnderStand_MADWeekly = By.xpath("(//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[7]//span[@class='textRun']");
+		public static final By card_UnderStand_MADSmallValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[7]/visual-container)[5]//*[@class='value']");
+		public static final By card_UnderStand_MADMainValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[7]/visual-container)[4]//*[@class='value']");
+		public static final By card_UnderStand_MADArrow = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[7]/visual-container)[6]//*[@class='value']");
+		
+		//Card RMSE
+		public static final By card_UnderStand_RMSE = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[8]/visual-container)[1]//*[text()='RMSE']");
+		public static final By card_UnderStand_RMSEWeekly = By.xpath("(//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[8]//span[@class='textRun']");
+		public static final By card_UnderStand_RMSESmallValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[8]/visual-container)[5]//*[@class='value']");
+		public static final By card_UnderStand_RMSEMainValue = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[8]/visual-container)[4]//*[@class='value']");
+		public static final By card_UnderStand_RMSEArrow = By.xpath("((//div[@class='vcGroupBody themableBackgroundColor themableBorderColorSolid'])[8]/visual-container)[6]//*[@class='value']");
+	
+	
+	
+	
+	
 }
+
+
