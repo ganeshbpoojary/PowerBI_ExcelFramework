@@ -23,9 +23,11 @@ public class SPlanning_UI {
 //	public static final By lasteUpdateDate=By.xpath("//*[@transform=\"translate(141,20.80127136486192)\"]");
 	public static final By lasteUpdateDate =By.xpath("//*[contains(text(),'Last updated')]//ancestor::div[@class='visual visual-card allow-deferred-rendering']");
 	public static final By filterSearchButton=By.xpath("//*[@title=\"Search\"]");
-	public static final By sales=By.xpath("//*[@title=\"Sales\"]");
-	public static final By spaceProductivity=By.xpath("(//*[@class=\"fill ui-role-button-fill\"])[2]");
-	public static final By salesOthers=By.xpath("//*[@title=\"Sales Others\"]"); 
+	public static final By sales=By.xpath("//*[contains(text(),'Sales & Sales/Linear: Selected Filters vs Others')]");
+//	public static final By spaceProductivity=By.xpath("(//*[@class=\"fill ui-role-button-fill\"])[2]");
+	
+	public static final By spaceProductivity=By.xpath("(//*[@class='visual visual-actionButton allow-deferred-rendering'])[2]");
+	public static final By salesOthers=By.xpath("//*[@title=\"Sales Others\"]");
 	public static final By saleslinear =By.xpath("//*[@title=\"Sales/Linear\"]");
 	public static final By  saleslinearOthers=By.xpath("//*[@title=\"Sales/Linear Others\"]");
 	public static final By units =By.xpath("//*[@title=\"Units\"]");
