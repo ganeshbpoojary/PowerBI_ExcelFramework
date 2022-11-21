@@ -1579,7 +1579,34 @@ public class WebDriverFactory {
 
 	}
 
-	
+	/**
+	 * 
+	 * Performs click operation on a WebElement
+	 *
+	 * 
+	 * 
+	 * @param by
+	 * 
+	 *           By instance of a WebElement
+	 * 
+	 */
+
+	public boolean setAttribute(By by) {
+		// return false if WebElemet is not found
+		if (!findElement(by)) {
+			return false;
+		}
+		try {
+			new WebDriverWait(driver, WEBDRIVER_WAIT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(element));
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+			extentTest.log(LogStatus.INFO, "Click On: " + by.toString(), by.toString() + " is clicked");
+			return true;
+		} catch (UnhandledAlertException uaex) {
+			extentTest.log(LogStatus.INFO, "Click On: " + by.toString(),
+					"Unhandled Alert is Present" + "</BR>" + captureScreenShot());
+			return false;
+		}
+	}
 
 	
 	
