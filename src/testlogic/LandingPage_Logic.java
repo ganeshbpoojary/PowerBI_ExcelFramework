@@ -18,22 +18,23 @@ public class LandingPage_Logic extends WebDriverFactory {
 			Properties property = new Properties();
 			try {
 				property.load(new FileInputStream("SeleniumConstants.properties"));
-				String email = property.getProperty("username");
-				String pwd = property.getProperty("password");
+				String email = property.getProperty("jda_username");
+				String pwd = property.getProperty("jda_password");
 //				refreshDataBook();				
 				launchAPP(url);
 				waitForPageToLoad();
 //				Thread.sleep(2000);
 				waitForElementTobeClickable(LandingPage_UI.txt_email);
+				clickOn(LandingPage_UI.txt_email);
 				typeIn(LandingPage_UI.txt_email, email);
 				clickOn(LandingPage_UI.btn_submitPowerBI);
 				waitForPageToLoad();
+				clickOn(LandingPage_UI.txt_password);
 				typeIn_Password(LandingPage_UI.txt_password, pwd);
 				clickOn(LandingPage_UI.btn_signinBY);
 				clickOn(LandingPage_UI.btn_yesBY);
 				waitForPageToLoad();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
