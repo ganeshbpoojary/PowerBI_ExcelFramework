@@ -19,18 +19,10 @@ public class LandingPage_Logic extends WebDriverFactory {
 			try {
 				property.load(new FileInputStream("SeleniumConstants.properties"));
 
-				String email = property.getProperty("jda_username");
-				String pwd = property.getProperty("jda_password");
-
-				waitForPageToLoad();
-        
-        
 				String email = property.getProperty("username");
 				String pwd = property.getProperty("password");
 
-
-
-//				refreshDataBook();				
+				waitForPageToLoad();
 				launchAPP(url);
 				waitForPageToLoad();
 //				Thread.sleep(2000);
