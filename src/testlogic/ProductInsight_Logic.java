@@ -12,8 +12,6 @@ import com.relevantcodes.extentreports.LogStatus;
 import frameworkutils.WebDriverFactory;
 import uimaps.ProductInsight_UI;
 
-
-
 public class ProductInsight_Logic extends WebDriverFactory {
 
 	public ProductInsight_Logic(WebDriver driver, Map<String, String> dataBook) {
