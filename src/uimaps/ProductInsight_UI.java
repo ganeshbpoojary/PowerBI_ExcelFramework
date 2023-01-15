@@ -74,4 +74,167 @@ public class ProductInsight_UI {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// Ganesh added
+	
+	public static final By title_ProductInsights=By.xpath("//title[text()='Product Insights - Power BI']");
+	//title[text()='Product Insights - Power BI']
+	public static final By tab_Financial_Perfomance=By.xpath("//div[text()='Financial Performance']//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By tab_Demand_Insights=By.xpath("//div[text()='Demand Insights']//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By tab_Mix_Analysis=By.xpath("//div[text()='Mix Analysis']//ancestor::div[@class='contentOuterContainer']/..");
+
+	
+	public static final By btn_FinancialPerformanceSummary=By.xpath("//div[text()='Financial Performance Summary']//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By btn_WhatIsTheRevenueUnitsPrice=By.xpath("//div[text()='What is the revenue, units, price, promotion and inventory trend?']//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By btn_WhatIsMyGroupShareContribution=By.xpath("//div[text()='What is my group share and contribution?']//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By btn_WhatIsTheRegionClusterStoreContribution=By.xpath("//div[text()='What is the region/cluster/store contribution?']//ancestor::div[@class='contentOuterContainer']/..");
+	public static final By btn_WhatIsTheMixOfPromotionalRegularSales=By.xpath("//div[text()='What is the mix of promotional and regular sales in my group?']//ancestor::div[@class='contentOuterContainer']/..");
+//	public static final By opt_dropDownRowsData = By.xpath("//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row']");
+
+	
+	//div[text()='Financial Performance Summary']//ancestor::div[@class='contentOuterContainer']/..
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

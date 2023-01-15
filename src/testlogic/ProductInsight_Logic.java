@@ -10,12 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.LogStatus;
 import frameworkutils.WebDriverFactory;
 import uimaps.AnamolyDetection_UI;
-import uimaps.Product_Insight_UI;
+import uimaps.ProductInsight_UI;
 import uimaps.RPCC_Demand_UI;
 
-public class Product_Insight_Logic extends WebDriverFactory {
+public class ProductInsight_Logic extends WebDriverFactory {
 
-	public Product_Insight_Logic(WebDriver driver, Map<String, String> dataBook) {
+	public ProductInsight_Logic(WebDriver driver, Map<String, String> dataBook) {
 		super(driver, dataBook);
 		// TODO Auto-generated constructor stub
 	}
@@ -57,7 +57,7 @@ public class Product_Insight_Logic extends WebDriverFactory {
 	private boolean clickGivenDropDownForOption_ProductInsight(String Filter_Option) {
 		waitForPageToLoad();
 				 {
-					 synchronized (Product_Insight_Logic.class) {
+					 synchronized (ProductInsight_Logic.class) {
 			 driver.findElement(By.xpath(
 					"(//input[@aria-label='Search']//ancestor::div[@class='slicer-dropdown-content']//div[@class='slicerBody']//div[@class='row'])//span[@title='"+Filter_Option+"']")).click();
 				return true;
@@ -66,7 +66,7 @@ public class Product_Insight_Logic extends WebDriverFactory {
 }
 	//not working
 	private void clickDrodpdownRadioButton_ProductInsight() {
-		synchronized (Product_Insight_Logic.class) {
+		synchronized (ProductInsight_Logic.class) {
 		try{
 			/*if(!driver.findElement(By.xpath(
 		
@@ -78,7 +78,7 @@ public class Product_Insight_Logic extends WebDriverFactory {
 		extentTest.log(LogStatus.PASS,"Dropdown is clicking","Dropdown is clicking");						
 			*/
 			
-			if(doubleClick(Product_Insight_UI.MetriSales))
+			if(doubleClick(ProductInsight_UI.MetriSales))
 							extentTest.log(LogStatus.PASS,"Dropdown is clicking","Dropdown is clicking");
 			else
 				 extentTest.log(LogStatus.FAIL,"Dropdown is not clicking","Dropdown is not clicking");
@@ -92,12 +92,12 @@ public class Product_Insight_Logic extends WebDriverFactory {
 
 	
 	private int getFilterDropDownRowCount_ProductInsight() {
-		synchronized (Product_Insight_Logic.class) {
+		synchronized (ProductInsight_Logic.class) {
 		waitForPageToLoad();
 		WebDriverWait wait = new WebDriverWait(driver, 1200);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(Product_Insight_UI.opt_dropDownRowsData));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ProductInsight_UI.opt_dropDownRowsData));
 		try {
-			List<WebElement> rows = driver.findElements(Product_Insight_UI.opt_dropDownRowsData);
+			List<WebElement> rows = driver.findElements(ProductInsight_UI.opt_dropDownRowsData);
 			int size = rows.size();
 			extentTest.log(LogStatus.INFO, "getDropDownRowCount: ", "Number of rows is- <B>[" + size + "]</B>");
 			return size;
@@ -108,7 +108,7 @@ public class Product_Insight_Logic extends WebDriverFactory {
 	
 
 	public void validateValueInDropDown_ProductInsight() {
-		synchronized (Product_Insight_Logic.class) {
+		synchronized (ProductInsight_Logic.class) {
 			try {
 				waitForPageToLoad();
 				clickonFilterandValidatethedata_ProductInsight(filterName);
@@ -126,7 +126,7 @@ public class Product_Insight_Logic extends WebDriverFactory {
 	}
 	
 	public void validateValueInDropDownAndSelect_ProductInsight() {
-		synchronized (Product_Insight_Logic.class) {
+		synchronized (ProductInsight_Logic.class) {
 			try {
 				waitForPageToLoad();
 				clickonFilterandValidatethedata_ProductInsight(filterName);
@@ -143,7 +143,7 @@ public class Product_Insight_Logic extends WebDriverFactory {
 	
 	public void onlyClickOnTheDrodpdown()
 	{
-		synchronized (Product_Insight_Logic.class) {
+		synchronized (ProductInsight_Logic.class) {
 			try {
 				waitForPageToLoad();
 				if(clickonFilterandValidatethedata_ProductInsight(filterName)) 
@@ -164,12 +164,12 @@ public class Product_Insight_Logic extends WebDriverFactory {
 	
 		
 	public void Validate_MixAnalysesDashboard_ProductInsight() {
-		synchronized (Product_Insight_Logic.class) {
+		synchronized (ProductInsight_Logic.class) {
 			try {
 				waitForPageToLoad();
-				waitForElementTobeLocated(Product_Insight_UI.titleMixAlanyses);
-				doubleClick(Product_Insight_UI.titleMixAlanyses);
-				if (isDisplayed(Product_Insight_UI.questionProductMixSubGroup))
+				waitForElementTobeLocated(ProductInsight_UI.titleMixAlanyses);
+				doubleClick(ProductInsight_UI.titleMixAlanyses);
+				if (isDisplayed(ProductInsight_UI.questionProductMixSubGroup))
 					 extentTest.log(LogStatus.PASS, "MixAnalysesDashboard is enabled", "MixAnalysesDashboard is enabled");
 				else
 					 extentTest.log(LogStatus.PASS, "MixAnalysesDashboard is  not enabled", "MixAnalysesDashboard is not enabled");
@@ -184,18 +184,18 @@ public class Product_Insight_Logic extends WebDriverFactory {
 	//Validate the Mix analyses page
 	public void validate_MixAnalysesPage_ProductInsight() {
 
-		synchronized (Product_Insight_Logic.class) {
+		synchronized (ProductInsight_Logic.class) {
 			try {
 				waitForPageToLoad();
-				waitForElementTobeLocated(Product_Insight_UI.titleMixAlanyses);
-				doubleClick(Product_Insight_UI.titleMixAlanyses);
-				if (isDisplayed(Product_Insight_UI.questionProductMixSubGroup)
-						&&isDisplayed(Product_Insight_UI.questionSubGroupitemcountbymonth)
-						&&isDisplayed(Product_Insight_UI.questionWhatAreMyKeyValueItem)
-						&&isDisplayed(Product_Insight_UI.itemdistrubutionchart)
-					    &&isDisplayed(Product_Insight_UI.itemchart)
-					    &&isDisplayed(Product_Insight_UI.metricchart)
-					    &&isDisplayed(Product_Insight_UI.label_Lastupdated))
+				waitForElementTobeLocated(ProductInsight_UI.titleMixAlanyses);
+				doubleClick(ProductInsight_UI.titleMixAlanyses);
+				if (isDisplayed(ProductInsight_UI.questionProductMixSubGroup)
+						&&isDisplayed(ProductInsight_UI.questionSubGroupitemcountbymonth)
+						&&isDisplayed(ProductInsight_UI.questionWhatAreMyKeyValueItem)
+						&&isDisplayed(ProductInsight_UI.itemdistrubutionchart)
+					    &&isDisplayed(ProductInsight_UI.itemchart)
+					    &&isDisplayed(ProductInsight_UI.metricchart)
+					    &&isDisplayed(ProductInsight_UI.label_Lastupdated))
 					extentTest.log(LogStatus.PASS, "WhatAnalyses page is enabled", "WhatAnalyses page is enabled");
 				else
 					extentTest.log(LogStatus.PASS, "WhatAnalyses page is not enabled", "WhatAnalyses page is not enabled");	
@@ -210,13 +210,13 @@ public class Product_Insight_Logic extends WebDriverFactory {
 	}
 	public void ClickonWhatAreMyKeyValue_ProductInsight()
 	{
-	synchronized (Product_Insight_Logic.class) {
+	synchronized (ProductInsight_Logic.class) {
 		try {
 			waitForPageToLoad();
-			waitForElementTobeLocated(Product_Insight_UI.questionWhatAreMyKeyValueItem);
-			doubleClick(Product_Insight_UI.questionWhatAreMyKeyValueItem);
+			waitForElementTobeLocated(ProductInsight_UI.questionWhatAreMyKeyValueItem);
+			doubleClick(ProductInsight_UI.questionWhatAreMyKeyValueItem);
 	        waitForPageToLoad();
-	        isDisplayed(Product_Insight_UI.keyValueItem);
+	        isDisplayed(ProductInsight_UI.keyValueItem);
 	       extentTest.log(LogStatus.PASS, "WhatAreMyKeyValue is enabled", "WhatAreMyKeyValue is enabled");
 		}				
 		 catch (Exception e) {
@@ -229,16 +229,16 @@ public class Product_Insight_Logic extends WebDriverFactory {
 	
 	public void VerifyWhatAreMyKeyValueDetails_ProductInsight()
 	{
-	synchronized (Product_Insight_Logic.class) {
+	synchronized (ProductInsight_Logic.class) {
 		try {
 			waitForPageToLoad();
-			if(isDisplayed(Product_Insight_UI.keyValueItem)
-					&& isDisplayed(Product_Insight_UI.KVIchart)
-					&& isDisplayed(Product_Insight_UI.questionHowAreMyKVI) 
-					&& isDisplayed(Product_Insight_UI.detailsKVIAndNonKVIitemshareAndCount)
-					&& isDisplayed(Product_Insight_UI.questiondetailsKVIAndNonKVIitemshareAndCount)
-					&& isDisplayed(Product_Insight_UI.KVIPerformingChart)
-					&& isDisplayed(Product_Insight_UI.yaxiesMetricValue))
+			if(isDisplayed(ProductInsight_UI.keyValueItem)
+					&& isDisplayed(ProductInsight_UI.KVIchart)
+					&& isDisplayed(ProductInsight_UI.questionHowAreMyKVI) 
+					&& isDisplayed(ProductInsight_UI.detailsKVIAndNonKVIitemshareAndCount)
+					&& isDisplayed(ProductInsight_UI.questiondetailsKVIAndNonKVIitemshareAndCount)
+					&& isDisplayed(ProductInsight_UI.KVIPerformingChart)
+					&& isDisplayed(ProductInsight_UI.yaxiesMetricValue))
 	       extentTest.log(LogStatus.PASS, "WhatAreMyKeyValue page has data", "WhatAreMyKeyValue page has  data");
 	       
 	       else
@@ -255,18 +255,18 @@ public class Product_Insight_Logic extends WebDriverFactory {
 
 public void VerifyWhatAreMyKeyTableDetails_ProductInsight()
 {
-synchronized (Product_Insight_Logic.class) {
+synchronized (ProductInsight_Logic.class) {
 	try {
 		waitForPageToLoad();
-		if(isDisplayed(Product_Insight_UI.keyValueItem)
-				&& isDisplayed(Product_Insight_UI.tabletitleItem)
-				&& isDisplayed(Product_Insight_UI.tabletitleProductName) 
-				&& isDisplayed(Product_Insight_UI.tabletitleRevenue)
-				&& isDisplayed(Product_Insight_UI.tabletitleSales_Units_Share)
-				&& isDisplayed(Product_Insight_UI.tabletitleGrossProfitShare)
-				&& isDisplayed(Product_Insight_UI.tabletitleMargin)
-			    && isDisplayed(Product_Insight_UI.tabletitleAverageUnitRetail)
-			    && isDisplayed(Product_Insight_UI.tabletitlePurchaseFrequency))
+		if(isDisplayed(ProductInsight_UI.keyValueItem)
+				&& isDisplayed(ProductInsight_UI.tabletitleItem)
+				&& isDisplayed(ProductInsight_UI.tabletitleProductName) 
+				&& isDisplayed(ProductInsight_UI.tabletitleRevenue)
+				&& isDisplayed(ProductInsight_UI.tabletitleSales_Units_Share)
+				&& isDisplayed(ProductInsight_UI.tabletitleGrossProfitShare)
+				&& isDisplayed(ProductInsight_UI.tabletitleMargin)
+			    && isDisplayed(ProductInsight_UI.tabletitleAverageUnitRetail)
+			    && isDisplayed(ProductInsight_UI.tabletitlePurchaseFrequency))
 			    
        extentTest.log(LogStatus.PASS, "WhatAreMyKeyValue Table page has data", "WhatAreMyKeyValue Table page has  data");
        
@@ -281,11 +281,11 @@ synchronized (Product_Insight_Logic.class) {
 }
 
 public void validate_KVIPerformingTableHasData_ProductInsight() {
-	synchronized (Product_Insight_Logic.class) {
+	synchronized (ProductInsight_Logic.class) {
 		int dataCell =0 ;
 		try {
-			waitForElementTobeLocated(Product_Insight_UI.tablevalueintable);
-			int rowCnt = getElementsCount(Product_Insight_UI.tablevalueintable);
+			waitForElementTobeLocated(ProductInsight_UI.tablevalueintable);
+			int rowCnt = getElementsCount(ProductInsight_UI.tablevalueintable);
 			for (int i = 1; i <= rowCnt; i++) {
 				By elm = By.xpath(
 						"(//*[@class='pivotTableCellWrap cell-interactive tablixAlignRight '])['"+i+"']");
@@ -705,12 +705,12 @@ public void validate_KVIPerformingTableHasData_ProductInsight() {
  * 
  **/
 public void goto_FinancialPerformance_ProductInsight() {
-	synchronized (Product_Insight_Logic.class) {
+	synchronized (ProductInsight_Logic.class) {
 		try {
 			boolean flag = false;
-			waitForElementTobeLocated(Product_Insight_UI.title_ProductInsights);
-			clickOn(Product_Insight_UI.tab_Financial_Perfomance);			
-			int finBtn = getElementsCount(Product_Insight_UI.btn_FinancialPerformanceSummary);
+			waitForElementTobeLocated(ProductInsight_UI.title_ProductInsights);
+			clickOn(ProductInsight_UI.tab_Financial_Perfomance);			
+			int finBtn = getElementsCount(ProductInsight_UI.btn_FinancialPerformanceSummary);
 			if (finBtn > 0) {
 				extentTest.log(LogStatus.PASS, "Navigate to Financial Performance Page",
 						"Financial Performance Page is opened");
