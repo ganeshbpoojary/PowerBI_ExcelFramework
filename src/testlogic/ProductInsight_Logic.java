@@ -737,11 +737,11 @@ public void goto_FinancialPerformance_ProductInsight() {
 //	}
 //}
 
+
 public void validate_DropDownHasData_ProductInsight() {
 	synchronized (AnamolyDetection_Logic.class) {
 		try {
-			By optCount = By
-					.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
+			By optCount = By					.xpath("//div[@role='listbox' and @aria-label='" + filterName + "']//div[@class='row']");
 			int rowCount = getElementsCount(optCount);
 			if (rowCount > 0)
 				extentTest.log(LogStatus.PASS, "Drop Down should have data",
@@ -749,6 +749,23 @@ public void validate_DropDownHasData_ProductInsight() {
 			else
 				extentTest.log(LogStatus.FAIL, "Drop Down should have data", "Drop Down has no Data");
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+/**
+ * Selection of a filter
+ * 
+ **/
+public void goto_FilterOption_ProductInsight() {
+	synchronized (RPCC_Demand_Logic.class) {
+		try {
+			By filter = By.xpath("//*[@title='" + filterName + "']/../../../..//div[@role='combobox']");
+			waitForElementTobeClickable(filter);
+			clickOn(filter);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
