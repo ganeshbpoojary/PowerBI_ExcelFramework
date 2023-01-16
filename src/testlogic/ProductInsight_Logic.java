@@ -9,10 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.LogStatus;
 import frameworkutils.WebDriverFactory;
-import uimaps.AnamolyDetection_UI;
 import uimaps.ProductInsight_UI;
-import uimaps.RPCC_Demand_UI;
-
 public class ProductInsight_Logic extends WebDriverFactory {
 
 	public ProductInsight_Logic(WebDriver driver, Map<String, String> dataBook) {
